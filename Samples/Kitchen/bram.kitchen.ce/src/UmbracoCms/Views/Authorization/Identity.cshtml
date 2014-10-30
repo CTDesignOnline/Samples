@@ -1,0 +1,18 @@
+@using BrambleBerry.Kitchen
+@using BrambleBerry.Kitchen.Controllers
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        // TODO Needs to be the customers name stored in Merchello
+        <p>Hello, @User.Identity.Name</p>
+        @* #TODO translations for these? Dictionary items? *@
+        <p>@Html.ActionLink("My Account", "Index", "MyAccountIndex") / @Html.ActionLink("Log out", "Logout", "Authorization") </p>
+    }
+    else
+    {
+        <p>
+            @Html.ActionLink("Login", "Index", "Authorization")
+            /
+            @Html.ActionLink("Register", "Registration", "Authorization")
+        </p>
+    }

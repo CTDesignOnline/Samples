@@ -1,0 +1,84 @@
+﻿@inherits Merchello.Web.Mvc.MerchelloViewPage<BasketViewModel>
+@using Controllers
+@using Models
+
+
+<h2>Basket</h2>
+
+
+@(Model.Items.Any() ? RenderBasket() : RenderEmpty())
+
+
+@helper RenderEmpty()
+{
+    <p><a href="/productlist/">There's nothing in your shopping cart, start shopping!</a></p>
+}
+
+@helper RenderBasket()
+{
+    @RenderBasketItems()
+    @RenderBasketLinks()
+    
+}
+
+@helper RenderBasketItems()
+{
+    // Renders an "Updatable" basket
+    
+    using(Html.BeginUmbracoForm<BasketController>("UpdateBasket"))
+    {
+        <table class="table">
+            <thead>
+                <tr>
+            	    <th class="name">Product</th>
+            	    <th class="price">Price</th>
+            	    <th class="quantity">Quantity</th>
+            	    <th class="total">Total</th>
+            	    <th class="delete">Delete</th>
+            	    <th class="">Extended Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="5"><hr /></td>
+                </tr>
+@{
+            // iterates through every line item in the basket.  A "for" loop is used here
+            // so that MVC Html.HiddenFor and Html.ActionLink will properly create the references to the Quantity fields that
+            // are posted back to the controller to be updated.
+            for (var i = 0; i < Model.Items.Count(); i++)
+            {
+                <tr>
+                    <td class="image">
+                        <span>@Model.Items[i].Name</span>                                                     
+                        @Html.HiddenFor(model => model.Items[i].Key)                 
+                    </td>
+	                <td >@Model.Items[i].UnitPrice.ToString("C2")</td>
+                    <td >@Html.TextBoxFor(model => model.Items[i].Quantity, new { @class = "col-xs-2"})</td>
+                    <td >@((Model.Items[i].TotalPrice).ToString("C2"))</td>
+                    <td >@Html.ActionLink("X", "RemoveItemFromBasket", "Basket", new {lineItemKey = Model.Items[i].Key}, null)</td>
+                    <td class="">@Model.Items[i].ExtendedData</td>
+                </tr>
+            }
+}
+                <tr>
+                    <td colspan="5"><hr /></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Sub Total</td>
+                    <td colspan="2">@Model.TotalPrice.ToString("C2")</td>
+                </tr>
+
+            </tbody>
+        </table>       
+	
+        <input type="submit" name="update" value="Update" /><br /><br />
+    }
+}
+@helper RenderBasketLinks()
+{    
+    <br />
+    <a href="/checkout/">Checkout</a><br />
+    <a href="/productlist/">Continue Shopping</a>
+}
+

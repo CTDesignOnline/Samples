@@ -1,0 +1,10 @@
+﻿@inherits UmbracoViewPage<BrambleBerry.Kitchen.Models.Account.MyOrders.IndexViewModel>
+@{
+    Layout = "../Base.cshtml";
+    Model.SetPageTitle("My Account / My Orders");
+    
+}
+<div class="row account-index-row">
+    @Html.Partial("OrdersMenu")
+    @Html.Partial("_RenderOrders",Model.Orders)
+</div>

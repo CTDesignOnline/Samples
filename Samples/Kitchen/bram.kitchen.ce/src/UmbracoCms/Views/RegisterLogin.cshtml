@@ -1,0 +1,11 @@
+﻿@inherits UmbracoViewPage<HomePageViewModel>
+@using BrambleBerry.Kitchen.Models
+@{
+    Layout = "OneColumn.cshtml";
+}
+
+<div class="brief col-s-6 offset-s-3 col-m-4 offset-m-4">
+    @Model.BodyText
+</div>
+
+@Html.Action("CustomerLogin","CustomerLoginSurface")

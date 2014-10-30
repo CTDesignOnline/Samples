@@ -1,0 +1,72 @@
+﻿@inherits UmbracoViewPage<ReceiptViewModel>
+@using BrambleBerry.Kitchen.Models.ViewModels
+@using Merchello.Core
+@using Merchello.Core.Models
+@{
+    Layout = "OneColumn.cshtml";
+}
+
+<section id="primary" class="col-l-6 offset-l-3 col-m-8 offset-m-2 col-s-10 offset-s-1 row">
+    <h1>@Umbraco.GetDictionaryValue("ReceiptHeadline")</h1>
+
+    <section class="receipt">
+        <p>@Umbraco.GetDictionaryValue("ThankYouNote")</p>
+        <p>@Umbraco.GetDictionaryValue("InvoiceNumber"): @Model.Invoice.PrefixedInvoiceNumber()</p>
+
+        @Model.BodyText
+        
+        <div class="row">
+            <section class="col-s-6 col-xs-12">
+                <h3>Billed To</h3>
+                <span class="fn">@Model.Invoice.BillToName</span>
+                <span class="adr">
+                    <span class="street-address">@Model.Invoice.BillToAddress1</span>
+                    <span class="extended-address">@Model.Invoice.BillToAddress2</span>
+                    <span class="locality">@Model.Invoice.BillToLocality</span>, <span class="region">@Model.Invoice.BillToRegion</span> <span class="postal-code">@Model.Invoice.BillToPostalCode</span>
+                    <span class="country-name">@Model.Invoice.GetBillingAddress().Country().Name</span>
+                </span>
+            </section>
+
+            @if (Model.IsShippable)
+            {
+                <section class="col-s-6 col-xs-12">
+                    <h3>Shipped To</h3>
+                    <span class="fn">@Model.ShippingAddress.Name</span>
+                    <span class="adr">
+                        <span class="street-address">@Model.ShippingAddress.Address1</span>
+                        <span class="extended-address">@Model.ShippingAddress.Address2</span>
+                        <span class="locality">@Model.ShippingAddress.Locality</span>, <span class="region">@Model.ShippingAddress.Region</span> <span class="postal-code">@Model.ShippingAddress.PostalCode</span>
+                        <span class="country-name">@Model.ShippingAddress.Country().Name</span>
+                    </span>
+                </section>
+            }
+        </div>
+
+        <table class="order-summary">
+            @foreach (var item in Model.Invoice.Items.Where(x => x.LineItemType == LineItemType.Product).OrderBy(x => x.Name))
+            {
+                <tr class="product">
+                    <td>@item.Name<span class="variant">x @item.Quantity @@ @item.Price.ToString("C")</span></td>
+                    <td>@item.TotalPrice.ToString("C")</td>
+                </tr>
+            }
+            <tr class="subtotal">
+                <td>@Umbraco.GetDictionaryValue("SubTotal")</td>
+                <td>@Model.Invoice.TotalItemPrice().ToString("C")</td>
+            </tr>
+            <tr class="shipping">
+                <td>@Umbraco.GetDictionaryValue("Shipping")<span class="variant">@Model.ShipMethodName</span></td>
+                <td>@Model.Invoice.TotalShipping().ToString("C")</td>
+            </tr>
+            <tr class="taxes">
+                <td>@Umbraco.GetDictionaryValue("Taxes")</td>
+                <td>@Model.Invoice.TotalTax().ToString("C")</td>
+            </tr>
+            <tr class="total">
+                <td>@Umbraco.GetDictionaryValue("Total")</td>
+                <td>@Model.Invoice.Total.ToString("C")</td>
+            </tr>
+        </table>
+    </section>
+
+</section>

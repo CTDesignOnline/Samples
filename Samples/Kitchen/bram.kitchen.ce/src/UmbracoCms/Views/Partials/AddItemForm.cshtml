@@ -1,0 +1,45 @@
+@inherits UmbracoViewPage<AddItemFormModel>
+@using BrambleBerry.Kitchen.Controllers
+@using BrambleBerry.Kitchen.Models
+
+@{
+    using (Html.BeginUmbracoForm<BasketController>("AddItem", Model, new { @class = "bs-docs-example", role = "form" }))
+    {
+
+        if (Model.Product.ProductOptions.Any())
+        {
+            var index = 0;
+            foreach (var option in Model.Product.ProductOptions)
+            {
+                var choices = option.Choices.OrderBy(x => x.SortOrder)
+                    .Select(choice => new SelectListItem()
+                    {
+                        Value = choice.Key.ToString(),
+                        Text = choice.Name
+                    }).ToList();
+                
+                choices.First().Selected = true;
+                
+                <label class="pseudo dropdown">
+
+                    <span class="wrapper">
+                        @Html.DropDownListFor(x => x.OptionChoices[index], choices, new { name = option.Name.ToLower().Replace(" ", "-"), id = option.Key, @class = "form-control ProductVariants", OnChange = "merch.Products.getUpdatedVariants(this)" })
+                        @Html.ValidationMessageFor(x => x.OptionChoices, "Please select one")
+                        <span class="value">@choices.First().Text</span>
+                    </span>
+
+                </label>
+                
+                index = index + 1;
+            }
+        }
+    
+        @Html.HiddenFor(x => x.ContentId)
+        @Html.HiddenFor(x => x.ProductKey)
+
+        <div class="text-right">
+            <input type="submit" value="Add to Cart" class="btn" />
+        </div>
+
+    }
+}

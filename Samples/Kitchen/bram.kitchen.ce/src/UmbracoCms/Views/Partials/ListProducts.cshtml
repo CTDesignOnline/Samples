@@ -1,0 +1,31 @@
+@inherits UmbracoViewPage<IEnumerable<ProductListItem>>
+@using BrambleBerry.Kitchen.Models
+
+@if (Model.Any())
+{
+    <ul id="product-list" class="row container image-list products">
+        @foreach (var product in Model)
+        {
+            <li class="col-l-3 col-m-4 col-s-6">
+                <a href="@product.Url">
+                    @if (product.HasImage)
+                    {
+                        <img src="@product.Thumbnail.Url" alt="@product.Thumbnail.Name" />
+                    }
+                    <div class="info">
+                        <div class="wrapper col-s-12">
+                            <h2>@product.Name</h2>
+                            <p>
+                                @if (product.HasVariants)
+                                {
+                                    <em>from</em>
+                                }
+                                @product.Price.ToString("C")
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        }
+    </ul>
+}

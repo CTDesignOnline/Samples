@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UmbracoCms.7.1.6", "http://localhost:49715", "{F6380A6B-BF91-4C32-B8AF-8C9AEC8B0DB3}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = ""
+		Debug.AspNetCompiler.VirtualPath = "/UmbracoCms.7.1.6"
+		Debug.AspNetCompiler.PhysicalPath = "UmbracoCms.7.1.6\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\UmbracoCms.7.1.6\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/UmbracoCms.7.1.6"
+		Release.AspNetCompiler.PhysicalPath = "UmbracoCms.7.1.6\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\UmbracoCms.7.1.6\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "UmbracoCms.7.1.6\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6380A6B-BF91-4C32-B8AF-8C9AEC8B0DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6380A6B-BF91-4C32-B8AF-8C9AEC8B0DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6380A6B-BF91-4C32-B8AF-8C9AEC8B0DB3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F6380A6B-BF91-4C32-B8AF-8C9AEC8B0DB3}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6380A6B-BF91-4C32-B8AF-8C9AEC8B0DB3}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{F6380A6B-BF91-4C32-B8AF-8C9AEC8B0DB3}.Release|x64.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

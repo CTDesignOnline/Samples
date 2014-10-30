@@ -1,0 +1,20 @@
+﻿@inherits UmbracoViewPage<ProductListingViewModel>
+@using BrambleBerry.Kitchen
+@using BrambleBerry.Kitchen.Models.ViewModels
+@{
+    Layout = "OneColumn.cshtml";
+}
+
+@if (Model.CategoryLinks.Any())
+{
+    <nav id="categories">
+        <ul class="container">
+            @foreach (var link in Model.CategoryLinks)
+            {
+                <li><a href="@link.Url" @(link.ActiveLinkClass()) id="@link.ElementId">@link.Title</a></li>
+            }
+        </ul>
+    </nav>
+}
+
+@Html.Partial("ListProducts", Model.Products)

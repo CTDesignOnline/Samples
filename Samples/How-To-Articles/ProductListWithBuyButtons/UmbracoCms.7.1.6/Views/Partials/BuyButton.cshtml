@@ -1,0 +1,20 @@
+﻿@inherits Merchello.Web.Mvc.MerchelloViewPage<Models.AddItemModel>
+@using Controllers
+@using Merchello.Web
+@{
+    // get Merchello object
+    var merchelloHelper = new MerchelloHelper();
+
+    // build Html form
+    using (Html.BeginUmbracoForm<BasketController>("AddToBasket", Model, new { role = "form" }))
+    {        
+        // Umbraco Content Id
+        @Html.HiddenFor(x => x.ContentId)
+
+        // Merchello Product Guid
+        @Html.HiddenFor(x => x.ProductKey) 
+        
+        <input type="submit" value="Add to Basket" class="btn"/>
+    }    
+}
+
