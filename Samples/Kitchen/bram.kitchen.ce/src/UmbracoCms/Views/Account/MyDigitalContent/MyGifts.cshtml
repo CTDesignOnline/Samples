@@ -1,0 +1,40 @@
+﻿@using System.Web.UI.WebControls
+@using BrambleBerry.Kitchen.Controllers
+@using Umbraco.Core.Models.Membership
+
+@inherits UmbracoViewPage<BrambleBerry.Kitchen.Models.Account.MyDigitalContent.MyDigitalContentRecievedViewModel>
+@{
+    Layout = "../Base.cshtml";
+    Model.SetPageTitle("My Account / My Digital Gifts Received");
+
+}
+<div class="row">
+    <table id="digital-gifts">
+        <tr>
+            <th>From</th>
+            <th>Claimed on</th>
+            <th>Items</th>
+            <th></th>
+            
+        </tr>
+        @foreach (var gift in Model.DigitalContent)
+        {
+            <tr>
+                <td>@gift.From</td>
+                <td>@gift.ClaimedOn.ToString("MMMM dd, yyyy")</td>
+                <td class="items">
+                    <ul>
+                        @foreach (var item in gift.Items)
+                        {
+                            <li>
+                                @item
+                        </li>
+                        }
+                    </ul>
+                </td>
+                
+                <td>@Html.ActionLink("Download", "Download", new { id = 1234 })</td>
+            </tr>
+        }
+    </table>
+</div>

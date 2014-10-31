@@ -1,0 +1,12 @@
+﻿@inherits Merchello.Web.Mvc.MerchelloViewPage<BasketViewModel>
+@using Controllers
+@using Models
+<h2>@Model.Customer | @Model.Items.Length.ToString() items in basket= @Model.TotalPrice.ToString("C")</h2>
+@{
+    //these are hard coded with URLs for our store
+    const string continueShoppingUrl = "/productlist/";
+    const string checkoutStep1Url = "/checkout/";
+    const string basket = "/basket/";
+}
+<a href="@basket">Basket</a><br />
+<hr/>

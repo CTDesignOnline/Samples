@@ -1,0 +1,5 @@
+C:\github\brambleberry\bram.kitchen.ce\src\AbleMods.Api\bin\Release\AbleMods.Api.dll
+C:\github\brambleberry\bram.kitchen.ce\src\AbleMods.Api\bin\Release\AbleMods.Api.pdb
+C:\github\brambleberry\bram.kitchen.ce\src\AbleMods.Api\obj\Release\AbleMods.Api.dll
+C:\github\brambleberry\bram.kitchen.ce\src\AbleMods.Api\obj\Release\AbleMods.Api.pdb
+C:\github\brambleberry\bram.kitchen.ce\src\AbleMods.Api\obj\Release\AbleMods.Api.csprojResolveAssemblyReference.cache

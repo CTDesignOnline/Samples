@@ -1,0 +1,328 @@
+﻿@inherits UmbracoViewPage<CheckoutViewModel>
+@using System.Web.Configuration
+@using BrambleBerry.Kitchen.Models.ViewModels
+@{
+    Layout = "CheckoutBase.cshtml";
+
+    ////if (WebConfigurationManager.AppSettings["BrambleBerry:CheckoutEnableSsl"] == "true" && !Request.IsSecureConnection)
+    ////{
+    ////    Response.Redirect(Request.Url.ToString().Replace("http://", "https://"));
+    ////}
+}
+
+
+<section id="primary" class="col-l-6 offset-l-3 col-m-8 offset-m-2 col-s-10 offset-s-1" data-ng-app="checkoutApp">
+    <h1>@Umbraco.GetDictionaryValue("CheckoutHeadline")</h1>
+
+    <form class="checkout col-s-12" name="checkout" data-ng-controller="checkoutController">
+        <!-- STEP: Contact Info -->
+        <fieldset>
+            <!-- Fields Pane -->
+            <div class="fields" data-ng-class="{ 'open': !visible.results.contactInfo }">
+                <h2>@Umbraco.GetDictionaryValue("ContactInfo")</h2>
+                <label class="col-xs-6">
+                    <span>@Umbraco.GetDictionaryValue("FirstName")</span>
+                    <input type="text" name="contactFirst" placeholder="@Umbraco.GetDictionaryValue("FirstName")" data-ng-model="contactInfo.firstName" required />
+                </label>
+                <label class="col-xs-6">
+                    <span>@Umbraco.GetDictionaryValue("LastName")</span>
+                    <input type="text" name="contactLast" placeholder="@Umbraco.GetDictionaryValue("LastName")" data-ng-model="contactInfo.lastName" required />
+                </label>
+                <label class="col-xs-12 reset-xs">
+                    <span>@Umbraco.GetDictionaryValue("Email")</span>
+                    <input type="text" name="contactEmail" placeholder="@Umbraco.GetDictionaryValue("Email")" data-ng-model="contactInfo.email" required />
+                </label>
+                <div class="col-xs-12">
+                    <!-- ACTION: Complete Contact Info -->
+                    <button class="button submit" type="button" data-ng-click="completeContactInfo()">@Umbraco.GetDictionaryValue("Next")</button>
+                    <div class="validation-error" data-ng-class="{ 'open': visible.errors.contactInfo }">
+                        <ul>
+                            <li data-ng-show="checkout.contactFirst.$invalid" class="error">First Name is a required field.</li>
+                            <li data-ng-show="checkout.contactLast.$invalid" class="error">Last Name is a required field.</li>
+                            <li data-ng-show="checkout.contactEmail.$invalid" class="error">Email is a required field.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Results Pane -->
+            <div class="results" data-ng-class="{ 'open': completed.contactInfo && visible.results.contactInfo }">
+                <!-- ACTION: Edit Contact Info -->
+                <button type="button" class="edit" data-ng-click="visible.results.contactInfo = false">@Umbraco.GetDictionaryValue("Edit")</button>
+                <span class="fn">{{contactInfo.firstName}} {{contactInfo.lastName}}</span>
+                <span class="email">{{contactInfo.email}}</span>
+            </div>
+        </fieldset>
+        <!-- STEP: Shipping Address -->
+        <fieldset>
+            <!-- Fields Pane -->
+            <div class="fields row" data-ng-class="{ 'open': completed.contactInfo && !visible.results.shipping }">
+                <h2>@Umbraco.GetDictionaryValue("ShippingAddress")</h2>
+                <label class="col-xs-12">
+                    <span>Name</span>
+                    <input type="text" name="shippingName" placeholder="Name" data-ng-model="shippingAddress.fullname" required />
+                </label>
+                <label class="col-xs-12">
+                    <span>@Umbraco.GetDictionaryValue("Address")</span>
+                    <input type="text" name="shippingAddress1" placeholder="@Umbraco.GetDictionaryValue("Address1")" data-ng-model="shippingAddress.address1" required />
+                </label>
+                <label class="col-xs-12">
+                    <span>@Umbraco.GetDictionaryValue("Address2")</span>
+                    <input type="text" name="shippingAddress2" placeholder="@Umbraco.GetDictionaryValue("Address2")" data-ng-model="shippingAddress.address2" />
+                </label>
+                <label class="col-xs-6 reset-xs">
+                    <span>@Umbraco.GetDictionaryValue("City")</span>
+                    <input type="text" name="shippingCity" placeholder="@Umbraco.GetDictionaryValue("City")" data-ng-model="shippingAddress.city" required />
+                </label>
+                <label class="dropdown col-xs-6" for="shippingRegion">
+                    <span class="wrapper">
+                        <select name="shippingRegion" data-ng-model="filters.shippingRegion" data-ng-change="updateFilterBinding(filters.shippingRegion.id, 'shippingRegion')" data-ng-options="option.name for option in options.shippingRegions"></select>
+                        <span class="value" data-ng-class="{ 'selected': filters.shippingRegion.id != -1 }">{{filters.shippingRegion.name}}</span>
+                    </span>
+                </label>
+                <label class="col-xs-6 reset-xs">
+                    <span>@Umbraco.GetDictionaryValue("ZipPostalCode")</span>
+                    <input type="text" name="shippingPostalCode" placeholder="@Umbraco.GetDictionaryValue("PostalCode")" data-ng-model="shippingAddress.postalCode" required />
+                </label>
+                <label class="dropdown col-xs-6" for="shippingCountry">
+                    <span class="wrapper">
+                        <select name="shippingCountry" data-ng-model="filters.shippingCountry" data-ng-change="updateFilterBinding(filters.shippingCountry.id, 'shippingCountry')" data-ng-options="option.name for option in options.shippingCountries"></select>
+                        <span class="value" data-ng-class="{ 'selected': filters.shippingCountry.id != -1 }">{{filters.shippingCountry.name}}</span>
+                    </span>
+                </label>
+                <!-- ACTION: Complete Shipping -->
+                <div class="col-xs-12">
+                    <button class="button submit" type="button" data-ng-click="completeShipping()">@Umbraco.GetDictionaryValue("Next")</button>
+                    <div class="validation-error" data-ng-class="{ 'open': visible.errors.shipping }">
+                        <ul>
+                            <li data-ng-show="checkout.shippingName.$invalid" class="error">Name is a required field.</li>
+                            <li data-ng-show="checkout.shippingAddress1.$invalid" class="error">Address is a required field.</li>
+                            <li data-ng-show="checkout.shippingCity.$invalid" class="error">City is a required field.</li>
+                            <li data-ng-show="filters.shippingRegion.id == -1" class="error">State/Province is a required field.</li>
+                            <li data-ng-show="checkout.shippingPostalCode.$invalid" class="error">Zip/Postal Code is a required field.</li>
+                            <li data-ng-show="filters.shippingCountry.id == -1" class="error">Country is a required field.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Results Pane -->
+            <div class="results" data-ng-class="{ 'open': completed.shipping && visible.results.shipping }">
+                <!-- ACTION: Edit Shipping -->
+                <button type="button" class="edit" data-ng-click="editShipping()">@Umbraco.GetDictionaryValue("Edit")</button>
+                <span class="fn">{{shippingAddress.fullname}}</span>
+                <span class="adr">
+                    <span class="street-address">{{shippingAddress.address1}}</span>
+                    <span class="extended-address" data-ng-show="shippingAddress.address2 !=''">{{shippingAddress.address2}}</span>
+                    <span class="locality">{{shippingAddress.city}}</span>, <span class="region">{{shippingAddress.region}}</span> <span class="postal-code">{{shippingAddress.postalCode}}</span>
+                    <span class="country-name">{{filters.shippingCountry.name}}</span>
+                </span>
+            </div>
+        </fieldset>
+        <!-- STEP: Shipping Method -->
+        <fieldset>
+            <!-- Fields Pane -->
+            <div class="fields" data-ng-class="{ 'open': completed.shipping && !visible.results.shippingMethod }">
+                <h2>@Umbraco.GetDictionaryValue("ShippingMethod")</h2>
+                <label class="dropdown" for="shippingMethod">
+                    <span class="wrapper">
+                        <select name="shippingMethod" data-ng-model="filters.shippingMethod" data-ng-change="updateFilterBinding(filters.shippingMethod.id, 'shippingMethod')" data-ng-options="option.name for option in options.shippingMethods"></select>
+                        <span class="value" data-ng-class="{ 'selected': filters.shippingMethod.id != -1 }">{{filters.shippingMethod.name}}</span>
+                    </span>
+                </label>
+                <!-- ACTION: Complete Shipping Method -->
+                <button class="button submit" type="button" data-ng-click="completeShippingMethod()">@Umbraco.GetDictionaryValue("Next")</button>
+                <div class="validation-error" data-ng-class="{ 'open': visible.errors.shippingMethod }">
+                    <ul>
+                        <li data-ng-show="filters.shippingMethod.id == -1" class="error">Shipping Method is a required field.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Results Pane -->
+            <div class="results" data-ng-class="{ 'open': completed.shippingMethod && visible.results.shippingMethod }">
+                <!-- ACTION: Edit Shipping Method -->
+                <button type="button" class="edit" data-ng-click="visible.results.shippingMethod = false">@Umbraco.GetDictionaryValue("Edit")</button>
+                <span class="shipping-method">{{shippingMethod}} (${{shippingCost}})</span>
+            </div>
+        </fieldset>
+        <!-- STEP: Payment Method -->
+        <fieldset>
+            <!-- Fields Pane -->
+            <div class="fields" data-ng-class="{ 'open': completed.shippingMethod && !visible.results.payment }">
+                <h2>@Umbraco.GetDictionaryValue("PaymentMethod")</h2>
+                <label class="checkbox">
+                    <input type="checkbox" checked="checked" data-ng-model="visible.panels.hideBillingAddress" />
+                    <span>@Umbraco.GetDictionaryValue("UseShippingAddress")</span>
+                </label>
+                <!-- Billing Address -->
+                <div class="billingAddress" data-ng-class="{ 'open': !visible.panels.hideBillingAddress }">
+                    <label>
+                        <span>Name</span>
+                        <input type="text" name="billingName" placeholder="Name" data-ng-model="billingAddress.fullname" data-ng-required="!visible.panels.hideBillingAddress" />
+                    </label>
+                    <label>
+                        <span>@Umbraco.GetDictionaryValue("Address")</span>
+                        <input type="text" name="billingAddress1" placeholder="@Umbraco.GetDictionaryValue("Address1")" data-ng-model="billingAddress.address1" data-ng-required="!visible.panels.hideBillingAddress" />
+                    </label>
+                    <label>
+                        <span>@Umbraco.GetDictionaryValue("Address2")</span>
+                        <input type="text" name="billingAddress2" placeholder="@Umbraco.GetDictionaryValue("Address2")" data-ng-model="billingAddress.address2" />
+                    </label>
+                    <label class="half">
+                        <span>@Umbraco.GetDictionaryValue("City")</span>
+                        <input type="text" name="billingCity" placeholder="@Umbraco.GetDictionaryValue("City")" data-ng-model="billingAddress.city" data-ng-required="!visible.panels.hideBillingAddress" />
+                    </label>
+                    <label class="dropdown half" for="billingRegion">
+                        <span class="wrapper">
+                            <select name="billingRegion" data-ng-model="filters.billingRegion" data-ng-change="updateFilterBinding(filters.billingRegion.id, 'billingRegion')" data-ng-options="option.name for option in options.billingRegions"></select>
+                            <span class="value" data-ng-class="{ 'selected': filters.billingRegion.id != -1 }">{{filters.billingRegion.name}}</span>
+                        </span>
+                    </label>
+                    <label class="half">
+                        <span>@Umbraco.GetDictionaryValue("PostalCode")</span>
+                        <input type="text" name="billingPostalCode" placeholder="@Umbraco.GetDictionaryValue("PostalCode")" data-ng-model="billingAddress.postalCode" data-ng-required="!visible.panels.hideBillingAddress" />
+                    </label>
+                    <label class="dropdown half" for="billingCountry">
+                        <span class="wrapper">
+                            <select name="billingCountry" data-ng-model="filters.billingCountry" data-ng-change="updateFilterBinding(filters.billingCountry.id, 'billingCountry')" data-ng-options="option.name for option in options.billingCountries"></select>
+                            <span class="value" data-ng-class="{ 'selected': filters.billingCountry.id != -1 }">{{filters.billingCountry.name}}</span>
+                        </span>
+                    </label>
+                    <br /><br />
+                </div>
+                <!-- Choose Payment Method -->
+                <label class="dropdown" for="payment">
+                    <span class="wrapper">
+                        <select name="payment" data-ng-model="filters.paymentMethod" data-ng-change="updateFilterBinding(filters.paymentMethod.id, 'paymentMethod')" data-ng-options="option.name for option in options.paymentMethods"></select>
+                        <span class="value" data-ng-class="{ 'selected': filters.paymentMethod.id != -1 }">{{filters.paymentMethod.name}}</span>
+                    </span>
+                </label>
+                <!-- CC Form -->
+                <br />
+                <div class="credit-card-form" data-ng-class="{ 'open': visible.panels.creditCard }">
+                    <label>
+                        <span>Name</span>
+                        <input type="text" name="creditCardName" placeholder="Cardholder's Name" data-ng-model="creditCard.name" data-ng-required="visible.panels.creditCard" />
+                    </label>
+                    <label>
+                        <span>Card Number</span>
+                        <input type="text" name="creditCardNumber" placeholder="Card Number" data-ng-model="creditCard.number" data-ng-required="visible.panels.creditCard" />
+                    </label>
+                    <label class="quarter dropdown">
+                        <span class="wrapper">
+                            <select name="creditCardMonth" data-ng-model="filters.expireMonth" data-ng-change="updateFilterBinding(filters.expireMonth.id, 'expireMonth')" data-ng-options="option.name for option in options.expireMonth"></select>
+                            <span class="value">{{filters.expireMonth.name}}</span>
+                        </span>
+                    </label>
+                    <label class="quarter dropdown">
+                        <span class="wrapper">
+                            <select name="creditCardYear" data-ng-model="filters.expireYear" data-ng-change="updateFilterBinding(filters.expireYear.id, 'expireYear')" data-ng-options="option.name for option in options.expireYear"></select>
+                            <span class="value">{{filters.expireYear.name}}</span>
+                        </span>
+                    </label>
+                    <label class="half">
+                        <span>Security Code*</span>
+                        <input type="text" name="creditCardCode" placeholder="Security Code*" data-ng-model="creditCard.code" data-ng-required="visible.panels.creditCard" />
+                    </label>
+                    <p>*The security code is the last three digits of the code on the back of your credit card.</p>
+                </div>
+                <p>{{selectedPaymentMethod.description}}</p>
+                <!-- ACTION: Complete Payment -->
+                <button class="button submit" type="button" data-ng-click="completePayment()">@Umbraco.GetDictionaryValue("Next")</button>
+                <div class="validation-error" data-ng-class="{ 'open': visible.errors.payment }">
+                    <ul>
+                        <li data-ng-show="checkout.billingName.$invalid" class="error">Name is a required field.</li>
+                        <li data-ng-show="checkout.billingAddress1.$invalid" class="error">Address is a required field.</li>
+                        <li data-ng-show="checkout.billingCity.$invalid" class="error">City is a required field.</li>
+                        <li data-ng-show="!visible.panels.hideBillingAddress && filters.billingRegion.id == -1" class="error">State/Province is a required field.</li>
+                        <li data-ng-show="checkout.billingPostalCode.$invalid" class="error">Zip/Postal Code is a required field.</li>
+                        <li data-ng-show="!visible.panels.hideBillingAddress && filters.billingCountry.id == -1" class="error">Country is a required field.</li>
+                        <li data-ng-show="filters.paymentMethod.id == -1" class="error">Payment Method is a required field.</li>
+                        <li data-ng-show="creditCard.name.$invalid" class="error">Credit Card Holder's Name is a required field.</li>
+                        <li data-ng-show="creditCard.number.$invalid" class="error">Credit Card Number is a required field.</li>
+                        <li data-ng-show="visible.panels.creditCard && filters.expireMonth == -1" class="error">Month is a required field.</li>
+                        <li data-ng-show="visible.panels.creditCard && filters.expireYear == -1" class="error">Year is a required field.</li>
+                        <li data-ng-show="creditCard.code.$invalid" class="error">Security Code is a required field.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Results Pane -->
+            <div class="results" data-ng-class="{ 'open': completed.payment && visible.results.payment }">
+                <!-- ACTION: Edit Payment Method -->
+                <button type="button" class="edit" data-ng-click="visible.results.payment = false">@Umbraco.GetDictionaryValue("Edit")</button>
+                <span class="payment">{{paymentMethod}}</span>
+                <div data-ng-show="!visible.panels.hideBillingAddress">
+                    <span class="fn">{{billingAddress.fullname}}</span>
+                    <span class="adr">
+                        <span class="street-address">{{billingAddress.address1}}</span>
+                        <span class="extended-address" data-ng-show="billingAddress.address2 !=''">{{billingAddress.address2}}</span>
+                        <span class="locality">{{billingAddress.city}}</span>, <span class="region">{{billingAddress.region}}</span> <span class="postal-code">{{billingAddress.postalCode}}</span>
+                        <span class="country-name">{{filters.billingCountry.name}}</span>
+                    </span>
+                </div>
+            </div>
+        </fieldset>
+        <!-- STEP: Summary -->
+        <fieldset class="summary">
+            <h2>@Umbraco.GetDictionaryValue("Summary")</h2>
+            <table class="order-summary">
+                @{
+                    foreach (var item in Model.Items.OrderBy(x => x.Name))
+                    {
+                        <tr class="product">
+                            <td>@item.Name<span class="variant"> x @item.Quantity @@ @item.UnitPrice.ToString("C")</span></td>
+                            <td>@item.TotalPrice.ToString("C")</td>
+                        </tr>
+                    }
+                }
+
+                <tr class="subtotal">
+                    <td>@Umbraco.GetDictionaryValue("SubTotal")</td>
+                    <td>@Model.TotalBasketPrice.ToString("C")</td>
+                </tr>
+                <tr class="shipping">
+                    <td>@Umbraco.GetDictionaryValue("Shipping")</td>
+                    <td>
+                        <span data-ng-show="shippingCost == 0">@Umbraco.GetDictionaryValue("Pending")</span>
+                        <span data-ng-show="shippingCost != 0">${{shippingCost}}</span>
+                    </td>
+                </tr>
+                <tr class="taxes">
+                    <td>@Umbraco.GetDictionaryValue("Taxes")</td>
+                    <td>
+                        <span data-ng-show="!summary">@Umbraco.GetDictionaryValue("Pending")</span>
+                        <span data-ng-show="summary">${{taxes()}}</span>
+                    </td>
+                </tr>
+                <tr class="total">
+                    <td>@Umbraco.GetDictionaryValue("Total")</td>
+                    <td>${{totalPrice()}}</td>
+                </tr>
+            </table>
+            <p class="order-error" data-ng-show="hasOrderError">Your order could not be completed because of the following error: {{orderErrorText}}</p>
+            <!-- ACTION: Complete Order -->
+            <!-- Button does not display until Contact Info, Shipping, and Payment have been filled out -->
+            <input type="submit" value="Complete Order" data-ng-show="readyToComplete()" data-ng-click="completeOrder()" />
+        </fieldset>
+        <input type="hidden" data-ng-model="subtotal" data-ng-init="subtotal=@Model.TotalBasketPrice" />
+        <input type="hidden" data-ng-model="customerGuid" data-ng-init="customerGuid='@Model.CustomerKey'" />
+
+
+    </form>
+</section>
+@section AdditionalScripts
+{
+    <script src="/Scripts/ng-app/kitchen.app.js"></script>
+    <script src="/Scripts/ng-app/models/checkout.models.js"></script>
+    <script src="/Scripts/ng-app/api/url.constants.js"></script>
+    <script src="~/Scripts/ng-app/api/countries.api.js"></script>
+    <script src="~/Scripts/ng-app/api/order.api.js"></script>
+    <script src="~/Scripts/ng-app/api/payment.methods.api.js"></script>
+    <script src="~/Scripts/ng-app/api/provinces.api.js"></script>
+    <script src="~/Scripts/ng-app/api/shipping.methods.api.js"></script>
+    <script src="~/Scripts/ng-app/services/address.service.js"></script>
+    <script src="~/Scripts/ng-app/services/country.service.js"></script>
+    <script src="~/Scripts/ng-app/services/order.service.js"></script>
+    <script src="~/Scripts/ng-app/services/payment.method.service.js"></script>
+    <script src="~/Scripts/ng-app/services/province.service.js"></script>
+    <script src="~/Scripts/ng-app/services/shipping.method.service.js"></script>
+    <script src="/Scripts/ng-app/controllers/checkout.controller.js"></script>
+}

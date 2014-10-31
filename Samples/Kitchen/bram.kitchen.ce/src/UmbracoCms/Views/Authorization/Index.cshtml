@@ -1,0 +1,72 @@
+@inherits UmbracoViewPage<AuthorizationLoginModel>
+@using BrambleBerry.Kitchen.Controllers
+@using BrambleBerry.Kitchen.Models.Authorization
+@{
+
+    Layout = "Base.cshtml";
+}
+@*<h1>@Model.ReturnUrl</h1>*@
+<section id="sign-in" class="slide-parent col-s-6">
+    @using (Html.BeginUmbracoForm<AuthorizationController>("Index", FormMethod.Post, new { @class = "slide-toggle sign-in-slide open" }))
+    {
+        <h2>Sign in to My Account</h2>
+        if (TempData[AuthorizationController.LoginErrorMessageKey] != null)
+        {
+            <div class="alert warning help">
+                <p>@Html.Raw(TempData[AuthorizationController.LoginErrorMessageKey])</p>
+            </div>
+        }
+        <label>
+            <span>@Html.DisplayNameFor(x => x.Username)</span>
+            @Html.TextBoxFor(x => x.Username, new { placeholder = @Html.DisplayNameFor(x => x.Username), @type = "email" })
+            @Html.ValidationMessageFor(x => x.Username)
+        </label>
+
+        <div class="form-group row no-gutter">
+            <label class="col-xs-9">
+                <span>@Html.DisplayNameFor(x => x.Password)</span>
+                @Html.PasswordFor(x => x.Password, new { placeholder = @Html.DisplayNameFor(x => x.Password) })
+                @Html.ValidationMessageFor(x => x.Password)
+            </label>
+            <label class="checkbox col-xs-3 show-password">
+                <input type="checkbox" name="show" />
+                <span>Show</span>
+            </label>
+        </div>
+
+        <div class="row helpers">
+            <div class="col-xs-6">
+                @BramFormHelpers.RenderCheckBox(@Html.NameFor(x => x.RememberMe), @Html.IdFor(x => x.RememberMe), @Html.DisplayNameFor(x => x.RememberMe))
+            </div>
+            <div class="col-xs-6 forgot">
+                <a class="forgot-password-link slide-link">I forgot my password</a>
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.ReturnUrl)
+        @Html.AntiForgeryToken()
+        <button type="submit">Sign in with Our Secure Server</button>
+    }
+    
+      @Html.Partial("ForgottenPassword",new AuthorizationForgotPasswordFormModel(),new ViewDataDictionary(){{"disableLayout",true}})
+
+</section>
+<section id="options" class="col-s-6 slide-parent">
+    
+    <section class="slide-toggle new-here-slide open">
+        <section class="guest">
+            <h2>I'm New Here</h2>
+            <h3>Save time now.</h3>
+            <p>You don't need an account to checkout</p>
+            <a href="/" role="button">Continue as Our Guest</a>
+        </section>
+
+        <section class="create">
+            <h3>Save time later.</h3>
+            <p>Create a BrambleBerry.com account for fast checkout and easy access to order history.</p>
+            <button type="button" class="create-account-link slide-link">Create an Account</button>
+        </section>
+    </section>
+    
+    @Html.Partial("Registration", new AuthorizationRegistrationModel(), new ViewDataDictionary() { { "disableLayout", true } })
+</section>

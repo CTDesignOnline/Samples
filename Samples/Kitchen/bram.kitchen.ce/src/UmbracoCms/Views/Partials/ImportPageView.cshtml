@@ -1,0 +1,24 @@
+﻿@using AbleMods.Models
+@model ImportPageModel
+
+@using (Html.BeginUmbracoForm("ImportPage", "ImportSurface"))
+{
+    <br/><br/>
+    @Html.Raw("Select the Able Category To Import:") @Html.DropDownListFor(m => m.CategoryId, Model.Categories, "Select Able Category:")<br/><br/>
+    @Html.Raw("Select the Umbraco Parent Node:") @Html.DropDownListFor(m => m.ParentNodeId, Model.ContentNodes, "Select Parent Content:")
+    <br/><br/>
+    @Html.Raw("Deep Import:")<label class="checkbox"> @Html.CheckBoxFor(m => m.DeepImport, "Deep Import ?")</label>
+    <br/><br/>
+    @Html.Raw("Test 3 Only?") @Html.CheckBoxFor(m => m.Test3Only, "Test 3 Only ?")
+    <br/><br/>
+    <input type="submit" name="submitButton" value="Import Products">
+    <input type="submit" name="submitButton" value="Import Category with Products" />
+    <input type="submit" name="submitButton" value="Import Reviews" />
+    <hr/>
+    <input type="submit" name="submitButton" value="Delete Reviews Table">
+    <input type="submit" name="submitButton" value="Delete Mappings Table">
+    <input type="submit" name="submitButton" value="Delete Merchello Products" />
+    
+}
+
+The response was:  @ViewBag.Status

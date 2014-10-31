@@ -1,0 +1,14 @@
+﻿@inherits UmbracoViewPage<ContactPageViewModel>
+@using System.Web.Configuration
+@using BrambleBerry.Kitchen.Models.ViewModels
+@{
+    Layout = "OneColumn.cshtml";
+}
+
+<div id="primary" class="col-s-6 offset-s-3">
+    <h1>@Model.Headline</h1>
+
+    @Model.BodyText
+
+    @Html.Action("RenderContactForm", "ContactPage", null, true)
+</div>

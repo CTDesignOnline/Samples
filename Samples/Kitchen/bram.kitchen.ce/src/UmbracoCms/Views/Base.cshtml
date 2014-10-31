@@ -1,0 +1,70 @@
+﻿@inherits UmbracoViewPage<ViewModelBase>
+@using BrambleBerry.Kitchen
+@using BrambleBerry.Kitchen.Models.ViewModels
+@using Cruncher.Web
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 ie"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9 ie"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+ <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>@Model.Title</title>
+    @if (!string.IsNullOrEmpty(Model.MetaDescription))
+    {<meta name="description" content="@Model.MetaDescription" />}
+    @if (!string.IsNullOrEmpty(Model.MetaKeywords))
+    {<meta name="keywords" content="@Model.MetaKeywords" />}                                                           
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @CruncherBundler.RenderCSS("gfonts","styles.min.css")
+    <link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body class="@Model.BodyCss" id="top">
+    <div id="container">    
+        <header role="banner">
+            <div class="container">
+                <div id="google_translate_element"></div>
+                <h1><a href="@Model.Logo.Url">@Model.Logo.SiteName</a></h1>
+
+                <input type="checkbox" class="invis" name="nav-toggle" id="nav-toggle" />
+
+                <label class="nav-toggle" for="nav-toggle">
+                    <i class="fa fa-angle-down"></i>
+                    <i class="fa fa-angle-up"></i>
+                </label>
+
+                <nav id="main" class="menu">
+                    <ul>
+                        @foreach (var link in Model.Menu.Children)
+                        {
+                            <li><a href="@link.Url" @(link.ActiveLinkClass())>@link.Title</a></li>
+                        }
+                    </ul>
+                </nav>
+                
+                @Html.Action("RenderBasketMenu", "Basket", null, true)
+            </div>
+        </header>
+
+        @RenderBody()
+
+    </div><!--/container-->
+
+    <footer role="contentinfo" class="col-xs-12">
+        <a href="#top" class="arrow up top"><i class="fa fa-angle-up"></i></a>
+        <section class="info">
+            <p class="copyright">Copyright &copy; 1999-@DateTime.Now.Year Bramble Berry<sup>&reg;</sup> Inc. All Rights Reserved.</p>
+            <cite class="mindfly">
+                Site by <a href="http://www.mindfly.com" target="_blank">Mindfly</a>, <a href="http://www.proworks.com" target="_blank">ProWorks</a>, &amp; <a href="https://offroadcode.com/">Offroadcode</a>. Powered by <a href="http://www.umbraco.com" target="_blank">Umbraco</a> and <a href="http://www.merchello.com">Merchello</a>.
+            </cite>
+        </section>
+    </footer>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    @CruncherBundler.RenderJavaScript("responsive.min.js", "bram-functions.js")
+    @RenderSection("AdditionalScripts", false)
+</body>
+</html>

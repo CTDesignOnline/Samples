@@ -1,0 +1,34 @@
+@using BrambleBerry.Kitchen.Controllers
+@using BrambleBerry.Kitchen.Models
+
+@model CustomerLoginModel
+@if (User.Identity.IsAuthenticated)
+{
+     @* #TODO translations for these? Dictionary items? *@
+    <p>Hello, @User.Identity.Name</p>
+    <p>
+        @using ( Html.BeginUmbracoForm<CustomerLoginSurfaceController>( "CustomerLogout", FormMethod.Post, new { id = "logoutForm"} ) )
+        {
+            @Html.AntiForgeryToken()
+            <text>log out</text>
+        }        
+    </p>
+}
+else
+{
+    using (Html.BeginUmbracoForm( "CustomerLogin", "CustomerLoginSurface" ))
+    {
+        if ( ViewData.ModelState["LoginError"] != null )
+        {
+           <div class="alert warning">
+               @ViewData.ModelState["LoginError"].Value
+           </div>    
+        }         
+        @* This is the bit that actually renders out all the input fields *@
+        @Html.EditorFor(x => Model)
+        
+        @Html.HiddenFor(model => model.ReturnUrl)
+
+        <input type="submit" />
+    }
+}   
