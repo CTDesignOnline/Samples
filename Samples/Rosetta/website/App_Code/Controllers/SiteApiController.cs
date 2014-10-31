@@ -40,7 +40,7 @@ namespace Controllers
         [AcceptVerbs("GET")]
         public string GetProductVariantPrice(Guid productKey, string optionChoiceKeys)
         {
-            var optionsArray = optionChoiceKeys.Split(',');
+            var optionsArray = optionChoiceKeys != null ? optionChoiceKeys.Split(',') : null;
 
             var guidOptionChoiceKeys = new List<Guid>();
             foreach (var option in optionsArray)
