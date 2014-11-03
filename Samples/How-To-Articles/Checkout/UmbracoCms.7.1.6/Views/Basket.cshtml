@@ -1,4 +1,8 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
+@{
+    Layout = null;
+}
+@*@Html.Action("DisplayCustomerBasket", "Basket", new { area = "MerchelloExample"})*@
+@*<h1>@CurrentPage.Name</h1>*@
 @Html.Action("DisplayBasket", "Basket", new { area = "MerchelloExample"})
 

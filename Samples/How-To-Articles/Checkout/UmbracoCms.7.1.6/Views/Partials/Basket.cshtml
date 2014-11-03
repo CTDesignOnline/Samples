@@ -2,11 +2,15 @@
 @using Controllers
 @using Models
 
+@{
+    string location = "/productlist/";
+    string currentUri = Request.Url.AbsoluteUri;
+
+}
 
 <h2>Basket</h2>
-
-
 @(Model.Items.Any() ? RenderBasket() : RenderEmpty())
+@(currentUri.Contains("basket") ? RenderBasketLinks() : RenderCheckoutLinks())
 
 
 @helper RenderEmpty()
@@ -14,14 +18,22 @@
     <p><a href="/productlist/">There's nothing in your shopping cart, start shopping!</a></p>
 }
 
-@helper RenderBasket()
+@helper RenderBasketLinks()
+    {    
+
+        <a href="/basket/">Basket</a><br />
+        <a href="/checkout/">Checkout</a><br />
+        <a href="/productlist/">Continue Shopping</a>
+
+}
+@helper RenderCheckoutLinks()
 {
-    @RenderBasketItems()
-    @RenderBasketLinks()
-    
+    <a href="/checkout/address/">Continue to Shipping/Billing Address</a>
 }
 
-@helper RenderBasketItems()
+
+
+@helper RenderBasket()
 {
     // Renders an "Updatable" basket
     
@@ -74,11 +86,7 @@
 	
         <input type="submit" name="update" value="Update" /><br /><br />
     }
-}
-@helper RenderBasketLinks()
-{    
-    <br />
-    <a href="/checkout/">Checkout</a><br />
-    <a href="/productlist/">Continue Shopping</a>
+
+
 }
 
