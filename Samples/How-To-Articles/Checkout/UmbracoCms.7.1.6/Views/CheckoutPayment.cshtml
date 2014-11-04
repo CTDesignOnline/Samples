@@ -11,6 +11,10 @@
         Text = x.PaymentMethod.Name
     });
 }
+
+<table>
+    <tr>
+        <td valign="top">
 <h3>Payment Method</h3>
 	
 @using (Html.BeginUmbracoForm<CheckoutController>("SavePayment", new {area = "MerchelloExample"}, new {@class = "form form-horizontal", role = "form"}))
@@ -20,4 +24,16 @@
 
     <input type="submit" value="Proceed to receipt"  />
 }
+
+        </td>
+		<td width="100">
+		</td>
+        <td >
+            @Html.Action("RenderInvoiceSummary", "Checkout", new { area = "MerchelloExample", dataFromInvoice=false, invoiceKey = Guid.Empty})
+
+        </td>
+    </tr>
+</table>	
+
+
 	

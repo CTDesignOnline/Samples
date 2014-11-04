@@ -1,35 +1,36 @@
-﻿@inherits Merchello.Web.Mvc.MerchelloViewPage<AddressModel>
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using Merchello.Core
-@using Models
-@using Merchello.Web
 @using Controllers
-
-	
-Address
-	
-@using (Html.BeginUmbracoForm<CheckoutController>("SaveAddress", new { area = "MerchelloExample" }, new { @class = "form form-horizontal", role = "form" }))
-{
-	
-	<h3>Enter your Address</h3>
-	
-    @Html.Label("Name")<br>
-    
-	@Html.TextBox("Name") <br><br>
-	
-	@Html.Label("Email")<br>
-	@Html.TextBox("Email") <br><br>
-	
-	@Html.Label("Address1")<br>
-	@Html.TextBox("Address") <br><br>
-	
-	@Html.Label("City")<br>
-	@Html.TextBox("City")<br><br>
-	
-	@Html.Label("State")<br>
-	@Html.TextBox("State")<br><br>
-	
-	@Html.Label("PostalCode")<br>
-	@Html.TextBox("Postal or Zip Code")<br><br>		
-    <input type="submit" value="Proceed to payment" />
-
+@{
+    Layout = null;
 }
+   	
+    <h2>Address</h2>
+<table>
+    <tr>
+        <td>
+            
+    @using (Html.BeginUmbracoForm<CheckoutController>("SaveAddress", new { area = "MerchelloExample" }, new { @class = "form form-horizontal", role = "form" }))
+    {
+	
+        @Html.Action("RenderAddressForm", "Checkout", new { area = "MerchelloExample", addressType = AddressType.Shipping })
+        
+        <div class="text-right">
+            <input type="submit" value="Proceed to Next Step" />
+        </div>
+
+
+    }            
+
+        </td>
+		<td width="100">
+		</td>
+        <td >
+            @Html.Action("RenderInvoiceSummary", "Checkout", new { area = "MerchelloExample", dataFromInvoice=false, invoiceKey = Guid.Empty})
+
+        </td>
+    </tr>
+</table>	
+
+
+    
