@@ -842,3 +842,64 @@ System.NullReferenceException: Object reference not set to an instance of an obj
    at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2014-11-25 12:18:54,155 [10] INFO  Umbraco.Core.PluginManager - [Thread 31] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-11-25 12:18:54,156 [10] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 5 (took 0ms)
+2014-11-25 12:36:05,137 [10] INFO  umbraco.BusinessLogic.Log - [Thread 83] Log scrubbed.  Removed all items older than 2014-09-26 12:36:05
+2014-11-25 12:36:05,139 [10] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 83] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2014-11-25 12:36:22,471 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Determining hash of code files on disk
+2014-11-25 12:36:22,504 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Hash determined (took 25ms)
+2014-11-25 12:36:22,522 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-11-25 12:36:23,576 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 42 (took 1053ms)
+2014-11-25 12:36:23,730 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-11-25 12:36:23,748 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 17ms)
+2014-11-25 12:36:23,749 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-11-25 12:36:23,768 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 19ms)
+2014-11-25 12:36:23,801 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-11-25 12:36:23,822 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 7 (took 20ms)
+2014-11-25 12:36:23,823 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-11-25 12:36:23,870 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 48 (took 47ms)
+2014-11-25 12:36:23,967 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-11-25 12:36:23,982 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 14ms)
+2014-11-25 12:36:23,983 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-11-25 12:36:23,996 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 13ms)
+2014-11-25 12:36:25,393 [91] INFO  Merchello.Web.UmbracoApplicationEventHandler - Attempting to initialize Merchello
+2014-11-25 12:36:25,465 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of Merchello.Core.Gateways.GatewayProviderBase
+2014-11-25 12:36:25,483 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of Merchello.Core.Gateways.GatewayProviderBase, found 4 (took 18ms)
+2014-11-25 12:36:26,073 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of Merchello.Core.Observation.ITrigger
+2014-11-25 12:36:26,091 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of Merchello.Core.Observation.ITrigger, found 3 (took 17ms)
+2014-11-25 12:36:26,110 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of Merchello.Core.Observation.IMonitor
+2014-11-25 12:36:26,135 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of Merchello.Core.Observation.IMonitor, found 3 (took 24ms)
+2014-11-25 12:36:26,149 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of Merchello.Web.Reporting.ReportController
+2014-11-25 12:36:26,167 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of Merchello.Web.Reporting.ReportController, found 0 (took 17ms)
+2014-11-25 12:36:26,170 [91] INFO  Merchello.Core.CoreBootManager - [Thread 85] Starting subscribing Monitors to Triggers
+2014-11-25 12:36:26,172 [91] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 85] PartialOrderShippedMonitor subscribing to PartialOrderShippedTrigger
+2014-11-25 12:36:26,176 [91] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.MonitorModels.IPaymentResultMonitorModel, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 85] OrderConfirmationMonitor subscribing to OrderConfirmationTrigger
+2014-11-25 12:36:26,176 [91] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 85] OrderShippedMonitor subscribing to OrderShippedTrigger
+2014-11-25 12:36:26,176 [91] INFO  Umbraco.Core.CoreBootManager - [Thread 85] Finished subscribing Monitors to Triggers
+2014-11-25 12:36:26,913 [91] INFO  Merchello.Web.UmbracoApplicationEventHandler - Initialization of Merchello complete
+2014-11-25 12:36:27,048 [91] INFO  Merchello.Web.Search.ExamineEvents - [Thread 85] Initializing Merchello ProductIndex binding events
+2014-11-25 12:36:27,392 [91] INFO  Merchello.Web.Trees.ServerVariablesParsingEvents - [Thread 85] Initializing Merchello ServerVariablesParsingEvents
+2014-11-25 12:36:27,395 [91] INFO  Merchello.Web.UmbracoApplicationEventHandler - [Thread 85] Initializing Customer related events
+2014-11-25 12:36:27,401 [91] INFO  Merchello.Core.Gateways.GatewayEvents - [Thread 85] Initializing Merchello Warehouse Catalog binding events
+2014-11-25 12:36:27,404 [91] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 85] Initializing Merchello NotificationMonitor binding events
+2014-11-25 12:36:27,404 [91] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 85] Completed Merchello NotificationMonitor binding events
+2014-11-25 12:36:27,405 [91] INFO  Merchello.Core.Gateways.Notification.Smtp.SmtpProviderEvents - [Thread 85] Initializing SMTP notification gateway provider registration binding events
+2014-11-25 12:36:27,470 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-11-25 12:36:27,491 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 5 (took 20ms)
+2014-11-25 12:36:27,525 [91] WARN  Umbraco.Core.Services.ApplicationTreeService - [Thread 85] The tree definition: <add initialize="true" sortOrder="9" alias="diploTraceLog" application="developer" title="Trace Logs" iconClosed="icon-folder" iconOpen="icon-folder-open" type="Diplo.TraceLogViewer.Controllers.TraceLogTreeController, Diplo.TraceLogViewer" /> could not be resolved to a .Net object type
+2014-11-25 12:36:27,527 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of umbraco.interfaces.ITree
+2014-11-25 12:36:27,557 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 29ms)
+2014-11-25 12:36:27,584 [91] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 85] Initializing Examine and binding to business logic events
+2014-11-25 12:36:27,585 [91] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 85] Adding examine event handlers for index providers: 3
+2014-11-25 12:36:27,595 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Starting resolution types of umbraco.interfaces.IApplication
+2014-11-25 12:36:27,628 [91] INFO  Umbraco.Core.PluginManager - [Thread 85] Completed resolution of types of umbraco.interfaces.IApplication, found 8 (took 32ms)
+2014-11-25 12:36:28,492 [91] INFO  Umbraco.Web.UmbracoModule - [Thread 83] Setting OriginalRequestUrl: localhost:54066/umbraco
+2014-11-25 12:39:27,969 [91] INFO  Umbraco.Core.PluginManager - [Thread 84] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-11-25 12:39:27,993 [91] INFO  Umbraco.Core.PluginManager - [Thread 84] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 21ms)
+2014-11-25 12:39:28,469 [91] INFO  Umbraco.Web.Security.WebSecurity - [Thread 84] User Id: 1 logged in
+2014-11-25 12:39:32,108 [91] WARN  Umbraco.Core.Services.ApplicationTreeService - [Thread 87] The tree definition: <add initialize="true" sortOrder="9" alias="diploTraceLog" application="developer" title="Trace Logs" iconClosed="icon-folder" iconOpen="icon-folder-open" type="Diplo.TraceLogViewer.Controllers.TraceLogTreeController, Diplo.TraceLogViewer" /> could not be resolved to a .Net object type
+2014-11-25 12:39:32,136 [91] INFO  Umbraco.Core.PluginManager - [Thread 87] Starting resolution types of umbraco.interfaces.ITree
+2014-11-25 12:39:32,158 [91] INFO  Umbraco.Core.PluginManager - [Thread 87] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 22ms)
+2014-11-25 12:39:48,603 [91] INFO  Umbraco.Core.PluginManager - [Thread 54] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-11-25 12:39:48,652 [91] INFO  Umbraco.Core.PluginManager - [Thread 54] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 48ms)
+2014-11-25 12:41:16,260 [91] INFO  umbraco.content - [Thread 52] Loading content from disk cache...
