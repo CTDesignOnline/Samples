@@ -23,30 +23,44 @@
             $scope.billingAddresses = [];
             var haveBillingDefault = false;
             var haveShippingDefault = false;
+            var i;
+            var promiseTypeFields = merchelloSettingsService.getTypeFields();
             $scope.shippingAddresses = [];
-            if (addresses.length > 0) {
-                _.each(addresses, function(address) {
-                    if (address.addressType.toLowerCase() === 'billing') {
-                        if (address.isDefault) {
-                            $scope.defaultBillingAddress = new merchello.Models.CustomerAddress(address);
-                            haveBillingDefault = true;
-                        }
-                        $scope.billingAddresses.push(new merchello.Models.CustomerAddress(address));
-                    } else {
-                        if (address.isDefault) {
-                            $scope.defaultShippingAddress = new merchello.Models.CustomerAddress(address);
-                            haveShippingDefault = true;
-                        }
-                        $scope.shippingAddresses.push(new merchello.Models.CustomerAddress(address));
+            promiseTypeFields.then(function (typeFieldsResponse) {
+                for (i = 0; i < typeFieldsResponse.length; i++) {
+                    var typeField = typeFieldsResponse[i];
+                    if (typeField.alias === "Billing" & $scope.billingKey === false) {
+                        $scope.billingKey = typeField.typeKey;
                     }
-                });
-            }
-            if (!haveBillingDefault && $scope.billingAddresses.length > 0) {
-                $scope.defaultBillingAddress = $scope.billingAddresses[0];
-            }
-            if (!haveShippingDefault && $scope.shippingAddresses.length > 0) {
-                $scope.defaultShippingAddress = $scope.shippingAddresses[0];
-            }
+                    if (typeField.alias == "Shipping" & $scope.shippingKey === false) {
+                        $scope.shippingKey = typeField.typeKey;
+                    }
+                }
+                if (addresses.length > 0) {
+                    for (i = 0; i < addresses.length; i++) {
+                        var newAddress = new merchello.Models.CustomerAddress(addresses[i]);
+                        if (newAddress.addressTypeFieldKey == $scope.billingKey) {
+                            if (newAddress.isDefault) {
+                                $scope.defaultBillingAddress = newAddress;
+                                haveBillingDefault = true;
+                            }
+                            $scope.billingAddresses.push(newAddress);
+                        } else if (newAddress.addressTypeFieldKey == $scope.shippingKey) {
+                            if (newAddress.isDefault) {
+                                $scope.defaultShippingAddress = newAddress;
+                                haveShippingDefault = true;
+                            }
+                            $scope.shippingAddresses.push(newAddress);
+                        }
+                    }
+                }
+                if (!haveBillingDefault && $scope.billingAddresses.length > 0) {
+                    $scope.defaultBillingAddress = $scope.billingAddresses[0];
+                }
+                if (!haveShippingDefault && $scope.shippingAddresses.length > 0) {
+                    $scope.defaultShippingAddress = $scope.shippingAddresses[0];
+                }
+            });
         };
 
         /**
@@ -242,13 +256,15 @@
         * Prepare a list of addresses to save with the customer
         */
         $scope.prepareAddressesForSave = function () {
-            var addresses = [];
-            _.each($scope.billingAddresses, function(address) {
-                addresses.push(new merchello.Models.CustomerAddress(address));
-            });
-            _.each($scope.shippingAddresses, function(address) {
-                addresses.push(new merchello.Models.CustomerAddress(address));
-            });
+            var addresses = [], addressToAdd, i;
+            for (i = 0; i < $scope.billingAddresses.length; i++) {
+                addressToAdd = new merchello.Models.CustomerAddress($scope.billingAddresses[i]);
+                addresses.push(addressToAdd);
+            };
+            for (i = 0; i < $scope.shippingAddresses.length; i++) {
+                addressToAdd = new merchello.Models.CustomerAddress($scope.shippingAddresses[i]);
+                addresses.push(addressToAdd);
+            };
             return addresses;
         };
 
@@ -271,14 +287,15 @@
             // Insert the applicable customer, billing, and shipping keys and types into new addresses.
             _.each(addresses, function(address) {
                 address.customerKey = $scope.customer.key;
-                if (data.addressType.toLowerCase() === 'billing') {
-                    address.addressType = 'Billing';
+                address.addressType = data.addressType;
+                if (data.addressType === 'billing') {
+                    address.addressTypeFieldKey = $scope.billingKey;
                 } else {
-                    address.addressType = 'Shipping';
+                    address.addressTypeFieldKey = $scope.shippingKey;
                 }
             });
             // Update the appropriate address list.
-            if (data.addressType.toLowerCase() === 'billing') {
+            if (data.addressType === 'billing') {
                 $scope.billingAddresses = _.map(addresses, function(address) {
                     return new merchello.Models.CustomerAddress(address);
                 });
@@ -358,6 +375,7 @@
         $scope.setVariables = function () {
             $scope.avatarUrl = "";
             $scope.billingAddresses = [];
+            $scope.billingKey = false;
             $scope.countries = [];
             $scope.customer = new merchello.Models.Customer();
             $scope.customerKey = false;
@@ -371,6 +389,7 @@
             $scope.invoiceTotal = 0;
             $scope.loaded = false;
             $scope.shippingAddresses = [];
+            $scope.shippingKey = false;
         };
 
         $scope.init();
