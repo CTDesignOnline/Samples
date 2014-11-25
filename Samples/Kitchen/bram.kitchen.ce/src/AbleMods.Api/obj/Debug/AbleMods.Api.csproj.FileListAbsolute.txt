@@ -8,3 +8,8 @@ C:\github\brambleberry\bram.kitchen.ce\src\AbleMods.Api\bin\Debug\AbleMods.Api.p
 C:\github\brambleberry\bram.kitchen.ce\src\AbleMods.Api\obj\Debug\AbleMods.Api.csprojResolveAssemblyReference.cache
 C:\github\brambleberry\bram.kitchen.ce\src\AbleMods.Api\obj\Debug\AbleMods.Api.dll
 C:\github\brambleberry\bram.kitchen.ce\src\AbleMods.Api\obj\Debug\AbleMods.Api.pdb
+C:\github\Merchello\Samples\dfberry\Samples\Samples\Kitchen\bram.kitchen.ce\src\AbleMods.Api\bin\Debug\AbleMods.Api.dll
+C:\github\Merchello\Samples\dfberry\Samples\Samples\Kitchen\bram.kitchen.ce\src\AbleMods.Api\bin\Debug\AbleMods.Api.pdb
+C:\github\Merchello\Samples\dfberry\Samples\Samples\Kitchen\bram.kitchen.ce\src\AbleMods.Api\obj\Debug\AbleMods.Api.csprojResolveAssemblyReference.cache
+C:\github\Merchello\Samples\dfberry\Samples\Samples\Kitchen\bram.kitchen.ce\src\AbleMods.Api\obj\Debug\AbleMods.Api.dll
+C:\github\Merchello\Samples\dfberry\Samples\Samples\Kitchen\bram.kitchen.ce\src\AbleMods.Api\obj\Debug\AbleMods.Api.pdb
