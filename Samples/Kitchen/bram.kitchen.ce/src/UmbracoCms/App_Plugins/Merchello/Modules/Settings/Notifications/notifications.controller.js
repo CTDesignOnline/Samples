@@ -151,11 +151,11 @@
             var mockSubscribers = [
                 {
                     pk: 0,
-                    email: "rusty1@mindfly.com"
+                    email: "janae@mindfly.com"
                 },
                 {
                     pk: 1,
-                    email: "rusty2@mindfly.com"
+                    email: "heather@mindfly.com"
                 },
                 {
                     pk: 2,

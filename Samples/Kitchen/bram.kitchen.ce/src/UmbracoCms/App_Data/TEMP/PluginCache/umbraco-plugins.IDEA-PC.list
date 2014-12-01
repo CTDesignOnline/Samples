@@ -32,21 +32,21 @@
     <add type="umbraco.presentation.nodeFactory.UmbracoSiteMapProviderAccessUpdate, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.EnsureSystemPathsApplicationStartupHandler, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.umbraco.Search.ExamineEvents, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Search.ExamineEvents, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Trees.ServerVariablesParsingEvents, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.UmbracoApplicationEventHandler, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Plugin.Payments.AuthorizeNet.AuthorizeNetEvents, Merchello.Plugin.Payments.AuthorizeNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="BrambleBerry.Kitchen.Events.UmbracoEvents, BrambleBerry.Kitchen, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.providers.members.MembershipEventHandler, umbraco.providers, Version=1.0.5394.16134, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.GatewayEvents, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.Notification.Smtp.SmtpProviderEvents, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Sales.SalesPreparationEvents, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Plugin.Taxation.Avalara.UmbracoApplicationEvents, Merchello.Plugin.Taxation.Avalara, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Plugin.Shipping.FedEx.FedExEvents, Merchello.Plugin.Shipping.FedEx, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.PickerRelations.PickerRelationsEventHandler, umbraco.editorControls, Version=1.0.5394.16138, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.BusinessLogic.ApplicationRegistrar, businesslogic, Version=1.0.5394.16133, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.BusinessLogic.ApplicationTreeRegistrar, businesslogic, Version=1.0.5394.16133, Culture=neutral, PublicKeyToken=null" />
-    <add type="BrambleBerry.Kitchen.Events.UmbracoEvents, BrambleBerry.Kitchen, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Plugin.Shipping.FedEx.FedExEvents, Merchello.Plugin.Shipping.FedEx, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Plugin.Payments.AuthorizeNet.AuthorizeNetEvents, Merchello.Plugin.Payments.AuthorizeNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.providers.members.MembershipEventHandler, umbraco.providers, Version=1.0.5394.16134, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Gateways.GatewayEvents, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Gateways.Notification.Smtp.SmtpProviderEvents, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Sales.SalesPreparationEvents, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Plugin.Taxation.Avalara.UmbracoApplicationEvents, Merchello.Plugin.Taxation.Avalara, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Search.ExamineEvents, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Trees.ServerVariablesParsingEvents, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.UmbracoApplicationEventHandler, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.editorControls.PickerRelations.PickerRelationsEventHandler, umbraco.editorControls, Version=1.0.5394.16138, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter" resolutionType="FindAllTypes" />
   <baseType type="Umbraco.Core.PropertyEditors.IPropertyValueConverter" resolutionType="FindAllTypes">
@@ -68,7 +68,10 @@
     <add type="Umbraco.Core.PropertyEditors.ValueConverters.YesNoValueConverter, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Web.Mvc.SurfaceController" resolutionType="FindAllTypes">
-    <add type="AbleMods.Controllers.ImportSurfaceController, App_Code.wsikkjmf, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Controllers.UmbProfileController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Controllers.UmbLoginStatusController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Controllers.UmbRegisterController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Controllers.UmbLoginController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
     <add type="BrambleBerry.Kitchen.Controllers.Account.BaseAccountController, BrambleBerry.Kitchen, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="BrambleBerry.Kitchen.Controllers.Account.MyAccountIndexController, BrambleBerry.Kitchen, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="BrambleBerry.Kitchen.Controllers.Account.MyDigitalContentController, BrambleBerry.Kitchen, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
@@ -87,14 +90,9 @@
     <add type="BrambleBerry.Kitchen.Controllers.ProductListingController, BrambleBerry.Kitchen, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="BrambleBerry.Kitchen.Controllers.ReceiptController, BrambleBerry.Kitchen, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="BrambleBerry.Kitchen.Controllers.TextPageController, BrambleBerry.Kitchen, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Controllers.UmbProfileController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Controllers.UmbLoginStatusController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Controllers.UmbRegisterController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Controllers.UmbLoginController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
+    <add type="AbleMods.Controllers.ImportSurfaceController, App_Code.ra--ysqu, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Web.WebApi.UmbracoApiController" resolutionType="FindAllTypes">
-    <add type="BrambleBerry.Kitchen.Controllers.Api.CheckoutApiController, BrambleBerry.Kitchen, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="BrambleBerry.Kitchen.Controllers.Api.SiteApiController, BrambleBerry.Kitchen, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Editors.AuthenticationController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Editors.ContentController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Editors.DashboardController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
@@ -125,25 +123,25 @@
     <add type="Umbraco.Web.WebServices.DomainsApiController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.WebServices.ExamineManagementApiController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.WebServices.TagsController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.AuditLogApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Reporting.Sales.SalesByItemReportApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Reporting.Sales.SalesOverTimeReportApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.CustomerApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.FixedRateShippingApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.GatewayProviderApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.InvoiceApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.NotificationGatewayApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.OrderApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.PaymentApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.PaymentGatewayApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.WebApi.ScheduledTasksApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.SettingsApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.ShippingGatewayApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.ShipmentApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.TaxationGatewayApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.WarehouseApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Editors.ProductApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Trees.MerchelloTreeController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="BrambleBerry.Kitchen.Controllers.Api.CheckoutApiController, BrambleBerry.Kitchen, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="BrambleBerry.Kitchen.Controllers.Api.SiteApiController, BrambleBerry.Kitchen, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.AuditLogApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.CustomerApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.FixedRateShippingApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.GatewayProviderApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.InvoiceApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.NotificationGatewayApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.OrderApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.PaymentApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.PaymentGatewayApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.WebApi.ScheduledTasksApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.SettingsApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.ShippingGatewayApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.ShipmentApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.TaxationGatewayApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.WarehouseApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Editors.ProductApiController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Trees.MerchelloTreeController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Core.Media.IThumbnailProvider" resolutionType="FindAllTypes">
     <add type="Umbraco.Web.Media.ThumbnailProviders.MediaTypeIconThumbnailProvider, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
@@ -153,95 +151,32 @@
   <baseType type="Umbraco.Core.Media.IImageUrlProvider" resolutionType="FindAllTypes">
     <add type="Umbraco.Web.Media.ImageUrlProviders.ImageUrlProvider, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
   </baseType>
-  <baseType type="Umbraco.Core.Persistence.Migrations.IMigration" resolutionType="FindAllTypes">
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSevenOneZero.AssignMissingPrimaryForMySqlKeys, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSixTwoZero.AssignMissingPrimaryForMySqlKeys, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSixTwoZero.AssignMissingPrimaryForMySqlKeys2, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSixTwoZero.ChangePasswordColumn, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSixTwoZero.UpdateToNewMemberPropertyAliases, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSeven.UpdateRelatedLinksData, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSeven.AlterCmsMacroPropertyTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSeven.AddIndexToCmsMacroPropertyTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSeven.AddIndexToCmsMacroTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSeven.AlterTagRelationsTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSeven.AlterTagsTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSeven.DropControlIdColumn, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSeven.RemoveCmsMacroPropertyTypeTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSeven.AlterUserTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSeven.UpdateControlIdToPropertyEditorAlias, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionFourNineZero.RemoveUmbracoAppConstraints, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSeven.AddPropertyEditorAliasColumn, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSixOneZero.CreateServerRegistryTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSixTwoZero.AddChangeDocumentTypePermission, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSixTwoZero.AdditionalIndexesAndKeys, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSixZeroOne.UpdatePropertyTypesAndGroups, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSix.DeleteAppTables, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSix.EnsureAppsTreesUpdated, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSix.MoveMasterContentTypeData, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSix.NewCmsContentType2ContentTypeTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSix.RemoveMasterContentTypeColumn, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSix.RenameTabIdColumn, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSix.UpdateCmsContentTypeAllowedContentTypeTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSix.UpdateCmsContentTypeTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSix.UpdateCmsContentVersionTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSix.UpdateCmsPropertyTypeGroupTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Migrations.Upgrades.TargetVersionSix.RenameCmsTabTable, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneOneOne.RecreateNotificaitonMessageTable, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneOneZero.AddShippedDateColumn, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneOneZero.CreateOneOneZeroTables, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneOneZero.InsertNewTypeFieldData, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-  </baseType>
-  <baseType type="umbraco.interfaces.ICacheRefresher" resolutionType="FindAllTypes">
-    <add type="Umbraco.Web.Cache.ApplicationCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.ApplicationTreeCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.ContentTypeCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.DataTypeCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.DictionaryCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.DomainCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.LanguageCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.MacroCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.MediaCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.MemberCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.MemberGroupCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.PageCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.PublicAccessCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.StylesheetCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.StylesheetPropertyCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.TemplateCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.UnpublishedPageCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.UserCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.UserPermissionsCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Web.Cache.UserTypeCacheRefresher, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-  </baseType>
   <baseType type="Merchello.Core.Gateways.GatewayProviderBase" resolutionType="FindTypesWithAttribute">
     <add type="Merchello.Plugin.Payments.AuthorizeNet.Provider.AuthorizeNetPaymentGatewayProvider, Merchello.Plugin.Payments.AuthorizeNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Plugin.Shipping.FedEx.Provider.FedExShippingGatewayProvider, Merchello.Plugin.Shipping.FedEx, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Gateways.Notification.Smtp.SmtpNotificationGatewayProvider, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Gateways.Payment.Cash.CashPaymentGatewayProvider, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Gateways.Shipping.FixedRate.FixedRateShippingGatewayProvider, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Gateways.Taxation.FixedRate.FixedRateTaxationGatewayProvider, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.Notification.Smtp.SmtpNotificationGatewayProvider, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.Payment.Cash.CashPaymentGatewayProvider, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.Shipping.FixedRate.FixedRateShippingGatewayProvider, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.Taxation.FixedRate.FixedRateTaxationGatewayProvider, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="Merchello.Plugin.Taxation.Avalara.Provider.AvaTaxTaxationGatewayProvider, Merchello.Plugin.Taxation.Avalara, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Plugin.Shipping.FedEx.Provider.FedExShippingGatewayProvider, Merchello.Plugin.Shipping.FedEx, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Merchello.Core.Observation.ITrigger" resolutionType="FindTypesWithAttribute">
-    <add type="Merchello.Core.Gateways.Notification.Triggering.OrderShippedTrigger, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Gateways.Notification.Triggering.PartialOrderShippedTrigger, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Gateways.Notification.Triggering.OrderConfirmationTrigger, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.Notification.Triggering.OrderShippedTrigger, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.Notification.Triggering.PartialOrderShippedTrigger, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.Notification.Triggering.OrderConfirmationTrigger, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Merchello.Core.Observation.IMonitor" resolutionType="FindTypesWithAttribute">
-    <add type="Merchello.Core.Gateways.Notification.Monitors.OrderShippedMonitor, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Gateways.Notification.Monitors.PartialOrderShippedMonitor, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Core.Gateways.Notification.Monitors.OrderConfirmationMonitor, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.Notification.Monitors.OrderShippedMonitor, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.Notification.Monitors.PartialOrderShippedMonitor, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Core.Gateways.Notification.Monitors.OrderConfirmationMonitor, Merchello.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
-  <baseType type="Merchello.Web.Reporting.ReportController" resolutionType="FindTypesWithAttribute">
-    <add type="Merchello.Web.Reporting.Sales.SalesByItemReportApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Reporting.Sales.SalesOverTimeReportApiController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
-  </baseType>
+  <baseType type="Merchello.Web.Reporting.ReportController" resolutionType="FindTypesWithAttribute" />
   <baseType type="Umbraco.Web.Trees.TreeController" resolutionType="FindTypesWithAttribute">
     <add type="Umbraco.Web.Trees.DataTypeTreeController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Trees.MemberTreeController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Trees.MediaTreeController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Trees.ContentTreeController, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Trees.MerchelloTreeController, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Trees.MerchelloTreeController, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.ITree" resolutionType="FindTypesWithAttribute">
     <add type="umbraco.loadPackager, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
@@ -265,6 +200,7 @@
     <add type="umbraco.cms.presentation.Trees.UserTypes, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.IApplication" resolutionType="FindTypesWithAttribute">
+    <add type="Merchello.Web.Trees.MerchelloApp, Merchello.Web, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.businesslogic.ContentApplicationDefinition, businesslogic, Version=1.0.5394.16133, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.businesslogic.MediaApplicationDefinition, businesslogic, Version=1.0.5394.16133, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.businesslogic.SettingsApplicationDefinition, businesslogic, Version=1.0.5394.16133, Culture=neutral, PublicKeyToken=null" />
@@ -272,7 +208,30 @@
     <add type="umbraco.businesslogic.UsersApplicationDefinition, businesslogic, Version=1.0.5394.16133, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.businesslogic.MembersApplicationDefinition, businesslogic, Version=1.0.5394.16133, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.businesslogic.TranslationApplicationDefinition, businesslogic, Version=1.0.5394.16133, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Trees.MerchelloApp, Merchello.Web, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="Umbraco.Core.Persistence.Mappers.BaseMapper" resolutionType="FindTypesWithAttribute">
+    <add type="Umbraco.Core.Persistence.Mappers.MemberGroupMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.TagMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.MacroMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.MemberMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.MemberTypeMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.ContentMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.ContentTypeMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.DataTypeDefinitionMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.DictionaryMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.DictionaryTranslationMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.LanguageMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.MediaMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.MediaTypeMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.PropertyGroupMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.PropertyMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.PropertyTypeMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.RelationMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.RelationTypeMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.ServerRegistrationMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.UmbracoEntityMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.UserMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Core.Persistence.Mappers.UserTypeMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Core.PropertyEditors.IParameterEditor" resolutionType="FindAllTypes">
     <add type="Umbraco.Web.PropertyEditors.EmailAddressPropertyEditor, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
@@ -355,29 +314,5 @@
     <add type="umbraco.cms.presentation.Trees.UserTypes, umbraco, Version=1.0.5394.16136, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredContentTree, umbraco.editorControls, Version=1.0.5394.16138, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredMediaTree, umbraco.editorControls, Version=1.0.5394.16138, Culture=neutral, PublicKeyToken=null" />
-  </baseType>
-  <baseType type="Umbraco.Core.Persistence.Mappers.BaseMapper" resolutionType="FindTypesWithAttribute">
-    <add type="Umbraco.Core.Persistence.Mappers.MemberGroupMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.TagMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.MacroMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.MemberMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.MemberTypeMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.ContentMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.ContentTypeMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.DataTypeDefinitionMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.DictionaryMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.DictionaryTranslationMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.LanguageMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.MediaMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.MediaTypeMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.PropertyGroupMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.PropertyMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.PropertyTypeMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.RelationMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.RelationTypeMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.ServerRegistrationMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.UmbracoEntityMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.UserMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
-    <add type="Umbraco.Core.Persistence.Mappers.UserTypeMapper, Umbraco.Core, Version=1.0.5394.16131, Culture=neutral, PublicKeyToken=null" />
   </baseType>
 </plugins>
