@@ -6,54 +6,57 @@
     * @name umbraco.resources.MerchelloProductService
     * @description Loads in data for data types
     **/
-    merchelloServices.MerchelloProductService = function($q, $http, umbRequestHelper, notificationsService) {
+    merchelloServices.MerchelloProductService = function($q, $http, umbRequestHelper, notificationsService, merchelloProductVariantService) {
 
         var prodservice = {
             possibleProductVariants: [],
 
-            ///////////////////////////////////////////////////////////////////////////////////////////
-            /// Helper methods
-            ///////////////////////////////////////////////////////////////////////////////////////////
+            // Builds the possible variants
+            // sets = array or arrays of choices
+            // set = current iteration
+            // permutation = array of variant combinations
+            permute: function(sets, set, permutation) {
+                for (var i = 0; i < sets[set].length; ++i) {
+                    permutation[set] = sets[set][i];
 
-            ///**
-            //* @ngdoc method
-            //* @name permute
-            //* @description 
-            //* Builds the possible variants
-            //*    - sets = array or arrays of choices
-            //*    - set = current iteration
-            //*    - permutation = array of variant combinations
-            //**/
-            //permute: function (sets, set, permutation) {
-            //    for (var i = 0; i < sets[set].length; ++i) {
-            //        permutation[set] = sets[set][i];
+                    if (set < (sets.length - 1)) {
+                        prodservice.permute(sets, set + 1, permutation);
+                    } else {
+                        prodservice.possibleProductVariants.push(permutation.slice(0));
+                    }
+                }
+            },
 
-            //        if (set < (sets.length - 1)) {
-            //            prodservice.permute(sets, set + 1, permutation);
-            //        } else {
-            //            prodservice.possibleProductVariants.push(permutation.slice(0));
-            //        }
-            //    }
-            //},
-
-
-
-            ///////////////////////////////////////////////////////////////////////////////////////////
             /// Server http requests
-            ///////////////////////////////////////////////////////////////////////////////////////////
 
             /**
             * @ngdoc method
-            * @name add
-            * @description Creates a new product with an API call to the server
+            * @name create
+            * @description Creates a new product with an API call to the server using the name, sku, and price
             **/
-            add: function (product) {
+            create: function (productname, sku, price) {
 
                 return umbRequestHelper.resourcePromise(
-                    $http.post(umbRequestHelper.getApiUrl('merchelloProductApiBaseUrl', 'AddProduct'),
+                    $http({
+                        url: umbRequestHelper.getApiUrl('merchelloProductApiBaseUrl', 'NewProduct'),
+                        method: "POST",
+                        params: { sku: sku, name: productname, price: price }
+                    }),
+                    'Failed to create product sku ' + sku);
+            },
+
+            /**
+            * @ngdoc method
+            * @name createFromProduct
+            * @description Creates a new product with an API call to the server
+            **/
+            createFromProduct: function (product) {
+
+                return umbRequestHelper.resourcePromise(
+                    $http.post(umbRequestHelper.getApiUrl('merchelloProductApiBaseUrl', 'NewProductFromProduct'),
                         product
                     ),
-                    'Failed to create product sku ' + product.sku);
+                    'Failed to create product sku ' + sku);
             },
 
             /**
@@ -73,21 +76,6 @@
 
             /**
             * @ngdoc method
-            * @name getVariant
-            * @description Gets a product variant with an API call to the server
-            **/
-            getVariant: function (key) {
-
-                return umbRequestHelper.resourcePromise(
-                    $http({
-                        url: umbRequestHelper.getApiUrl('merchelloProductApiBaseUrl', 'GetProductVariant', [{ id: key }]),
-                        method: "GET"
-                    }),
-                    'Failed to retreive data for product variant key ' + key);
-            },
-
-            /**
-            * @ngdoc method
             * @name save
             * @description Saves / updates product with an api call back to the server
             **/
@@ -98,20 +86,6 @@
                         product
                     ),
                     'Failed to save data for product key ' + product.key);
-            },
-
-            /**
-            * @ngdoc method
-            * @name saveVariant
-            * @description Saves / updates product variant with an api call back to the server
-            **/
-            saveVariant: function (productVariant) {
-
-                return umbRequestHelper.resourcePromise(
-                    $http.post(umbRequestHelper.getApiUrl('merchelloProductApiBaseUrl', 'PutProductVariant'),
-                        productVariant
-                    ),
-                    'Failed to save data for product variant key ' + productVariant.key);
             },
 
             /**
@@ -131,36 +105,48 @@
 
             /**
             * @ngdoc method
-            * @name searchProducts
-            * @description Searches for all products with a ListQuery object
+            * @name getByKey
+            * @description Gets all products in the data store with an API call to the server
             **/
-            searchProducts: function (query) {
+            getAllProducts: function () {
 
                 return umbRequestHelper.resourcePromise(
-                    $http.post(
-                        umbRequestHelper.getApiUrl('merchelloProductApiBaseUrl', 'SearchProducts'),
-                        query
+                    $http.get(
+                        umbRequestHelper.getApiUrl('merchelloProductApiBaseUrl', 'GetAllProducts')
                     ),
-                    'Failed to search products');
+                    'Failed to get all products');
 
             },
 
+            /**
+            * @ngdoc method
+            * @name getByKey
+            * @description Gets all products matching teh 'term' in the data store with an API call to the server
+            **/
+            filterProducts: function (term) {
 
+                return umbRequestHelper.resourcePromise(
+                    $http.get(
+                        umbRequestHelper.getApiUrl('merchelloProductApiBaseUrl', 'GetFilteredProducts'),
+                        //'/umbraco/Merchello/ProductApi/GetFilteredProducts',
+                        { params: { term: term } }
+                    ),
+                    'Failed to get filtered products');
 
-            ///////////////////////////////////////////////////////////////////////////////////////////
+            },
+
             /// Business logic
-            ///////////////////////////////////////////////////////////////////////////////////////////
 
             /**
             * @ngdoc method
             * @name createProduct
             * @description Creates product and delivers the new Product model in the promise data
             **/
-            createProduct: function(product) {
+            createProduct: function(product, notifyMethodCallback) {
 
                 var deferred = $q.defer();
 
-                var promiseCreate = prodservice.add(product);
+                var promiseCreate = prodservice.createFromProduct(product);
                 promiseCreate.then(function(newproduct) {
 
                     product = new merchello.Models.Product(newproduct);
@@ -184,111 +170,131 @@
 
                 var promise = prodservice.save(product);
 
-                promise.then(function (savedProduct) {
+                promise.then(function() {
 
-                    product = new merchello.Models.Product(savedProduct);
+                    // Get updated product and options
+                    var promiseProduct = prodservice.getByKey(product.key);
+                    promiseProduct.then(function(dbproduct) {
 
-                    deferred.resolve(product);
+                        product = new merchello.Models.Product(dbproduct);
 
-                }, function (reason) {
+                        deferred.resolve(product);
+
+                    }, function(reason) {
+                        deferred.reject(reason);
+                    });
+
+                }, function(reason) {
                     deferred.reject(reason);
                 });
 
                 return deferred.promise;
             },
 
-            /**
-            * @ngdoc method
-            * @name updateProductVariant
-            * @description Saves product variant changes and delivers the new ProductVariant model in the promise data
-            **/
-            updateProductVariant: function (productVariant) {
+            updateProductWithVariants: function(product, tocreatevariants) {
 
                 var deferred = $q.defer();
 
-                var promise = prodservice.saveVariant(productVariant);
+                var promisesArray = [];
 
-                promise.then(function (savedProductVariant) {
+                // Save product
+                promisesArray.push(prodservice.save(product));
 
-                    productVariant = new merchello.Models.ProductVariant(savedProductVariant);
+                // Create Variants
+                for (var v = 0; v < product.productVariants.length; v++) {
+                    var currentVariant = product.productVariants[v];
 
-                    deferred.resolve(productVariant);
+                    if (currentVariant.key.length > 0) {
+                        promisesArray.push(merchelloProductVariantService.save(currentVariant));
+                    } else {
+                        if (currentVariant.selected) {
+                            promisesArray.push(merchelloProductVariantService.create(currentVariant));
+                        }
+                    }
+                }
 
-                }, function (reason) {
+                var promise = $q.all(promisesArray);
+
+                promise.then(function() {
+                    //deferred.notify("saved");
+
+                    // Get updated product and options
+                    var promiseProduct = prodservice.getByKey(product.key);
+                    promiseProduct.then(function(dbproduct) {
+
+                        product = new merchello.Models.Product(dbproduct);
+
+                        deferred.resolve(product);
+
+                    }, function(reason) {
+                        deferred.reject(reason);
+                    });
+
+                }, function(reason) {
                     deferred.reject(reason);
                 });
 
                 return deferred.promise;
             },
 
+            createVariantsFromOptions: function(product) {
+                var choiceSets = [];
+                var permutation = [];
+                prodservice.possibleProductVariants = [];
 
-            ///**
-            //* @ngdoc method
-            //* @name createVariantsFromOptions
-            //* @description Used to build the variants permutations when a new option has been added or an option was deleted
-            //**/
-            //createVariantsFromOptions: function (product) {
-            //    var choiceSets = [];
-            //    var permutation = [];
-            //    prodservice.possibleProductVariants = [];
+                for (var i = 0; i < product.productOptions.length; i++) {
+                    var currentOption = product.productOptions[i];
+                    choiceSets.push(currentOption.choices);
+                    permutation.push('');
+                }
 
-            //    for (var i = 0; i < product.productOptions.length; i++) {
-            //        var currentOption = product.productOptions[i];
-            //        choiceSets.push(currentOption.choices);
-            //        permutation.push('');
-            //    }
+                product.productVariants = [];
 
-            //    product.productVariants = [];
+                prodservice.permute(choiceSets, 0, permutation);
 
-            //    prodservice.permute(choiceSets, 0, permutation);
+                for (var p = 0; p < prodservice.possibleProductVariants.length; p++) {
+                    var variant = prodservice.possibleProductVariants[p];
 
-            //    for (var p = 0; p < prodservice.possibleProductVariants.length; p++) {
-            //        var variant = prodservice.possibleProductVariants[p];
+                    // Todo: check if already exists?
+                    var merchVariant = product.addVariant(variant);
 
-            //        // Todo: check if already exists?
-            //        var merchVariant = product.addVariant(variant);
+                    merchVariant.fixAttributeSortOrders(product.productOptions);
+                }
 
-            //        merchVariant.fixAttributeSortOrders(product.productOptions);
-            //    }
+                return product;
+            },
 
-            //    return product;
-            //},
+            // Used when duplicating variants with a new option
+            createVariantsFromDetachedOptionsList: function(product, options) {
+                var choiceSets = [];
+                var permutation = [];
+                prodservice.possibleProductVariants = [];
 
-            ///**
-            //* @ngdoc method
-            //* @name createVariantsFromDetachedOptionsList
-            //* @description Used to build the variants permutations. Used when duplicating variants with a new option.
-            //**/
-            //createVariantsFromDetachedOptionsList: function (product, options) {
-            //    var choiceSets = [];
-            //    var permutation = [];
-            //    prodservice.possibleProductVariants = [];
+                for (var i = 0; i < options.length; i++) {
+                    var currentOption = options[i];
+                    choiceSets.push(currentOption.choices);
+                    permutation.push('');
+                }
 
-            //    for (var i = 0; i < options.length; i++) {
-            //        var currentOption = options[i];
-            //        choiceSets.push(currentOption.choices);
-            //        permutation.push('');
-            //    }
+                prodservice.permute(choiceSets, 0, permutation);
 
-            //    prodservice.permute(choiceSets, 0, permutation);
+                for (var p = 0; p < prodservice.possibleProductVariants.length; p++) {
+                    var variant = prodservice.possibleProductVariants[p];
 
-            //    for (var p = 0; p < prodservice.possibleProductVariants.length; p++) {
-            //        var variant = prodservice.possibleProductVariants[p];
+                    // Todo: check if already exists?
+                    var merchVariant = product.addVariant(variant);
 
-            //        // Todo: check if already exists?
-            //        var merchVariant = product.addVariant(variant);
+                    merchVariant.fixAttributeSortOrders(options);
+                }
 
-            //        merchVariant.fixAttributeSortOrders(options);
-            //    }
-
-            //    return product;
-            //}
+                return product;
+            }
 
         };
 
         return prodservice;
     };
 
-    angular.module('umbraco.resources').factory('merchelloProductService', ['$q', '$http', 'umbRequestHelper', 'notificationsService', merchello.Services.MerchelloProductService]);
+    angular.module('umbraco.resources').factory('merchelloProductService', ['$q', '$http', 'umbRequestHelper', 'notificationsService', 'merchelloProductVariantService', merchello.Services.MerchelloProductService]);
 
 }(window.merchello.Services = window.merchello.Services || {}));

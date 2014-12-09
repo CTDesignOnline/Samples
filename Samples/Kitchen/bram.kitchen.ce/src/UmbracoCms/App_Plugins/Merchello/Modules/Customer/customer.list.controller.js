@@ -8,7 +8,7 @@
      * @description
      * The controller for the customers list page
      */
-    controllers.CustomerListController = function ($scope, dialogService, merchelloCustomerService, merchelloInvoiceService, notificationsService) {
+    controllers.CustomerListController = function ($scope, dialogService, merchelloCustomerService, notificationsService) {
 
         /**
          * @ngdoc method
@@ -88,9 +88,11 @@
             var perPage = $scope.limitAmount;
             var sortBy = $scope.sortInfo().sortBy;
             var sortDirection = $scope.sortInfo().sortDirection;
-            if (filterText !== $scope.filterText) {
+            if (filterText === undefined) {
+                filterText = '';
+            } else {
+                // Since there's a filter being added, start back at the first page.
                 page = 0;
-                $scope.currentPage = 0;
             }
             $scope.filterText = filterText;
             var listQuery = new merchello.Models.ListQuery({
@@ -113,26 +115,7 @@
                         return new merchello.Models.Customer(customer);
                     });
                     $scope.maxPages = queryResult.totalPages;
-                    // TODO: comment out line below once the merchelloInvoiceService.getByCustomerKey API endpoint returns valid results.
-                    // $scope.loadMostRecentOrders();
                 }
-            });
-        };
-
-        /**
-        * @ngdoc method
-        * @name loadMostRecentOrders
-        * @function
-        * 
-        * @description
-        * Iterate through all the customers in the list, and acquire their most recent order.
-        */
-        $scope.loadMostRecentOrders = function () {
-            _.each($scope.customers, function (customer) {
-                var promiseOrder = merchelloInvoiceService.getByCustomerKey(customer.key);
-                promiseOrder.then(function (response) {
-                    // TODO: Finish function acquiring the most recent order total for each customer once the merchelloInvoiceService.getByCustomerKey API endpoint returns valid results.
-                });
             });
         };
 
@@ -198,7 +181,7 @@
             $scope.loaded = true;
             $scope.maxPages = 0;
             $scope.preValuesLoaded = true;
-            $scope.sortProperty = 'loginName';
+            $scope.sortProperty = 'firstName';
             $scope.visible = {
                 bulkActionButton: function() {
                     var result = false;
@@ -239,6 +222,6 @@
     };
 
 
-    angular.module("umbraco").controller("Merchello.Dashboards.Customer.ListController", ['$scope',  'dialogService', 'merchelloCustomerService', 'merchelloInvoiceService', 'notificationsService', merchello.Controllers.CustomerListController]);
+    angular.module("umbraco").controller("Merchello.Dashboards.Customer.ListController", ['$scope',  'dialogService', 'merchelloCustomerService', 'notificationsService', merchello.Controllers.CustomerListController]);
 
 }(window.merchello.Controllers = window.merchello.Controllers || {}));

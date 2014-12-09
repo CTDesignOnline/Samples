@@ -282,62 +282,25 @@
             return composedOf;
         };
 
-        self.findCatalogInventory = function (catalog) {
-            return _.find(self.catalogInventories, function(inv) {
-                 return (inv.catalogKey == catalog.key);
-            });
-        };
-
-        self.ensureAllCatalogInventoriesForWarehouse = function (warehouse) {
-            var isInCatalog = false;
-            for (var i = 0; i < warehouse.warehouseCatalogs.length; i++) {
-                var catalog = warehouse.warehouseCatalogs[i];
-                var catalogInventory = self.findCatalogInventory(catalog);
-                if (!catalogInventory) {
-                    self.addCatalogInventory(warehouse, catalog);
-                } else {
-                    catalogInventory.setWarehouse(warehouse);
-                    catalogInventory.setCatalog(catalog);
-                    catalogInventory.productInCatalog = true;
-                    isInCatalog = true;
-                }
-            }
-            if (!isInCatalog) {
-                var defaultCatalog = warehouse.findDefaultCatalog();
-                var defaultCatalogInventory = self.findCatalogInventory(defaultCatalog);
-                defaultCatalogInventory.productInCatalog = true;
-            }
-        };
-
         self.ensureCatalogInventory = function(defaultWarehouse) {
             if (self.catalogInventories.length == 0) {
-                self.addCatalogInventory(defaultWarehouse, defaultWarehouse.findDefaultCatalog());
+                self.addCatalogInventory(defaultWarehouse);
             }
         };
 
-        // Helper to add a catalog inventory to this product
-        self.addCatalogInventory = function (warehouse, catalog) {
+        // Helper to add a variant to this product
+        self.addCatalogInventory = function (warehouse) {
 
             var newCatalogInventory = new merchello.Models.CatalogInventory();
             newCatalogInventory.productVariantKey = self.key;
             newCatalogInventory.warehouseKey = warehouse.key;
-            newCatalogInventory.catalogKey = catalog.key;
-            newCatalogInventory.catalogName = catalog.name;
-            newCatalogInventory.warehouse = warehouse;
-            newCatalogInventory.catalog = catalog;
+            newCatalogInventory.catalogKey = warehouse.warehouseCatalogs[0].key;
+            newCatalogInventory.catalogName = warehouse.warehouseCatalogs[0].name;
 
             self.catalogInventories.push(newCatalogInventory);
 
             return newCatalogInventory;
         };
-
-        // Helper to remove catalog inventories that aren't used / checked
-        self.removeUnusedCatalogInventories = function (catalogInventories) {
-
-            return _.reject(catalogInventories, function (inventory) { return !inventory.productInCatalog; });
-
-        };
-
 
         self.globalInventoryChanged = function(newVal) {
             if (newVal) {
@@ -481,14 +444,6 @@
             self.downloadMediaId = productVariant.downloadMediaId;
 
             self.catalogInventories = productVariant.catalogInventories.slice(0);
-            self.catalogInventories = self.removeUnusedCatalogInventories(self.catalogInventories);
-        };
-
-        // Helper to remove catalog inventories that aren't used / checked
-        self.removeUnusedCatalogInventories = function (catalogInventories) {
-
-            return _.reject(catalogInventories, function (inventory) { return !inventory.productInCatalog; });
-
         };
 
         // Helper to add a variant to this product

@@ -2,23 +2,13 @@
 
 
     /**
-     * @ngdoc service
-     * @name merchello.Services.MerchelloShipmentService
-     * @description Loads in data and allows modification for shipments
-     **/
+        * @ngdoc service
+        * @name merchello.Services.MerchelloShipmentService
+        * @description Loads in data and allows modification for shipments
+        **/
     merchelloServices.MerchelloShipmentService = function ($q, $http, umbRequestHelper) {
 
         return {
-
-            getAllShipmentStatuses: function() {
-
-                return umbRequestHelper.resourcePromise(
-                    $http({
-                        url: umbRequestHelper.getApiUrl('merchelloShipmentApiBaseUrl', 'GetAllShipmentStatuses'),
-                        method: 'GET'}),
-                    'Failed to get shipment statuses');
-
-            },
 
             getShipment: function (key) {
 

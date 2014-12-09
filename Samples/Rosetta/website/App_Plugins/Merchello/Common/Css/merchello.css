@@ -197,8 +197,6 @@
     background-color: #e0f2dc; }
   .merchello-panel-body .table .text-right {
     text-align: right; }
-  .merchello-panel-body .table .text-center {
-    text-align: center; }
   .merchello-panel-body .table th {
     border-top: none; }
   .merchello-panel-body table.sortable th {
@@ -508,15 +506,5 @@
     text-align: right; }
   .merchello-product-picker table td {
     padding: 5px; }
-
-.merchello-product-editor .merchello-panel-body {
-  position: static; }
-.merchello-product-editor label {
-  display: block;
-  padding: 0; }
-.merchello-product-editor input, .merchello-product-editor select, .merchello-product-editor textarea {
-  margin-bottom: 10px; }
-.merchello-product-editor input[type="radio"], .merchello-product-editor input[type="checkbox"] {
-  margin-top: 4px; }
 
 /*# sourceMappingURL=merchello.css.map */

@@ -165,7 +165,6 @@
             self.currencyCode = "";
             self.nextOrderNumber = 0;
             self.nextInvoiceNumber = 0;
-            self.nextShipmentNumber = 0;
             self.dateFormat = "";
             self.timeFormat = "";
             self.unitSystem = "";
@@ -178,7 +177,6 @@
             self.currencyCode = settingsFromServer.currencyCode;
             self.nextOrderNumber = parseInt(settingsFromServer.nextOrderNumber);
             self.nextInvoiceNumber = parseInt(settingsFromServer.nextInvoiceNumber);
-            self.nextShipmentNumber = parseInt(settingsFromServer.nextShipmentNumber);
             self.dateFormat = settingsFromServer.dateFormat;
             self.timeFormat = settingsFromServer.timeFormat;
             self.unitSystem = settingsFromServer.unitSystem;
@@ -201,6 +199,8 @@
             self.serviceCode = gatewayResourceFromServer.serviceCode;
         }
     };
+
+
 
     models.GatewayProvider = function (gatewayProviderFromServer) {
 
