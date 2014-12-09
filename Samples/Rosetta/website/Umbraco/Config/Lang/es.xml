@@ -658,17 +658,7 @@ However, Runway offers an easy foundation based on best practices to get you sta
     <key alias="DownloadXmlDTD">Descargar xml DTD</key>
     <key alias="fields">Campos</key>
     <key alias="includeSubpages">Incluir subpáginas</key>
-    <key alias="mailBody"><![CDATA[
-        Hola %0%. 
-
-        Este email se ha generado automáticamente para informale que %2% ha solicitado que el documento '%1%' sea traducido en '%5%'. 
-
-        Para editarlo, vaya a la dirección http://%3%/translation/details.aspx?id=%4% o inicie la sesión en umbraco y vaya a http://%3% para ver las tareas pendientes de traducir. 
-
-        Espero que tenga un buen dia. 
-
-        Saludos de parte de el robot de umbraco
-    ]]></key>
+    <key alias="mailBody">Hola %0%. Este email se ha generado automáticamente para informale que %2% ha solicitado que el documento '%1%' sea traducido en '%5%'. Para editarlo, vaya a la dirección http://%3%/umbraco/translation/details.aspx?id=%4% o inicie la sesión en umbraco y vaya a http://%3%/umbraco para ver las tareas pendientes de traducir. Espero que tenga un buen dia. Saludos de parte de el robot de umbraco</key>
     <key alias="mailSubject">Tarea para tradudir [%0%] por %1%</key>
     <key alias="noTranslators">No se encontraron usuarios traductores. Por favor, crea un usuario traductor antes de empezar a mandar contenido para su traducción</key>
     <key alias="ownedTasks">Tareas creadas por ti</key>
@@ -804,7 +794,6 @@ However, Runway offers an easy foundation based on best practices to get you sta
 		<key alias="mustUniqueSku">Debe tener una referencia SKU única</key>
 		<key alias="inventoryWarning"><![CDATA[<p>Importante: si seleccionas gestionar el inventario, debe ser configurado manualmente para cada variante (abajo) una vez que este producto se haya guardado. También puedes configurar un inventario por defecto, aque se aplicará a <strong>todas las variantes</strong>.</p>]]></key>
 		<key alias="startingInventoryWarning"><![CDATA[(Comenzará el inventario para <strong>todas las variantes</strong> y <strong>todos los almacenes</strong>)]]></key>
-    <key alias="productOnSale">Product on sale</key>
   </area><area alias="merchelloOrder">
 		<!-- things -->
 		<key alias="order">Pedido</key>
@@ -904,7 +893,6 @@ However, Runway offers an easy foundation based on best practices to get you sta
     <key alias="startingOrderNumber">Número de pedido desde</key>
     <key alias="timeFormat">Formato horario</key>
     <key alias="startingInvoiceNumber">Número de factura desde</key>
-    <key alias="startingShipmentNumber">Starting Shipment No.</key>
     <key alias="catalogDefaults">Configuración del catálogo</key>
     <key alias="catalogDefaultsHelper">Configura las opciones por defecto del producto. Puedes cambiarlo después en cada producto.</key>
     <key alias="globalTaxable">Todos los productos están sujetos a impuestos</key>
@@ -1044,19 +1032,4 @@ However, Runway offers an easy foundation based on best practices to get you sta
     <key alias="selectProduct">Selecciona un producto...</key>
     <key alias="selectMerchelloProduct">Selecciona un producto de Merchello</key>
     <key alias="selectYourProduct">Selecciona tu producto</key>
-  </area><area alias="merchelloAuditLogs">
-    <key alias="notificationShipping">Shipping confirmation email sent to %0%</key>
-    <key alias="notificationSalesConfirmation">Sales confirmation email sent to %0%</key>
-    <key alias="paymentCaptured">We successfully captured %0% %1%</key>
-    <key alias="paymentAuthorize">We were authorized to capture %0% %1%</key>
-    <key alias="paymentVoided">Payment was voided</key>
-    <key alias="paymentDeclined">Payment was declined</key>
-    <key alias="paymentRefunded">We refunded %0% %1% of a payment</key>
-    <key alias="invoiceDeleted">Invoice %0% was deleted</key>
-    <key alias="paymentDeleted">Payment was deleted</key>
-    <key alias="invoiceCreated">Sale was made. Invoice %0%</key>
-    <key alias="invoiceStatusChanged">Invoice was marked %0%</key>
-    <key alias="orderCreated">Order %0% was created</key>
-    <key alias="shipmentCreated">Shipment was created with %0% line items</key>
-    <key alas="shipmentStatusChanged">Shipment status was changed to %0%</key>
   </area></language>

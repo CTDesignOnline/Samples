@@ -133,21 +133,6 @@
          */
         $scope.limitChanged = function (newVal) {
             $scope.limitAmount = newVal;
-            $scope.currentPage = 0;
-            $scope.loadProducts();
-        };
-
-        /**
-         * @ngdoc method
-         * @name changePage
-         * @function
-         * 
-         * @description
-         * Helper function re-search the products after the page has changed
-         */
-        $scope.changePage = function (newPage) {
-            $scope.currentPage = newPage;
-            $scope.loadProducts();
         };
 
         /**
@@ -174,7 +159,6 @@
                 $scope.sortOrder = "Ascending";
             }
 
-            $scope.loadProducts();
         };
 
         /**

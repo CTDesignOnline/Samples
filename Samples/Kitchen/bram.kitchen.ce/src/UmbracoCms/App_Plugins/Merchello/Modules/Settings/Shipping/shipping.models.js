@@ -81,7 +81,7 @@
         };
 
         self.removeMethod = function (shippingMethod) {
-            self.shipMethods = _.reject(self.shipMethods, function (m) { return m.key == shippingMethod.key; });
+            self.shipMethods = _.reject(self.shipMethods, function (m) { return m.shipMethod.key == shippingMethod.shipMethod.key; });
         };
 
         // TODO: get this from API or somehow better
@@ -134,7 +134,7 @@
             if (province) {
                 newShippingRegion = province;
             } else {
-                newShippingRegion = new merchello.Models.ProvinceData();
+                newShippingRegion = new merchello.Models.ShippingRegion();
             }
             // Note From Kyle: Not sure what preferred method we have on this project to inject the properties (if any) into the newly created region.
             self.provinces.push(newShippingRegion);
@@ -298,10 +298,6 @@
             });
         }
 
-        self.findDefaultCatalog = function () {
-            return _.find(self.warehouseCatalogs, function (catalog) { return catalog.isDefault; });
-        };
-
     };
 
     models.WarehouseCatalog = function (warehouseCatalogFromServer) {
@@ -340,9 +336,6 @@
             self.lowCount = 0;
             self.productVariantKey = "";
             self.warehouseKey = "";
-            self.productInCatalog = false;
-            self.warehouse = {};
-            self.catalog = {};
         } else {
             self.catalogKey = catalogInventoryFromServer.catalogKey;
             self.catalogName = catalogInventoryFromServer.catalogName;
@@ -351,29 +344,7 @@
             self.lowCount = catalogInventoryFromServer.lowCount;
             self.productVariantKey = catalogInventoryFromServer.productVariantKey;
             self.warehouseKey = catalogInventoryFromServer.warehouseKey;
-            self.productInCatalog = false;
-            self.warehouse = {};
-            self.catalog = {};
         }
-
-        self.setWarehouse = function (warehouse) {
-            self.warehouse = warehouse;
-            self.warehouseKey = warehouse.key;
-        };
-
-        self.setCatalog = function (catalog) {
-            self.catalog = catalog;
-            self.catalogKey = catalog.key;
-        };
-
-        self.findMyWarehouse = function (warehouses) {
-            return _.find(warehouses, function (warehouse) { return warehouse.key == self.warehouseKey; });
-        };
-
-        self.findMyCatalog = function (catalogs) {
-            return _.find(catalogs, function (catalog) { return catalog.key == self.catalogKey; });
-        };
-
     };
 
 }(window.merchello.Models = window.merchello.Models || {}));

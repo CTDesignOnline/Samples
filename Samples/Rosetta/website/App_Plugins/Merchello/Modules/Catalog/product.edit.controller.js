@@ -8,7 +8,7 @@
      * @description
      * The controller for the product edit view
      */
-    controllers.ProductEditController = function ($scope, $routeParams, $location, $q, assetsService, notificationsService, dialogService, angularHelper, serverValidationManager, merchelloProductService, merchelloWarehouseService, merchelloSettingsService) {
+    controllers.ProductEditController = function ($scope, $routeParams, $location, $q, assetsService, notificationsService, dialogService, angularHelper, serverValidationManager, merchelloProductService, merchelloProductVariantService, merchelloWarehouseService, merchelloSettingsService) {
 
         assetsService.loadCss("/App_Plugins/Merchello/Common/Css/merchello.css");
 
@@ -48,23 +48,16 @@
          */
         $scope.loadAllWarehouses = function() {
 
-            var deferred = $q.defer();
-
             var promiseWarehouse = merchelloWarehouseService.getDefaultWarehouse();
-            promiseWarehouse.then(function (warehouse) {
-
+            promiseWarehouse.then(function(warehouse) {
                 $scope.defaultWarehouse = new merchello.Models.Warehouse(warehouse);
                 $scope.warehouses.push($scope.defaultWarehouse);
-                deferred.resolve();
-
+                $scope.productVariant.ensureCatalogInventory($scope.defaultWarehouse);
             }, function (reason) {
                 notificationsService.error("Default Warehouse Load Failed", reason.message);
-                deferred.reject(reason);
             });
 
             // TODO: load other warehouses when implemented
-
-            return deferred.promise;
         }
 
         /**
@@ -73,13 +66,17 @@
          * @function
          * 
          * @description
-         * Loads in store settings from server into the scope.  Called in init().
+         * Loads in store settings from server into the scope and applies the 
+         * defaults to the product variant.  Called in init().
          */
         $scope.loadSettings = function() {
 
             var promiseSettings = merchelloSettingsService.getAllSettings();
             promiseSettings.then(function(settings) {
                 $scope.settings = new merchello.Models.StoreSettings(settings);
+                $scope.productVariant.shippable = $scope.settings.globalShippable;
+                $scope.productVariant.taxable = $scope.settings.globalTaxable;
+                $scope.productVariant.trackInventory = $scope.settings.globalTrackInventory;
             }, function (reason) {
                 notificationsService.error("Settings Load Failed", reason.message);
             });
@@ -102,8 +99,6 @@
 
                 $scope.productVariant.copyFromProduct($scope.product);
 
-                $scope.productVariant.ensureAllCatalogInventoriesForWarehouse($scope.defaultWarehouse);
-
                 $scope.loaded = true;
                 $scope.preValuesLoaded = true;
 
@@ -124,17 +119,9 @@
          */
         $scope.init = function () {
 
-            var promiseWarehouses = $scope.loadAllWarehouses();
-            promiseWarehouses.then(function () {
-
-                $scope.loadSettings();
-                loadProduct($routeParams.id);
-
-            }, function (reason) {
-
-                //notificationsService.error("Load Failed", reason.message);
-
-            });
+            $scope.loadAllWarehouses();
+            $scope.loadSettings();
+            loadProduct($routeParams.id);
 
         };
 
@@ -157,24 +144,49 @@
 
             if (thisForm.$valid) {
 
-                // Copy from master variant
-                $scope.product.copyFromVariant($scope.productVariant);
+                // if saving a product (not a variant)
+                if ($scope.product.hasVariants) // We added options / variants to a product that previously did not have them OR on save during a create
+                {
+                    // Copy from master variant
+                    $scope.product.copyFromVariant($scope.productVariant);
 
-                var promise = merchelloProductService.updateProduct($scope.product);
+                    var promise = merchelloProductService.updateProductWithVariants($scope.product);
 
-                promise.then(function (product) {
-                    notificationsService.success("Product Saved", "");
+                    promise.then(function (product) {
+                        notificationsService.success("Products and variants saved", "");
 
-                    $scope.product = product;
-                    $scope.productVariant.copyFromProduct($scope.product);
+                        $scope.product = product;
+                        $scope.productVariant.copyFromProduct($scope.product);
 
-                    if ($scope.product.hasVariants) {
-                        $location.url("/merchello/merchello/ProductEditWithOptions/" + $scope.product.key, true);
+                        if ($scope.product.hasVariants) {
+                            $location.url("/merchello/merchello/ProductEditWithOptions/" + $scope.product.key, true);
+                        }
+
+                    }, function (reason) {
+                        notificationsService.error("Product or variants save Failed", reason.message);
+                    });
+                } else // Simple product save with no options or variants
+                {
+                    if ($scope.product.productOptions.length > 0) // The options checkbox was checked, a blank option was added, then the options checkbox was unchecked
+                    {
+                        $scope.product.productOptions = [];
                     }
 
-                }, function (reason) {
-                    notificationsService.error("Product Save Failed", reason.message);
-                });
+                    // Copy from master variant
+                    $scope.product.copyFromVariant($scope.productVariant);
+
+                    var promise = merchelloProductService.updateProduct($scope.product);
+
+                    promise.then(function (product) {
+                        notificationsService.success("Product Saved", "");
+
+                        $scope.product = product;
+                        $scope.productVariant.copyFromProduct($scope.product);
+
+                    }, function (reason) {
+                        notificationsService.error("Product Save Failed", reason.message);
+                    });
+                }
             }
         };
 
@@ -218,9 +230,41 @@
             });
         }
 
+        /**
+        * @ngdoc method
+        * @name updateVariants
+        * @function
+        * 
+        * @description
+        * Called when the Update button is pressed below the options.  This will create a new product if necessary 
+        * and save the product.  Then the product variants are generated.
+        * 
+        * We have to create the product because the API cannot create the variants with a product with options.
+        */
+        $scope.updateVariants = function (thisForm) {
+
+            // Copy from master variant
+            $scope.product.copyFromVariant($scope.productVariant);
+
+            var promise = merchelloProductService.updateProduct($scope.product);
+
+            promise.then(function(product) {
+                notificationsService.success("Product Saved", "");
+
+                $scope.product = product;
+                $scope.productVariant.copyFromProduct($scope.product);
+
+                $scope.product = merchelloProductService.createVariantsFromOptions($scope.product);
+
+            }, function(reason) {
+                notificationsService.error("Product Save Failed", reason.message);
+            });
+
+        };
+
     };
 
-    angular.module("umbraco").controller("Merchello.Editors.Product.EditController", ['$scope', '$routeParams', '$location', '$q', 'assetsService', 'notificationsService', 'dialogService', 'angularHelper', 'serverValidationManager', 'merchelloProductService', 'merchelloWarehouseService', 'merchelloSettingsService', merchello.Controllers.ProductEditController]);
+    angular.module("umbraco").controller("Merchello.Editors.Product.EditController", ['$scope', '$routeParams', '$location', '$q', 'assetsService', 'notificationsService', 'dialogService', 'angularHelper', 'serverValidationManager', 'merchelloProductService', 'merchelloProductVariantService', 'merchelloWarehouseService', 'merchelloSettingsService', merchello.Controllers.ProductEditController]);
 
 }(window.merchello.Controllers = window.merchello.Controllers || {}));
 
