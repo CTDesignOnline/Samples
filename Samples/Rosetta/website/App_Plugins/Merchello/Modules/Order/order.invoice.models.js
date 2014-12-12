@@ -39,7 +39,7 @@
 					return extDataItem['key'] == "merchProductVariantKey";
 				});
 			}
-			if (variantKey === "undefined") {
+			if (variantKey == undefined) {
 				variantKey = '';
 			}
 			return variantKey;
@@ -287,7 +287,7 @@
 		};
 
 		self.hasAmount = function () {
-			return amount > 0;
+			return self.amount > 0;
 		};
 	};
 
@@ -320,7 +320,7 @@
 		}
 
 		self.hasAmount = function() {
-			return amount > 0;
+			return self.amount > 0;
 		};
 	};
 
@@ -375,6 +375,7 @@
 			self.trackingCode = "";
 			self.shippedDate = "";
 			self.items = [];
+			self.shipmentStatus = new merchello.Models.ShipmentStatus();
 		} else {
 			self.key = data.key;
 			self.versionKey = data.versionKey;
@@ -405,7 +406,49 @@
 			self.items = _.map(data.items, function (lineitem) {
 				return new merchello.Models.OrderLineItem(lineitem);
 			});
+			self.shipmentStatus = new merchello.Models.ShipmentStatus(data.shipmentStatus);
 		}
 	};
+
+	models.ShipmentStatus = function (data) {
+
+	    var self = this;
+
+	    if (data == undefined) {
+	        self.key = "";
+	        self.name = "";
+	        self.alias = "";
+	        self.reportable = "";
+	        self.active = "";
+	        self.sortOrder = "";
+	    } else {
+	        self.key = data.key;
+	        self.name = data.name;
+	        self.alias = data.alias;
+	        self.reportable = data.reportable;
+	        self.active = data.active;
+	        self.sortOrder = data.sortOrder;
+	    }
+	};
+
+	models.OrderSummary = function (data) {
+
+	    var self = this;
+
+	    if (data == undefined) {
+	        self.itemTotal = 0;
+	        self.invoiceTotal = 0;
+	        self.shippingTotal = 0;
+	        self.taxTotal = 0;
+	        self.orderPrepComplete = false;
+	    } else {
+	        self.itemTotal = data.itemTotal;
+	        self.invoiceTotal = data.invoiceTotal;
+	        self.shippingTotal = data.shippingTotal;
+	        self.taxTotal = data.taxTotal;
+	        self.orderPrepComplete = data.orderPrepComplete;
+	    }
+	};
+
 
 }(window.merchello.Models = window.merchello.Models || {}));

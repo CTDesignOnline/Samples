@@ -83,6 +83,65 @@
         }
     };
 
+    models.ListQuery = function(data) {
+
+        var self = this;
+
+        if (data === undefined) {
+            self.currentPage = 0;
+            self.itemsPerPage = 0;
+            self.parameters = [];
+            self.sortBy = 'invoicenumber'; // valid options are 'invoicenumber', 'billtoname', and 'invoicedate'
+            self.sortDirection = 'Ascending'; // valid options are 'Ascending' and 'Descending'
+        } else {
+            self.currentPage = data.currentPage;
+            self.itemsPerPage = data.itemsPerPage;
+            if (data.parameters) {
+                self.parameters = _.map(data.parameters, function(item) {
+                    return new merchello.Models.ListQueryParameter(item);
+                });
+            } else {
+                self.parameters = [];
+            }
+            self.sortBy = data.sortBy;
+            self.sortDirection = data.sortDirection;
+        }
+    };
+
+    models.ListQueryParameter = function(data) {
+
+        var self = this;
+
+        if (data === undefined) {
+            self.fieldName = "";
+            self.value = "";
+        } else {
+            self.fieldName = data.fieldName;
+            self.value = data.value;
+        }
+    };
+
+    models.QueryResult = function (data) {
+
+        var self = this;
+
+        if (data === undefined) {
+            self.currentPage = 0;
+            self.items = [];
+            self.itemsPerPage = 0;
+            self.totalItems = 0;
+            self.totalPages = 0;
+        } else {
+            self.currentPage = data.currentPage;
+            self.items = _.map(data.items, function (item) {
+                return item;
+            });
+            self.itemsPerPage = data.itemsPerPage;
+            self.totalItems = data.totalItems;
+            self.totalPages = data.totalPages;
+        }
+    };
+
     models.TypeField = function (typeFromServer) {
 
         var self = this;
@@ -106,6 +165,7 @@
             self.currencyCode = "";
             self.nextOrderNumber = 0;
             self.nextInvoiceNumber = 0;
+            self.nextShipmentNumber = 0;
             self.dateFormat = "";
             self.timeFormat = "";
             self.unitSystem = "";
@@ -118,6 +178,7 @@
             self.currencyCode = settingsFromServer.currencyCode;
             self.nextOrderNumber = parseInt(settingsFromServer.nextOrderNumber);
             self.nextInvoiceNumber = parseInt(settingsFromServer.nextInvoiceNumber);
+            self.nextShipmentNumber = parseInt(settingsFromServer.nextShipmentNumber);
             self.dateFormat = settingsFromServer.dateFormat;
             self.timeFormat = settingsFromServer.timeFormat;
             self.unitSystem = settingsFromServer.unitSystem;
@@ -140,8 +201,6 @@
             self.serviceCode = gatewayResourceFromServer.serviceCode;
         }
     };
-
-
 
     models.GatewayProvider = function (gatewayProviderFromServer) {
 

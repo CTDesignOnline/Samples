@@ -71,20 +71,14 @@
          * in Merchello models and add to the scope via the providers collection in the resources collection.
          */
 	    $scope.loadAllAvailableGatewayResources = function (shipProvider) {
-
 	        var promiseAllResources = merchelloCatalogShippingService.getAllShipGatewayResourcesForProvider(shipProvider);
 	        promiseAllResources.then(function (allResources) {
-
 	            shipProvider.resources = _.map(allResources, function (resource) {
 	                return new merchello.Models.GatewayResource(resource);
 	            });
-
 	        }, function (reason) {
-
 	            notificationsService.error("Available Gateway Resources Load Failed", reason.message);
-
 	        });
-
 	    };
 
 	    /**
@@ -97,26 +91,18 @@
          * in Merchello models and add to the scope via the providers collection.
          */
 	    $scope.loadAllShipProviders = function () {
-
 	        var promiseAllProviders = merchelloCatalogShippingService.getAllShipGatewayProviders();
 	        promiseAllProviders.then(function (allProviders) {
-
 	            $scope.providers = _.map(allProviders, function (providerFromServer) {
 	                return new merchello.Models.GatewayProvider(providerFromServer);
 	            });
-
 	            _.each($scope.providers, function (element, index, list) {
 	                $scope.loadAllAvailableGatewayResources(element);
 	            });
-
 	            $scope.loadCountries();
-
 	        }, function (reason) {
-
 	            notificationsService.error("Available Ship Providers Load Failed", reason.message);
-
 	        });
-
 	    };
 
 	    /**
@@ -131,29 +117,20 @@
          * country.
          */
 	    $scope.loadCountries = function () {
-
 	        if ($scope.primaryWarehouse.warehouseCatalogs.length > 0) {
-
 	            var catalogKey = $scope.selectedCatalog.key;
-
 	            var promiseShipCountries = merchelloCatalogShippingService.getWarehouseCatalogShippingCountries(catalogKey);
 	            promiseShipCountries.then(function (shipCountriesFromServer) {
-
 	                $scope.countries = _.map(shipCountriesFromServer, function (shippingCountryFromServer) {
 	                    return new merchello.Models.ShippingCountry(shippingCountryFromServer);
 	                });
-
 	                _.each($scope.countries, function (element, index, list) {
 	                    $scope.loadCountryProviders(element);
 	                });
-
 	                $scope.loaded = true;
 	                $scope.preValuesLoaded = true;
-
 	            }, function (reason) {
-
 	                notificationsService.error("Shipping Countries Load Failed", reason.message);
-
 	            });
 	        }
 	    };
@@ -282,7 +259,7 @@
          * @function
          * 
          * @description
-         * Helper method to set the primary warehouse on the scope and to make sure the idDefault flag on 
+         * Helper method to set the primary warehouse on the scope and to make sure the isDefault flag on 
          * all warehouses is set properly.  If a warehouse is passed in, then it will find that warehouse
          * and set it as the primary and set isDefault to true.  All other warehouses will have their 
          * isDefault flag reset to false.  If no warehouse is passed in (usually on loading data) then the 
@@ -314,7 +291,7 @@
          * @description
          * Helper method to change between the selected catalog on the screen. If catalogIndex is passed
          * in, then the function will select the catalog at that index if it exists. If it doesn't, then
-         * choose the first warehouse.
+         * choose the default warehouse.
          */
 		$scope.changeSelectedCatalog = function (catalogIndex) {
 		    if ((typeof catalogIndex) != 'undefined') {
@@ -324,7 +301,16 @@
 		            $scope.selectedCatalog = new merchello.Models.WarehouseCatalog();
 		        }
 		    } else {
-		        $scope.selectedCatalog = $scope.primaryWarehouse.warehouseCatalogs[0];
+		        var foundDefault = false;
+		        for (var i = 0; i < $scope.primaryWarehouse.warehouseCatalogs.length; i++) {
+		            if ($scope.primaryWarehouse.warehouseCatalogs[i].isDefault == true) {
+		                $scope.selectedCatalog = $scope.primaryWarehouse.warehouseCatalogs[i];
+		                foundDefault = true;
+		            }
+		        }
+                if (!foundDefault) {
+                    $scope.selectedCatalog = $scope.primaryWarehouse.warehouseCatalogs[0];
+                }
 		    }
 		};
 
@@ -355,11 +341,10 @@
 	    $scope.doesWarehouseHaveAddress = function() {
 	        var result = true;
 	        var warehouse = $scope.primaryWarehouse;
-            if (warehouse.address1 === '' || warehouse.locality == '') {
+	        if (warehouse.address1 === '' || warehouse.locality === '' || warehouse.address1 === null || warehouse.locality === null) {
                 result = false;
             }
 	        return result;
-
 	    };
 
 	    //--------------------------------------------------------------------------------------
@@ -501,7 +486,10 @@
 		    var provider;
             for (var i = 0; i < $scope.providers.length; i++) {
                 if (gatewayProvider.key == $scope.providers[i].key) {
-                    provider = $scope.providers[i];
+                    provider = new merchello.Models.GatewayProvider($scope.providers[i]);
+                    provider.resources = _.map($scope.providers[i].resources, function (resource) {
+                        return new merchello.Models.GatewayResource(resource);
+                    });
                 }
             }
             // If no method exists, create a new, blank one.
@@ -549,10 +537,26 @@
 		    if (!provider) {
 		        dialogProvider = new merchello.Models.ShippingGatewayProvider();
 		    }
+		    var providers = _.map($scope.providers, function (item) {
+		        var newProvider = new merchello.Models.GatewayProvider(item);
+		        newProvider.resources = _.map(item.resources, function (resource) {
+		                return new merchello.Models.GatewayResource(resource);
+		        });
+		        return newProvider;
+		    });
+		    // Clean out any placeholder dropdown values for the providers' resources.
+            for (var i = 0; i < providers.length; i++) {
+                for (var j = 0; j < providers[i].resources.length; j++) {
+                    if (providers[i].resources[j].serviceCode === '') {
+                        providers[i].resources.splice(j, 1);
+                        j -= 1;
+                    }
+                }
+            }
 		    var myDialogData = {
 		        country: country,
 		        provider: dialogProvider,
-		        availableProviders: $scope.providers
+		        availableProviders: providers
 		    };
 		    dialogService.open({
 		        template: '/App_Plugins/Merchello/Modules/Settings/Shipping/Dialogs/shippingprovider.html',
@@ -642,6 +646,44 @@
 
 		    });
 		};
+
+	    /**
+         * @ngdoc method
+         * @name deleteCatalog
+         * @function
+         * 
+         * @description
+         * Opens the delete catalog dialog via the Umbraco dialogService.
+         */
+	    $scope.deleteCatalog = function() {
+	        var dialogData = {};
+	        dialogData.name = $scope.selectedCatalog.name;
+	        dialogData.catalog = $scope.selectedCatalog;
+	        dialogService.open({
+	            template: '/App_Plugins/Merchello/Common/Js/Dialogs/deleteconfirmation.html',
+	            show: true,
+	            callback: $scope.deleteCatalogConfirm,
+	            dialogData: dialogData
+	        });
+	    };
+
+	    /**
+         * @ngdoc method
+         * @name deleteCatalogConfirm
+         * @function
+         * 
+         * @description
+         * Handles the delete after recieving the catalog to delete from the dialog view/controller
+         */
+	    $scope.deleteCatalogConfirm = function (data) {
+	        var selectedCatalog = new merchello.Models.WarehouseCatalog(data.catalog);
+	        var promiseDeleteCatalog = merchelloWarehouseService.deleteWarehouseCatalog(selectedCatalog.key);
+	        promiseDeleteCatalog.then(function (responseCatalog) {
+	            $scope.loadWarehouses();
+	        }, function (reason) {
+	            notificationsService.error('Catalog Delete Failed', reason.message);
+	        });
+        }
 
 	    /**
          * @ngdoc method
@@ -760,17 +802,20 @@
 		$scope.selectCatalogDialogOpen = function () {
 
 		    var availableCatalogs = [];
+		    var filter = availableCatalogs[0];
 		    for (var i = 0; i < $scope.primaryWarehouse.warehouseCatalogs.length; i++) {
 		        var catalog = {
 		            id: i,
 		            name: $scope.primaryWarehouse.warehouseCatalogs[i].name
 		        };
 		        availableCatalogs.push(catalog);
-		    }
-
+		        if ($scope.primaryWarehouse.warehouseCatalogs[i].key == $scope.selectedCatalog.key) {
+		            filter = availableCatalogs[i];
+		        }
+            }
 		    var myDialogData = {
 		        availableCatalogs: availableCatalogs,
-		        filter: availableCatalogs[0]
+		        filter: filter
 		    };
 		    dialogService.open({
 		        template: '/App_Plugins/Merchello/Modules/Settings/Shipping/Dialogs/shipping.selectcatalog.html',
@@ -829,7 +874,8 @@
          * @function
          * 
          * @description
-         * Handles the add/edit after recieving the dialogData from the dialog view/controller
+         * Handles the add/edit after recieving the dialogData from the dialog view/controller.
+         * If the selectedCatalog is set to be default, ensure that original default is no longer default.
          */
 		$scope.warehouseCatalogDialogConfirm = function (data) {
 		    var selectedCatalog = new merchello.Models.WarehouseCatalog(data.catalog);
@@ -840,10 +886,10 @@
             } else {
 		        promiseUpdateCatalog = merchelloWarehouseService.putWarehouseCatalog(selectedCatalog);
 		    }
-		    promiseUpdateCatalog.then(function (responseCatalog) {
+		    promiseUpdateCatalog.then(function(responseCatalog) {
 		        $scope.loadWarehouses();
-		    }, function (reason) {
-		        notificationService.error('Catalog Update Failed', reason.message);
+		    }, function(reason) {
+		        notificationsService.error('Catalog Update Failed', reason.message);
 		    });
 		};
 
