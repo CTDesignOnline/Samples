@@ -30,6 +30,7 @@
 <!-- Helper function that accepts Umbraco content item as parameter. Returns a visual display for each individual product in the list. -->
 @helper DisplayTheProduct(IPublishedContent productPage)
 {
+    // is obsolete
     var product = Merchello.Product(productPage.GetPropertyValue("merchelloProduct").ToString());  
    
        

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language alias="en_us" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
   <creator>
     <name>umbraco</name>
@@ -542,13 +542,13 @@ To manage your website, simply open the umbraco back office and start adding con
     <key alias="renewSession">Renew now to save your work</key>
   </area>
   <area alias="login">
-    <key alias="greeting0">Happy super sunday</key>
-    <key alias="greeting1">Happy manic monday </key>
-    <key alias="greeting2">Happy tubular tuesday</key>
-    <key alias="greeting3">Happy wonderful wednesday</key>
-    <key alias="greeting4">Happy thunder thursday</key>
-    <key alias="greeting5">Happy funky friday</key>
-    <key alias="greeting6">Happy caturday</key>
+    <key alias="greeting0">Happy super Sunday</key>
+    <key alias="greeting1">Happy manic Monday </key>
+    <key alias="greeting2">Happy tubular Tuesday</key>
+    <key alias="greeting3">Happy wonderful Wednesday</key>
+    <key alias="greeting4">Happy thunderous Thursday</key>
+    <key alias="greeting5">Happy funky Friday</key>
+    <key alias="greeting6">Happy Caturday</key>
     
     <key alias="instruction">log in below</key>
     <key alias="timeout">Session timed out</key>
@@ -697,8 +697,8 @@ To manage your website, simply open the umbraco back office and start adding con
     <key alias="nodePublish">%0% has been published</key>
     <key alias="nodePublishAll">%0% and subpages have been published</key>
     <key alias="publishAll">Publish %0% and all its subpages</key>
-    <key alias="publishHelp"><![CDATA[Click <em>ok</em> to publish <strong>%0%</strong> and thereby making it's content publicly available.<br/><br />
-      You can publish this page and all it's sub-pages by checking <em>publish all children</em> below.
+    <key alias="publishHelp"><![CDATA[Click <em>ok</em> to publish <strong>%0%</strong> and thereby making its content publicly available.<br/><br />
+      You can publish this page and all its sub-pages by checking <em>publish all children</em> below.
       ]]></key>
   </area>
   <area alias="colorpicker">
@@ -1039,22 +1039,32 @@ To manage your website, simply open the umbraco back office and start adding con
 		<key alias="hasDigitalDownload">This variant has digital goods</key>
 		<key alias="hasOptions">This variant has options (like size or color)</key>
 		<key alias="isTaxable">This variant is taxable</key>
-		<key alias="isShippable">This variant is shippable</key>
-		<key alias="noProduct">You have no products.</key>
+    <key alias="isShippable">This variant is shippable</key>
+    <key alias="isOnSale">This variant is on sale</key>
+    <key alias="isAvailable">This variant is available to purchase</key>
+    <key alias="noProduct">You have no products.</key>
 		<key alias="newProductPrompt">How about creating one now? Simply press the New Product button.</key>
 		<key alias="limitSelect">Number of products to display</key>
 		<key alias="mustUniqueSku">Must have a unique SKU</key>
 		<key alias="inventoryWarning"><![CDATA[<p>Important: If you choose to track inventory, it must be set manually for each variant (listed below) once this product has been saved.  However, you can set a base default inventory, applied to <strong>all variants</strong> here.</p>]]></key>
 		<key alias="startingInventoryWarning"><![CDATA[(Will set starting inventory for <strong>all variants</strong> and <strong>all warehouses</strong>)]]></key>
+    <key alias="productOnSale">Product on sale</key>
   </area><area alias="merchelloOrder">
 		<!-- things -->
-		<key alias="order">Order</key>
+    <key alias="invoice">Invoice</key>
+    <key alias="invoiceNumber">Invoice #</key>
+    <key alias="order">Order</key>
 		<key alias="orders">Orders</key>
 		<key alias="orderNumber">Order #</key>
 		<key alias="paymentStatus">Payment Status</key>
 		<key alias="fulfillmentStatus">Fulfillment Status</key>
+        <key alias="saveAnonymousCustomer">Save as Anonymous Customer</key>
+        <key alias="createCustomer">Create New Customer</key>
+      <key alias="createNewOrder">Create New Order</key>
     <key alias="lineItems"> Line Items</key>
     <key alias="orderName">[Order Name]</key>
+    <key alias="sales">Sales</key>
+    <key alias="saleInformation">Sale Information</key>
     <!-- actions -->
 		<key alias="filter">Filter Orders</key>
     <key alias="capturePayment">Capture Payment</key>
@@ -1081,6 +1091,7 @@ To manage your website, simply open the umbraco back office and start adding con
     <key alias="salesTax">Sales Tax</key>
     <key alias="authorized"> Authorized</key>
     <key alias="paymentHistory"> Payment History</key>
+    <key alias="saleHistory">Sale History</key>
     <key alias="paymentHistoryHelper">Status records for one or more payments</key>
     <key alias="paymentProcessedBy">Payment processed by:</key>
   </area><area alias="merchelloFulfillShipment">
@@ -1092,6 +1103,7 @@ To manage your website, simply open the umbraco back office and start adding con
     <key alias="warehouses">Warehouses</key>
     <key alias="stock">Stock</key>
     <key alias="lowCount">Low Count</key>
+    <key alias="location">Location</key>
     <!-- actions -->
     <!-- phrases -->
   </area><area alias="merchelloShipping">
@@ -1148,6 +1160,7 @@ To manage your website, simply open the umbraco back office and start adding con
     <key alias="startingOrderNumber">Starting Order No.</key>
     <key alias="timeFormat">Time Format</key>
     <key alias="startingInvoiceNumber">Starting Invoice No.</key>
+    <key alias="startingShipmentNumber">Starting Shipment No.</key>
     <key alias="catalogDefaults">Catalog Defaults</key>
     <key alias="catalogDefaultsHelper">Set the default catalog item (product) options. Can be changed later on a per item basis.</key>
     <key alias="globalTaxable">All items are taxable</key>
@@ -1289,4 +1302,21 @@ To manage your website, simply open the umbraco back office and start adding con
     <key alias="selectProduct">Select Product...</key>
     <key alias="selectMerchelloProduct">Select Merchello Product</key>
     <key alias="selectYourProduct">Select Your Product</key>
+    <key alias="removeProduct">Disconnect This Product</key>
+    <key alias="itemLocation">Item Location</key>
+  </area><area alias="merchelloAuditLogs">
+    <key alias="notificationShipping">Shipping confirmation email sent to %0%</key>
+    <key alias="notificationSalesConfirmation">Sales confirmation email sent to %0%</key>
+    <key alias="paymentCaptured">We successfully captured %0% %1%</key>
+    <key alias="paymentAuthorize">We were authorized to capture %0% %1%</key>
+    <key alias="paymentVoided">Payment was voided</key>
+    <key alias="paymentDeclined">Payment was declined</key>
+    <key alias="paymentRefunded">We refunded %0% %1% of a payment</key>
+    <key alias="invoiceDeleted">Invoice %0% was deleted</key>
+    <key alias="paymentDeleted">Payment was deleted</key>
+    <key alias="invoiceCreated">Sale was made. Invoice %0%</key>
+    <key alias="invoiceStatusChanged">Invoice was marked %0%</key>
+    <key alias="orderCreated">Order %0% was created</key>
+    <key alias="shipmentCreated">Shipment was created with %0% line items</key>
+    <key alas="shipmentStatusChanged">Shipment status was changed to %0%</key>
   </area></language>
