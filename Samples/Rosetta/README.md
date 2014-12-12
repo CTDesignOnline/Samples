@@ -1,5 +1,5 @@
 ##Merchello Version
-This site uses Merchello 1.2.12. 
+This site uses Merchello 1.5.1.2 
 
 ###Username
 admin
