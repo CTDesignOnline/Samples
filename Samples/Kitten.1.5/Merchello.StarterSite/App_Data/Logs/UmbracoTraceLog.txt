@@ -1,0 +1,93 @@
+2014-12-17 05:32:12,492 [10] INFO  umbraco.BusinessLogic.Log - [Thread 22] Log scrubbed.  Removed all items older than 2014-10-18 05:32:12
+2014-12-17 05:33:38,906 [10] INFO  umbraco.BusinessLogic.Log - [Thread 57] Log scrubbed.  Removed all items older than 2014-10-18 05:33:38
+2014-12-17 05:35:05,321 [10] INFO  umbraco.BusinessLogic.Log - [Thread 56] Log scrubbed.  Removed all items older than 2014-10-18 05:35:05
+2014-12-17 05:36:31,724 [10] INFO  umbraco.BusinessLogic.Log - [Thread 65] Log scrubbed.  Removed all items older than 2014-10-18 05:36:31
+2014-12-17 05:37:58,127 [10] INFO  umbraco.BusinessLogic.Log - [Thread 56] Log scrubbed.  Removed all items older than 2014-10-18 05:37:58
+2014-12-17 05:39:24,536 [10] INFO  umbraco.BusinessLogic.Log - [Thread 56] Log scrubbed.  Removed all items older than 2014-10-18 05:39:24
+2014-12-17 05:40:50,946 [10] INFO  umbraco.BusinessLogic.Log - [Thread 73] Log scrubbed.  Removed all items older than 2014-10-18 05:40:50
+2014-12-17 05:42:17,358 [10] INFO  umbraco.BusinessLogic.Log - [Thread 79] Log scrubbed.  Removed all items older than 2014-10-18 05:42:17
+2014-12-17 05:43:43,760 [10] INFO  umbraco.BusinessLogic.Log - [Thread 82] Log scrubbed.  Removed all items older than 2014-10-18 05:43:43
+2014-12-17 05:45:10,174 [10] INFO  umbraco.BusinessLogic.Log - [Thread 73] Log scrubbed.  Removed all items older than 2014-10-18 05:45:10
+2014-12-17 05:46:36,590 [10] INFO  umbraco.BusinessLogic.Log - [Thread 95] Log scrubbed.  Removed all items older than 2014-10-18 05:46:36
+2014-12-17 05:48:02,993 [10] INFO  umbraco.BusinessLogic.Log - [Thread 101] Log scrubbed.  Removed all items older than 2014-10-18 05:48:02
+2014-12-17 05:49:29,405 [10] INFO  umbraco.BusinessLogic.Log - [Thread 106] Log scrubbed.  Removed all items older than 2014-10-18 05:49:29
+2014-12-17 05:50:55,815 [10] INFO  umbraco.BusinessLogic.Log - [Thread 102] Log scrubbed.  Removed all items older than 2014-10-18 05:50:55
+2014-12-17 05:52:22,228 [10] INFO  umbraco.BusinessLogic.Log - [Thread 90] Log scrubbed.  Removed all items older than 2014-10-18 05:52:22
+2014-12-17 05:53:48,632 [10] INFO  umbraco.BusinessLogic.Log - [Thread 90] Log scrubbed.  Removed all items older than 2014-10-18 05:53:48
+2014-12-17 05:54:40,148 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2014-12-17 05:54:40,209 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 54ms)
+2014-12-17 05:54:40,223 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-12-17 05:54:40,334 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 44 (took 109ms)
+2014-12-17 05:54:40,452 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-12-17 05:54:40,453 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2014-12-17 05:54:40,453 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-12-17 05:54:40,455 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 1ms)
+2014-12-17 05:54:40,473 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-12-17 05:54:40,475 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 7 (took 1ms)
+2014-12-17 05:54:40,475 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-12-17 05:54:40,484 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 48 (took 8ms)
+2014-12-17 05:54:40,556 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-12-17 05:54:40,557 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 1ms)
+2014-12-17 05:54:40,560 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-12-17 05:54:40,561 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 1ms)
+2014-12-17 05:54:41,871 [7] INFO  Merchello.Web.UmbracoApplicationEventHandler - Attempting to initialize Merchello
+2014-12-17 05:54:41,914 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Gateways.GatewayProviderBase
+2014-12-17 05:54:41,917 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Gateways.GatewayProviderBase, found 4 (took 2ms)
+2014-12-17 05:54:42,222 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Observation.ITrigger
+2014-12-17 05:54:42,223 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Observation.ITrigger, found 3 (took 1ms)
+2014-12-17 05:54:42,226 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Observation.IMonitor
+2014-12-17 05:54:42,227 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Observation.IMonitor, found 3 (took 1ms)
+2014-12-17 05:54:42,229 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Web.Reporting.ReportController
+2014-12-17 05:54:42,230 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Web.Reporting.ReportController, found 0 (took 1ms)
+2014-12-17 05:54:42,231 [7] INFO  Merchello.Core.CoreBootManager - [Thread 1] Starting subscribing Monitors to Triggers
+2014-12-17 05:54:42,231 [7] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.5.2.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] PartialOrderShippedMonitor subscribing to PartialOrderShippedTrigger
+2014-12-17 05:54:42,232 [7] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.MonitorModels.IPaymentResultMonitorModel, Merchello.Core, Version=1.5.2.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] OrderConfirmationMonitor subscribing to OrderConfirmationTrigger
+2014-12-17 05:54:42,232 [7] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.5.2.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] OrderShippedMonitor subscribing to OrderShippedTrigger
+2014-12-17 05:54:42,232 [7] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Finished subscribing Monitors to Triggers
+2014-12-17 05:54:42,695 [7] INFO  Merchello.Web.UmbracoApplicationEventHandler - Initialization of Merchello complete
+2014-12-17 05:54:42,733 [7] INFO  MerchKit.NotificationEvents - [Thread 1] Initializing example site notifications
+2014-12-17 05:54:42,734 [7] INFO  Merchello.Core.Gateways.GatewayEvents - [Thread 1] Initializing Merchello Warehouse Catalog binding events
+2014-12-17 05:54:42,734 [7] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 1] Initializing Merchello NotificationMonitor binding events
+2014-12-17 05:54:42,734 [7] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 1] Completed Merchello NotificationMonitor binding events
+2014-12-17 05:54:42,735 [7] INFO  Merchello.Core.Gateways.Notification.Smtp.SmtpProviderEvents - [Thread 1] Initializing SMTP notification gateway provider registration binding events
+2014-12-17 05:54:42,844 [7] INFO  Merchello.Web.Search.ExamineEvents - [Thread 1] Initializing Merchello ProductIndex binding events
+2014-12-17 05:54:43,130 [7] INFO  Merchello.Web.Trees.ServerVariablesParsingEvents - [Thread 1] Initializing Merchello ServerVariablesParsingEvents
+2014-12-17 05:54:43,130 [7] INFO  Merchello.Web.UmbracoApplicationEventHandler - [Thread 1] Initializing Customer related events
+2014-12-17 05:54:43,132 [7] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2014-12-17 05:54:43,132 [7] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2014-12-17 05:54:45,866 [7] INFO  Umbraco.Web.UmbracoModule - [Thread 8] Setting OriginalRequestUrl: localhost:59414/umbraco
+2014-12-17 05:54:45,973 [7] INFO  umbraco.content - [Thread 8] Loading content from disk cache...
+2014-12-17 05:54:46,112 [7] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-12-17 05:54:46,115 [7] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 2ms)
+2014-12-17 05:54:46,476 [7] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-12-17 05:54:46,479 [7] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 2ms)
+2014-12-17 05:55:15,048 [10] INFO  umbraco.BusinessLogic.Log - [Thread 117] Log scrubbed.  Removed all items older than 2014-10-18 05:55:15
+2014-12-17 05:55:50,341 [7] INFO  umbraco.BusinessLogic.Log - [Thread 9] Log scrubbed.  Removed all items older than 2014-10-18 05:55:50
+2014-12-17 05:56:41,458 [10] INFO  umbraco.BusinessLogic.Log - [Thread 99] Log scrubbed.  Removed all items older than 2014-10-18 05:56:41
+2014-12-17 05:58:07,859 [10] INFO  umbraco.BusinessLogic.Log - [Thread 116] Log scrubbed.  Removed all items older than 2014-10-18 05:58:07
+2014-12-17 05:59:34,267 [10] INFO  umbraco.BusinessLogic.Log - [Thread 132] Log scrubbed.  Removed all items older than 2014-10-18 05:59:34
+2014-12-17 06:01:00,678 [10] INFO  umbraco.BusinessLogic.Log - [Thread 139] Log scrubbed.  Removed all items older than 2014-10-18 06:01:00
+2014-12-17 06:02:27,093 [10] INFO  umbraco.BusinessLogic.Log - [Thread 140] Log scrubbed.  Removed all items older than 2014-10-18 06:02:27
+2014-12-17 06:03:53,500 [10] INFO  umbraco.BusinessLogic.Log - [Thread 147] Log scrubbed.  Removed all items older than 2014-10-18 06:03:53
+2014-12-17 06:05:19,908 [10] INFO  umbraco.BusinessLogic.Log - [Thread 99] Log scrubbed.  Removed all items older than 2014-10-18 06:05:19
+2014-12-17 06:06:46,318 [10] INFO  umbraco.BusinessLogic.Log - [Thread 152] Log scrubbed.  Removed all items older than 2014-10-18 06:06:46
+2014-12-17 06:08:12,729 [10] INFO  umbraco.BusinessLogic.Log - [Thread 156] Log scrubbed.  Removed all items older than 2014-10-18 06:08:12
+2014-12-17 06:09:39,141 [10] INFO  umbraco.BusinessLogic.Log - [Thread 150] Log scrubbed.  Removed all items older than 2014-10-18 06:09:39
+2014-12-17 06:11:05,550 [10] INFO  umbraco.BusinessLogic.Log - [Thread 165] Log scrubbed.  Removed all items older than 2014-10-18 06:11:05
+2014-12-17 06:12:31,958 [10] INFO  umbraco.BusinessLogic.Log - [Thread 166] Log scrubbed.  Removed all items older than 2014-10-18 06:12:31
+2014-12-17 06:13:58,357 [10] INFO  umbraco.BusinessLogic.Log - [Thread 173] Log scrubbed.  Removed all items older than 2014-10-18 06:13:58
+2014-12-17 06:15:24,770 [10] INFO  umbraco.BusinessLogic.Log - [Thread 178] Log scrubbed.  Removed all items older than 2014-10-18 06:15:24
+2014-12-17 06:16:51,171 [10] INFO  umbraco.BusinessLogic.Log - [Thread 185] Log scrubbed.  Removed all items older than 2014-10-18 06:16:51
+2014-12-17 06:18:17,582 [10] INFO  umbraco.BusinessLogic.Log - [Thread 172] Log scrubbed.  Removed all items older than 2014-10-18 06:18:17
+2014-12-17 06:19:43,998 [10] INFO  umbraco.BusinessLogic.Log - [Thread 180] Log scrubbed.  Removed all items older than 2014-10-18 06:19:43
+2014-12-17 06:21:10,404 [10] INFO  umbraco.BusinessLogic.Log - [Thread 191] Log scrubbed.  Removed all items older than 2014-10-18 06:21:10
+2014-12-17 06:22:36,815 [10] INFO  umbraco.BusinessLogic.Log - [Thread 196] Log scrubbed.  Removed all items older than 2014-10-18 06:22:36
+2014-12-17 06:24:03,232 [10] INFO  umbraco.BusinessLogic.Log - [Thread 203] Log scrubbed.  Removed all items older than 2014-10-18 06:24:03
+2014-12-17 06:25:29,642 [10] INFO  umbraco.BusinessLogic.Log - [Thread 191] Log scrubbed.  Removed all items older than 2014-10-18 06:25:29
+2014-12-17 06:26:56,056 [10] INFO  umbraco.BusinessLogic.Log - [Thread 212] Log scrubbed.  Removed all items older than 2014-10-18 06:26:56
+2014-12-17 06:28:22,469 [10] INFO  umbraco.BusinessLogic.Log - [Thread 191] Log scrubbed.  Removed all items older than 2014-10-18 06:28:22
+2014-12-17 06:29:48,885 [10] INFO  umbraco.BusinessLogic.Log - [Thread 219] Log scrubbed.  Removed all items older than 2014-10-18 06:29:48
+2014-12-17 06:31:15,295 [10] INFO  umbraco.BusinessLogic.Log - [Thread 207] Log scrubbed.  Removed all items older than 2014-10-18 06:31:15
+2014-12-17 06:32:41,704 [10] INFO  umbraco.BusinessLogic.Log - [Thread 226] Log scrubbed.  Removed all items older than 2014-10-18 06:32:41
+2014-12-17 06:34:08,113 [10] INFO  umbraco.BusinessLogic.Log - [Thread 232] Log scrubbed.  Removed all items older than 2014-10-18 06:34:08
+2014-12-17 06:35:34,516 [10] INFO  umbraco.BusinessLogic.Log - [Thread 233] Log scrubbed.  Removed all items older than 2014-10-18 06:35:34
