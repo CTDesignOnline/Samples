@@ -3929,6 +3929,20 @@
             </summary>
             <param name="message">The <see cref="T:Merchello.Core.Gateways.Notification.IFormattedNotificationMessage"/> to be sent</param>
         </member>
+        <member name="M:Merchello.Core.Gateways.Notification.Smtp.SmtpNotificationGatewayMethod.Send(System.Net.Mail.MailMessage,System.Net.NetworkCredential)">
+            <summary>
+            Sends an email, logging any errors.
+            </summary>
+            <param name="msg">
+            The <see cref="T:System.Net.Mail.MailMessage"/>.
+            </param>
+            <param name="credentials">
+            The credentials.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
         <member name="M:Merchello.Core.Gateways.Notification.Smtp.SmtpNotificationGatewayMethod.SendAsync(System.Net.Mail.MailMessage,System.Net.NetworkCredential)">
             <summary>
             Sends an email asynchronously, logging any errors.
@@ -6005,19 +6019,29 @@
             <param name="shipment">The <see cref="T:Merchello.Core.Models.IShipment"/> that was shipped using the method attempting to return</param>
             <returns>A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShippingGatewayMethod"/></returns>
         </member>
-        <member name="M:Merchello.Core.Gateways.Shipping.IShippingGatewayProvider.QuoteShippingGatewayMethodsForShipment(Merchello.Core.Models.IShipment)">
+        <member name="M:Merchello.Core.Gateways.Shipping.IShippingGatewayProvider.QuoteShippingGatewayMethodsForShipment(Merchello.Core.Models.IShipment,System.Boolean)">
             <summary>
             Returns a collection of all available <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/> for a given shipment
             </summary>
             <param name="shipment">The <see cref="T:Merchello.Core.Models.IShipment"/> to be quoted</param>
+            <param name="tryGetCached">
+            The try Get Cached.
+            </param>
             <returns>A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/></returns>
         </member>
-        <member name="M:Merchello.Core.Gateways.Shipping.IShippingGatewayProvider.QuoteShippingGatewayMethodsForShipment(Merchello.Core.Gateways.Shipping.ShipmentRateQuoteStrategyBase)">
+        <member name="M:Merchello.Core.Gateways.Shipping.IShippingGatewayProvider.QuoteShippingGatewayMethodsForShipment(Merchello.Core.Gateways.Shipping.ShipmentRateQuoteStrategyBase,System.Boolean)">
             <summary>
             Returns a collection of all available <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/> for a given shipment
-            </summary>        
-            <param name="strategy">The quotation strategy</param>
-            <returns>A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/></returns>
+            </summary>
+            <param name="strategy">
+            The quotation strategy
+            </param>
+            <param name="tryGetCached">
+            The try Get Cached.
+            </param>
+            <returns>
+            A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/>
+            </returns>
         </member>
         <member name="P:Merchello.Core.Gateways.Shipping.IShippingGatewayProvider.ShipMethods">
             <summary>
@@ -6112,27 +6136,40 @@
             <param name="shipment">the <see cref="T:Merchello.Core.Models.IShipment"/></param>
             <returns>A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShippingGatewayMethod"/></returns>
         </member>
-        <member name="M:Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase.QuoteShippingGatewayMethodsForShipment(Merchello.Core.Models.IShipment)">
+        <member name="M:Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase.QuoteShippingGatewayMethodsForShipment(Merchello.Core.Models.IShipment,System.Boolean)">
             <summary>
             Returns a collection of all available <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/> for a given shipment
             </summary>
             <param name="shipment">The <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/></param>
+            <param name="tryGetCached">
+            If set true the strategy will try to get a quote from cache
+            </param>
             <returns>A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/></returns>
         </member>
-        <member name="M:Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase.QuoteShipMethodForShipment(Merchello.Core.Models.IShipment,Merchello.Core.Gateways.Shipping.IShippingGatewayMethod)">
+        <member name="M:Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase.QuoteShipMethodForShipment(Merchello.Core.Models.IShipment,Merchello.Core.Gateways.Shipping.IShippingGatewayMethod,System.Boolean)">
             <summary>
             Quotes a single GatewayShipMethod for a shipment rate
             </summary>
             <param name="shipment">The <see cref="T:Merchello.Core.Models.IShipment"/> used to generate the rate quote</param>
             <param name="shippingGatewayMethod">The <see cref="T:Merchello.Core.Gateways.Shipping.IShippingGatewayMethod"/> used to generate the rate quote</param>
+            <param name="tryGetCached">
+            If set true the strategy will try to get a quote from cache
+            </param>
             <returns>The <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/></returns>
         </member>
-        <member name="M:Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase.QuoteShippingGatewayMethodsForShipment(Merchello.Core.Gateways.Shipping.ShipmentRateQuoteStrategyBase)">
+        <member name="M:Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase.QuoteShippingGatewayMethodsForShipment(Merchello.Core.Gateways.Shipping.ShipmentRateQuoteStrategyBase,System.Boolean)">
             <summary>
             Returns a collection of all available <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/> for a given shipment
             </summary>
-            <param name="strategy">The quotation strategy</param>
-            <returns>A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/></returns>
+            <param name="strategy">
+            The quotation strategy
+            </param>
+            <param name="tryGetCached">
+            If set true the strategy will try to get a quote from cache
+            </param>
+            <returns>
+            A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/>
+            </returns>
         </member>
         <member name="M:Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase.DeleteAllActiveShipMethods(Merchello.Core.Models.IShipCountry)">
             <summary>
@@ -6878,6 +6915,37 @@
             Gets the extended data collection to store any additional information returned by the Tax Provider.
             Ex. may include an itemization of Country, State, Local / Municipal taxes
             </summary>
+        </member>
+        <member name="T:Merchello.Core.Gateways.Taxation.TaxableLineItemVisitor">
+            <summary>
+            A visitor class to identify taxable line items.
+            </summary>
+        </member>
+        <member name="F:Merchello.Core.Gateways.Taxation.TaxableLineItemVisitor._lineItems">
+            <summary>
+            The line items identified as taxable.
+            </summary>
+        </member>
+        <member name="F:Merchello.Core.Gateways.Taxation.TaxableLineItemVisitor._taxRate">
+            <summary>
+            The tax rate to be applied to the line item.
+            </summary>
+        </member>
+        <member name="M:Merchello.Core.Gateways.Taxation.TaxableLineItemVisitor.#ctor(System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Merchello.Core.Gateways.Taxation.TaxableLineItemVisitor"/> class.
+            </summary>
+            <param name="taxRate">
+            The tax rate.
+            </param>
+        </member>
+        <member name="M:Merchello.Core.Gateways.Taxation.TaxableLineItemVisitor.Visit(Merchello.Core.Models.ILineItem)">
+            <summary>
+            The visit.
+            </summary>
+            <param name="lineItem">
+            The line item.
+            </param>
         </member>
         <member name="P:Merchello.Core.Gateways.Taxation.TaxableLineItemVisitor.TaxableLineItems">
             <summary>
@@ -8170,9 +8238,22 @@
             Type fields for Merchello entities
             </summary>
         </member>
+        <member name="T:Merchello.Core.Models.TypeFields.TypeFieldMapper`1">
+            <summary>
+            The type field mapper.
+            </summary>
+            <typeparam name="T">
+            The type of TypeField
+            </typeparam>
+        </member>
+        <member name="T:Merchello.Core.Models.TypeFields.TypeFieldMapperBase">
+            <summary>
+            The type field mapper base.
+            </summary>
+        </member>
         <member name="P:Merchello.Core.Models.TypeFields.TypeFieldMapperBase.NotFound">
             <summary>
-            An empty type field
+            Gets the not found.
             </summary>
         </member>
         <member name="T:Merchello.Core.Models.TypeFields.ITypeFieldMapper`1">
@@ -8191,6 +8272,11 @@
             <summary>
             Returns a <see cref="T:Merchello.Core.Models.TypeFields.ITypeField"/> from an enumerated value
             </summary>        
+        </member>
+        <member name="F:Merchello.Core.Models.TypeFields.TypeFieldMapper`1.CachedTypeFields">
+            <summary>
+            The cached type fields.
+            </summary>
         </member>
         <member name="M:Merchello.Core.Models.TypeFields.TypeFieldMapper`1.BuildCache">
             <summary>
@@ -8218,6 +8304,17 @@
             <summary>
             Creates a <see cref="T:Merchello.Core.Models.TypeFields.TypeField"/> from a configuration file element
             </summary>
+        </member>
+        <member name="M:Merchello.Core.Models.TypeFields.TypeFieldMapper`1.GetCustom(System.String)">
+            <summary>
+            The get custom.
+            </summary>
+            <param name="alias">
+            The alias.
+            </param>
+            <returns>
+            The <see cref="T:Merchello.Core.Models.TypeFields.ITypeField"/>.
+            </returns>
         </member>
         <member name="M:Merchello.Core.Models.TypeFields.TypeFieldMapper`1.Custom(System.String)">
             <summary>
@@ -10492,11 +10589,16 @@
             Defines the shipment rate quote strategy
             </summary>
         </member>
-        <member name="M:Merchello.Core.Gateways.Shipping.IShipmentRateQuoteStrategy.GetShipmentRateQuotes">
+        <member name="M:Merchello.Core.Gateways.Shipping.IShipmentRateQuoteStrategy.GetShipmentRateQuotes(System.Boolean)">
             <summary>
-            Quotes all available shipmethods
+            Quotes all available ship methods
             </summary>
-            <returns>A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/></returns>
+            <param name="tryGetCached">
+            The try Get Cached.
+            </param>
+            <returns>
+            A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/>
+            </returns>
         </member>
         <member name="F:Merchello.Core.Gateways.Shipping.ShipmentRateQuoteStrategyBase._shipment">
             <summary>
@@ -10527,11 +10629,16 @@
             The runtime cache.
             </param>
         </member>
-        <member name="M:Merchello.Core.Gateways.Shipping.ShipmentRateQuoteStrategyBase.GetShipmentRateQuotes">
+        <member name="M:Merchello.Core.Gateways.Shipping.ShipmentRateQuoteStrategyBase.GetShipmentRateQuotes(System.Boolean)">
             <summary>
             Quotes all available ship methods
             </summary>
-            <returns>A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/></returns>
+            <param name="tryGetCached">
+            If set true the strategy will try to get a quote from cache
+            </param>
+            <returns>
+            A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/>
+            </returns>
         </member>
         <member name="M:Merchello.Core.Gateways.Shipping.ShipmentRateQuoteStrategyBase.GetShipmentRateQuoteCacheKey(Merchello.Core.Models.IShipment,Merchello.Core.Gateways.Shipping.IShippingGatewayMethod)">
             <summary>
@@ -10590,11 +10697,16 @@
             The runtime cache.
             </param>
         </member>
-        <member name="M:Merchello.Core.Gateways.Shipping.DefaultShipmentRateQuoteStrategy.GetShipmentRateQuotes">
+        <member name="M:Merchello.Core.Gateways.Shipping.DefaultShipmentRateQuoteStrategy.GetShipmentRateQuotes(System.Boolean)">
             <summary>
             Quotes all available ship methods
             </summary>
-            <returns>A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/></returns>
+            <param name="tryGetCached">
+            If set true the strategy will try to get a quote from cache
+            </param>
+            <returns>
+            A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/>
+            </returns>
         </member>
         <member name="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote">
             <summary>
@@ -10621,11 +10733,14 @@
             Defines a shipping context
             </summary>
         </member>
-        <member name="M:Merchello.Core.Gateways.Shipping.IShippingContext.GetShipRateQuotesForShipment(Merchello.Core.Models.IShipment)">
+        <member name="M:Merchello.Core.Gateways.Shipping.IShippingContext.GetShipRateQuotesForShipment(Merchello.Core.Models.IShipment,System.Boolean)">
             <summary>
             Returns a collection of all <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/> that are available for the <see cref="T:Merchello.Core.Models.IShipment"/>
             </summary>
             <param name="shipment">The <see cref="T:Merchello.Core.Models.IShipment"/> to quote</param>
+            <param name="tryGetCached">
+            If set true the strategy will try to get a quote from cache
+            </param>
             <returns>A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/></returns>
         </member>
         <member name="M:Merchello.Core.Gateways.Shipping.IShippingContext.GetAllowedShipmentDestinationCountries">
@@ -10672,11 +10787,14 @@
             <param name="gatewayMethodKey">The unique key (GUID) of the <see cref="T:Merchello.Core.Gateways.IGatewayMethod"/></param>
             <returns>An instantiated GatewayProvider</returns>
         </member>
-        <member name="M:Merchello.Core.Gateways.Shipping.ShippingContext.GetShipRateQuotesForShipment(Merchello.Core.Models.IShipment)">
+        <member name="M:Merchello.Core.Gateways.Shipping.ShippingContext.GetShipRateQuotesForShipment(Merchello.Core.Models.IShipment,System.Boolean)">
             <summary>
             Returns a collection of all <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/> that are available for the <see cref="T:Merchello.Core.Models.IShipment"/>
             </summary>
             <param name="shipment">The <see cref="T:Merchello.Core.Models.IShipment"/> to quote</param>
+            <param name="tryGetCached">
+            If set true the strategy will try to get a quote from cache
+            </param>
             <returns>A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/></returns>
         </member>
         <member name="M:Merchello.Core.Gateways.Shipping.ShippingContext.GetAllowedShipmentDestinationCountries">
@@ -15936,11 +16054,14 @@
             <param name="shipment">The <see cref="T:Merchello.Core.Models.IShipment"/></param>
             <returns>Returns a <see cref="T:Merchello.Core.Models.IAddress"/></returns>        
         </member>
-        <member name="M:Merchello.Core.Models.ShipmentExtensions.ShipmentRateQuotes(Merchello.Core.Models.IShipment)">
+        <member name="M:Merchello.Core.Models.ShipmentExtensions.ShipmentRateQuotes(Merchello.Core.Models.IShipment,System.Boolean)">
             <summary>
             Returns a collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/> from the various configured shipping providers
             </summary>
             <param name="shipment">The <see cref="T:Merchello.Core.Models.IShipment"/></param>
+            <param name="tryGetCached">
+            If set true the strategy will try to get a quote from cache
+            </param>
             <returns>A collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/></returns>
         </member>
         <member name="M:Merchello.Core.Models.ShipmentExtensions.ShipmentRateQuoteByShipMethod(Merchello.Core.Models.IShipment,System.String)">
@@ -15970,7 +16091,7 @@
             The shipment line item name
             </returns>
         </member>
-        <member name="M:Merchello.Core.Models.ShipmentExtensions.ShipmentRateQuotes(Merchello.Core.Models.IShipment,Merchello.Core.IMerchelloContext)">
+        <member name="M:Merchello.Core.Models.ShipmentExtensions.ShipmentRateQuotes(Merchello.Core.Models.IShipment,Merchello.Core.IMerchelloContext,System.Boolean)">
             <summary>
             The shipment rate quotes.
             </summary>
@@ -15979,6 +16100,9 @@
             </param>
             <param name="merchelloContext">
             The merchello context.
+            </param>
+            <param name="tryGetCached">
+            If set true the strategy will try to get a quote from cache
             </param>
             <returns>
             The collection of <see cref="T:Merchello.Core.Gateways.Shipping.IShipmentRateQuote"/>
@@ -17704,6 +17828,30 @@
             The <see cref="T:Merchello.Core.Models.OrderCollection"/>.
             </returns>
         </member>
+        <member name="T:Merchello.Core.Persistence.Repositories.ProductRepository">
+            <summary>
+            The product repository.
+            </summary>
+        </member>
+        <member name="F:Merchello.Core.Persistence.Repositories.ProductRepository._productVariantRepository">
+            <summary>
+            The product variant repository.
+            </summary>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Repositories.ProductRepository.#ctor(Merchello.Core.Persistence.UnitOfWork.IDatabaseUnitOfWork,Umbraco.Core.Cache.IRuntimeCacheProvider,Merchello.Core.Persistence.Repositories.IProductVariantRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Merchello.Core.Persistence.Repositories.ProductRepository"/> class.
+            </summary>
+            <param name="work">
+            The work.
+            </param>
+            <param name="cache">
+            The cache.
+            </param>
+            <param name="productVariantRepository">
+            The product variant repository.
+            </param>
+        </member>
         <member name="M:Merchello.Core.Persistence.Repositories.ProductRepository.SearchKeys(System.String,System.Int64,System.Int64,System.String,Merchello.Core.Persistence.Querying.SortDirection)">
             <summary>
             Searches the 
@@ -17739,6 +17887,40 @@
             </param>
             <param name="sql">
             The <see cref="T:Umbraco.Core.Persistence.Sql"/>.
+            </param>
+            <param name="orderExpression">
+            The order expression.
+            </param>
+            <param name="sortDirection">
+            The sort direction.
+            </param>
+            <returns>
+            The <see cref="T:Umbraco.Core.Persistence.Page`1"/>.
+            </returns>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Repositories.ProductRepository.PerformGet(System.Guid)">
+            <summary>
+            The perform get.
+            </summary>
+            <param name="key">
+            The key.
+            </param>
+            <returns>
+            The <see cref="T:Merchello.Core.Models.IProduct"/>.
+            </returns>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Repositories.ProductRepository.GetDtoPage(System.Int64,System.Int64,Umbraco.Core.Persistence.Sql,System.String,Merchello.Core.Persistence.Querying.SortDirection)">
+            <summary>
+            The get dto page.
+            </summary>
+            <param name="page">
+            The page.
+            </param>
+            <param name="itemsPerPage">
+            The items per page.
+            </param>
+            <param name="sql">
+            The SQL string.
             </param>
             <param name="orderExpression">
             The order expression.
@@ -19058,6 +19240,11 @@
             Defines the ProductTypeField
             </summary>
         </member>
+        <member name="T:Merchello.Core.Models.TypeFields.EnumTypeFieldConverter">
+            <summary>
+            The enum type field converter.
+            </summary>
+        </member>
         <member name="P:Merchello.Core.Models.TypeFields.EnumTypeFieldConverter.Address">
             <summary>
             Creates an instance of an <see cref="T:Merchello.Core.Models.TypeFields.IAddressTypeField"/> object
@@ -19345,12 +19532,6 @@
             Gets or sets the entity.
             </summary>
             <value>The entity.</value>
-        </member>
-        <member name="P:Merchello.Core.Persistence.UnitOfWork.PetaPocoUnitOfWork.Operation.ProcessDate">
-            <summary>
-            Gets or sets the process date.
-            </summary>
-            <value>The process date.</value>
         </member>
         <member name="P:Merchello.Core.Persistence.UnitOfWork.PetaPocoUnitOfWork.Operation.Repository">
             <summary>
@@ -25225,6 +25406,22 @@
             A collection of all <see cref="T:Merchello.Core.Models.IProduct"/>.
             </returns>
         </member>
+        <member name="M:Merchello.Core.Services.ProductService.EnsureVariants(System.Collections.Generic.IEnumerable{Merchello.Core.Models.IProduct})">
+            <summary>
+            Ensures that variants are created for each option and option choice combination
+            </summary>
+            <param name="products">
+            The collection of products.
+            </param>
+        </member>
+        <member name="M:Merchello.Core.Services.ProductService.EnsureVariants(Merchello.Core.Models.IProduct)">
+            <summary>
+            Ensures that variants are created for each option and option choice combination
+            </summary>
+            <param name="product">
+            The product.
+            </param>
+        </member>
         <member name="E:Merchello.Core.Services.ProductService.Creating">
             <summary>
             Occurs after Create
@@ -27189,12 +27386,27 @@
             Product Types
             </summary>
         </member>
+        <member name="M:Merchello.Core.Models.TypeFields.ProductTypeField.BuildCache">
+            <summary>
+            The build cache.
+            </summary>
+        </member>
         <member name="M:Merchello.Core.Models.TypeFields.ProductTypeField.GetCustom(System.String)">
             <summary>
             Returns a product type or NullTypeField
             </summary>
             <param name="alias">The alias of the product type</param>
             <returns>An object of <see cref="T:Merchello.Core.Models.TypeFields.ITypeField"/></returns>
+        </member>
+        <member name="P:Merchello.Core.Models.TypeFields.ProductTypeField.CustomTypeFields">
+            <summary>
+            Gets the custom type fields.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Models.TypeFields.ProductTypeField.Products">
+            <summary>
+            Gets the products.
+            </summary>
         </member>
         <member name="T:Merchello.Core.Persistence.Migrations.Initial.PluginDatabaseSchemaResult">
             <summary>
@@ -27736,69 +27948,6 @@
             <returns>
             A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
             </returns>
-        </member>
-        <member name="T:Merchello.Core.Mandate">
-            <summary>
-            Helper class for mandating values, for example on method parameters.
-            </summary>
-        </member>
-        <member name="M:Merchello.Core.Mandate.ParameterNotNull``1(``0,System.String)">
-            <summary>
-            Mandates that the specified parameter is not null.
-            </summary>
-            <param name="value">The value.</param>
-            <param name="paramName">Name of the param.</param>
-            <exception cref="T:System.ArgumentNullException">If <paramref name="value"/> is null.</exception>
-        </member>
-        <member name="M:Merchello.Core.Mandate.ParameterNotNullOrEmpty(System.String,System.String)">
-            <summary>
-            Mandates that the specified parameter is not null.
-            </summary>
-            <param name="value">The value.</param>
-            <param name="paramName">Name of the param.</param>
-            <exception cref="T:System.ArgumentNullException">If <paramref name="value"/> is null or whitespace.</exception>
-        </member>
-        <member name="M:Merchello.Core.Mandate.ParameterNotNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0},System.String)">
-            <summary>
-            Mandates that the specified sequence is not null and has at least one element.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sequence">The sequence.</param>
-            <param name="paramName">Name of the param.</param>
-        </member>
-        <member name="M:Merchello.Core.Mandate.ParameterCondition(System.Boolean,System.String)">
-            <summary>
-            Mandates that the specified parameter matches the condition.
-            </summary>
-            <param name="condition">The condition to check.</param>
-            <param name="paramName">Name of the param.</param>
-            <exception cref="T:System.ArgumentException">If the condition is false.</exception>
-        </member>
-        <member name="M:Merchello.Core.Mandate.ParameterCondition(System.Boolean,System.String,System.String)">
-            <summary>
-            Mandates that the specified parameter matches the condition.
-            </summary>
-            <param name="condition">The condition to check.</param>
-            <param name="paramName">Name of the param.</param>
-            <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentException">If the condition is false.</exception>
-        </member>
-        <member name="M:Merchello.Core.Mandate.That``1(System.Boolean)">
-            <summary>
-            Mandates that the specified condition is true, otherwise throws an exception specified in <typeparamref name="TException"/>.
-            </summary>
-            <typeparam name="TException">The type of the exception.</typeparam>
-            <param name="condition">if set to <c>true</c>, throws exception <typeparamref name="TException"/>.</param>
-            <exception cref="T:System.Exception">An exception of type <typeparamref name="TException"/> is raised if the condition is false.</exception>
-        </member>
-        <member name="M:Merchello.Core.Mandate.That``1(System.Boolean,System.Func{``0})">
-            <summary>
-            Mandates that the specified condition is true, otherwise throws an exception specified in <typeparamref name="TException"/>.
-            </summary>
-            <typeparam name="TException">The type of the exception.</typeparam>
-            <param name="condition">if set to <c>true</c>, throws exception <typeparamref name="TException"/>.</param>
-            <param name="defer">Deffered expression to call if the exception should be raised.</param>
-            <exception cref="T:System.Exception">An exception of type <typeparamref name="TException"/> is raised if the condition is false.</exception>
         </member>
         <member name="M:Merchello.Core.Models.TypeFields.PaymentMethodTypeField.GetCustom(System.String)">
             <summary>

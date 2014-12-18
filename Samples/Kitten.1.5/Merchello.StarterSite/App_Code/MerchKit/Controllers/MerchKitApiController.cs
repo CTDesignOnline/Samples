@@ -21,7 +21,7 @@ namespace MerchKit.Controllers
     /// Utility controller - assists with little lookups
     /// </summary>
     [PluginController("MerchKit")]
-    [JsonCamelCaseFormatter]
+    [Umbraco.Web.WebApi.JsonCamelCaseFormatter]
     public class MerchKitApiController : UmbracoApiController
     {
         private readonly IMerchelloContext _merchelloContext;
