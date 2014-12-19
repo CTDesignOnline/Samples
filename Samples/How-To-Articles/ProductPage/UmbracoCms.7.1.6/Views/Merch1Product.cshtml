@@ -1,21 +1,10 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@using Umbraco.Core
-@using Merchello.Web
+﻿@inherits Merchello.Web.Mvc.MerchelloTemplatePage
 
 @{
     Layout = null;
 
-    // Get Mechello - this is NOT the only way to get access to Merchello
-    // For a quick and simple example, this is the most straight forward
-    var helper = new MerchelloHelper();
-
-    // Merchello product guid tied to the Umbraco content page
-    // set via the Merchello Product Selector
     var key = new Guid(CurrentPage.product);
-
-    // Merchello product 
-    var product = helper.Query.Product.GetByKey(key);
-		
+    var product = Merchello.Query.Product.GetByKey(key);
 }
 
 <!--

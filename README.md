@@ -1,16 +1,31 @@
-Samples
+Samples and Starter Kit
 =======
 
 These projects are samples of using Merchello Commerce services. 
 
-##Rosetta
-This is the original Rosetta sample site used for the Code Garden presentation. It was never finished so it has many places it could be improved and completed. It is not a hybrid site but a more typical/beginner Umbraco site.
+##How-Tos
+The how-to projects are meant to be very small - showing you a very specific task or feature. Please read the associated how-to article at [merchello.com](http://merchello.com/documentation/getting-started/how-to/).
 
-##How-To-Articles
-Each project in the How-To section is meant to show a single feature or process. It is not a hybrid site. 
+##Kitten Starter
+The Kitten site is the beginning of a great starter kit. The site features product selection with options, a basket/shopping cart, and a checkout process. Feel free to take the starter as a beginning site. Or look at the code as an example of what you can do with Merchello. 
 
+###Kitten Home Page
+![](kitten-home.png)
 
-##Updates
-2014 December 12: Archived Kitchen (hybrid) site. Rosetta will be starter/template moving forward.
+###Kitten Product Page
+![](kitten-product-page.png)
 
-  
+###Kitten Contact Us Page
+![](kitten-contact-us.png)
+
+###Kitten Back Office Product List
+![](kitten-bo-product-list.png)
+
+###Kitten Back Office Sales List
+![](kitten-bo-sales.png)
+
+###Kitten Back Office 3rd Party Gateways
+![](kitten-bo-gateways.png)
+
+###Kitten Back Office Shipping Gateway
+![](kitten-bo-shipping.png)
