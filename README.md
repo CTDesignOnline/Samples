@@ -3,6 +3,11 @@ Samples and Starter Kit
 
 These projects are samples of using Merchello Commerce services. 
 
+Kitten
+user:admin
+pwd: 1234
+
+
 ##How-Tos
 The how-to projects are meant to be very small - showing you a very specific task or feature. Please read the associated how-to article at [merchello.com](http://merchello.com/documentation/getting-started/how-to/).
 
