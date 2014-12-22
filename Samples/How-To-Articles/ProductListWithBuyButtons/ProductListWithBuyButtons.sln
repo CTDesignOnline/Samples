@@ -1,25 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UmbracoCms.7.1.6(2)", "http://localhost:51620", "{195A2595-9933-40D8-8588-EB3A9F437AF6}"
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UmbracoCms(5)", "http://localhost:56133", "{FE986B3E-7DB3-4D7E-A08B-8C68D9CC869A}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		Debug.AspNetCompiler.VirtualPath = "/UmbracoCms.7.1.6"
-		Debug.AspNetCompiler.PhysicalPath = "UmbracoCms.7.1.6\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\UmbracoCms.7.1.6\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56133"
+		Debug.AspNetCompiler.PhysicalPath = "UmbracoCms\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56133\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/UmbracoCms.7.1.6"
-		Release.AspNetCompiler.PhysicalPath = "UmbracoCms.7.1.6\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\UmbracoCms.7.1.6\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56133"
+		Release.AspNetCompiler.PhysicalPath = "UmbracoCms\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56133\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "UmbracoCms.7.1.6\"
+		SlnRelativePath = "UmbracoCms\"
 	EndProjectSection
 EndProject
 Global
@@ -27,7 +29,8 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{195A2595-9933-40D8-8588-EB3A9F437AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE986B3E-7DB3-4D7E-A08B-8C68D9CC869A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE986B3E-7DB3-4D7E-A08B-8C68D9CC869A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
