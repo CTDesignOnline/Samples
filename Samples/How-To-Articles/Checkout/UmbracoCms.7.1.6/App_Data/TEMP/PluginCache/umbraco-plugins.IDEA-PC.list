@@ -68,8 +68,8 @@
     <add type="Umbraco.Web.Controllers.UmbLoginStatusController, umbraco, Version=1.0.5350.25719, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Controllers.UmbRegisterController, umbraco, Version=1.0.5350.25719, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Controllers.UmbLoginController, umbraco, Version=1.0.5350.25719, Culture=neutral, PublicKeyToken=null" />
-    <add type="Controllers.CheckoutController, App_Code.8z-jvfpw, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Controllers.BasketController, App_Code.8z-jvfpw, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Controllers.CheckoutController, App_Code.iaagpdzj, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Controllers.BasketController, App_Code.iaagpdzj, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Web.WebApi.UmbracoApiController" resolutionType="FindAllTypes">
     <add type="Umbraco.Web.Editors.AuthenticationController, umbraco, Version=1.0.5350.25719, Culture=neutral, PublicKeyToken=null" />
@@ -178,6 +178,16 @@
     <add type="umbraco.cms.presentation.Trees.UserPermissions, umbraco, Version=1.0.5350.25719, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.cms.presentation.Trees.UserTypes, umbraco, Version=1.0.5350.25719, Culture=neutral, PublicKeyToken=null" />
   </baseType>
+  <baseType type="umbraco.interfaces.IApplication" resolutionType="FindTypesWithAttribute">
+    <add type="umbraco.businesslogic.ContentApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.businesslogic.MediaApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.businesslogic.SettingsApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.businesslogic.DeveloperApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.businesslogic.UsersApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.businesslogic.MembersApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.businesslogic.TranslationApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
+    <add type="Merchello.Web.Trees.MerchelloApp, Merchello.Web, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
   <baseType type="Umbraco.Core.Persistence.Mappers.BaseMapper" resolutionType="FindTypesWithAttribute">
     <add type="Umbraco.Core.Persistence.Mappers.MemberGroupMapper, Umbraco.Core, Version=1.0.5350.25714, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Core.Persistence.Mappers.TagMapper, Umbraco.Core, Version=1.0.5350.25714, Culture=neutral, PublicKeyToken=null" />
@@ -246,15 +256,5 @@
     <add type="Umbraco.Web.PropertyEditors.TextAreaPropertyEditor, umbraco, Version=1.0.5350.25719, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.PropertyEditors.TextboxPropertyEditor, umbraco, Version=1.0.5350.25719, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.PropertyEditors.TrueFalsePropertyEditor, umbraco, Version=1.0.5350.25719, Culture=neutral, PublicKeyToken=null" />
-  </baseType>
-  <baseType type="umbraco.interfaces.IApplication" resolutionType="FindTypesWithAttribute">
-    <add type="umbraco.businesslogic.ContentApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.businesslogic.MediaApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.businesslogic.SettingsApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.businesslogic.DeveloperApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.businesslogic.UsersApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.businesslogic.MembersApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.businesslogic.TranslationApplicationDefinition, businesslogic, Version=1.0.5350.25716, Culture=neutral, PublicKeyToken=null" />
-    <add type="Merchello.Web.Trees.MerchelloApp, Merchello.Web, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
 </plugins>
