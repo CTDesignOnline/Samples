@@ -139,6 +139,9 @@ namespace MerchKit.Controllers
 
             var basket = Basket.GetBasket(customer);
 
+            // m-531 - refresh shipping address
+            basket.SalePreparation().ClearShipmentRateQuotes();
+
             // for this version there is only ever a single shipment
             var shipment = basket.PackageBasket(address.ToAddress()).FirstOrDefault();
 
