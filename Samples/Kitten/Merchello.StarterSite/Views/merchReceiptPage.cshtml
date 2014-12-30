@@ -29,8 +29,6 @@
         shipment = shipmentLineItem.ExtendedData.GetShipment<InvoiceLineItem>();
         shipmentName = shipmentLineItem.Name;
     }
-	
-	var payments = invoice.Payments();
 }
 
 
@@ -39,16 +37,7 @@
 
     <section class="receipt">
         <p>@Umbraco.GetDictionaryValue("merchInvoiceNoLabel"): @invoice.PrefixedInvoiceNumber()</p>
-        <p>@MvcHtmlString.Create(Umbraco.GetDictionaryValue("merchThanksParagraph"))
-		@if (payments.Count() > 0)
-		{
-			var extendedData = payments.First().ExtendedData;
-			if (extendedData != null && extendedData.ContainsKey("OrderConfirmUrl"))
-			{
-				<a href='@(extendedData["OrderConfirmUrl"])'>Please confirm your order!</a>
-			}
-		}
-		</p>
+        <p>@MvcHtmlString.Create(Umbraco.GetDictionaryValue("merchThanksParagraph"))</p>
             
         <h3>Billed To</h3>
         <span class="fn">@invoice.BillToName</span>
