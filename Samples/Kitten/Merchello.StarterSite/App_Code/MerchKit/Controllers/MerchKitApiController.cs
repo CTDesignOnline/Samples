@@ -254,7 +254,12 @@ namespace MerchKit.Controllers
             // salesPreparation
             var authorize = salesPreparation.AuthorizePayment(model.PaymentMethodKey);
 
-            if (authorize.Payment.Success) return new { Redirect = string.Format("/receipt/?inv={0}", authorize.Invoice.Key.ToString().EncryptWithMachineKey()) };
+            if (authorize.Payment.Success) 
+			{
+                if (authorize.Payment.Result.ExtendedData != null && authorize.Payment.Result.ExtendedData.ContainsKey("OrderConfirmUrl"))
+                    return new { Redirect = authorize.Payment.Result.ExtendedData["OrderConfirmUrl"] };
+				return new { Redirect = string.Format("/receipt/?inv={0}", authorize.Invoice.Key.ToString().EncryptWithMachineKey()) };
+			}
 
             return new { Error = authorize.Payment.Exception.Message };
         }
