@@ -80,8 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShippingProvider\IShippingGatewayMethod.cs" />
-    <Compile Include="ShippingProvider\IShippingGatewayProvider.cs" />
     <Compile Include="ShippingProvider\SampleShippingGatewayMethod.cs" />
     <Compile Include="ShippingProvider\SampleShippingGatewayProvider.cs" />
   </ItemGroup>

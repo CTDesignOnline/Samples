@@ -112,7 +112,7 @@
             var product = Services.ProductService.GetByKey(model.ProductKey);
 
             // check if content has sample shipper property - isOverWeight
-            // if yes, set basket item extented property
+            // if yes, set basket item extended property
             var content = Umbraco.Content(model.ContentId.ToString(CultureInfo.InvariantCulture));
             if (content.HasProperty("IsOverweight") && content.HasValue("IsOverweight"))
             {

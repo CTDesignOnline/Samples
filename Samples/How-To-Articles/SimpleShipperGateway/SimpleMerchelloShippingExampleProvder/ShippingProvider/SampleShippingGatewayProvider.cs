@@ -11,13 +11,22 @@
 
     /// <summary>
     /// GatewayProviderActivation Params: key, name, description
-    /// key: generated new guid
-    /// name: name appears in back office
-    /// description: description appears in back office
+    /// GatewayProviderActivation key: generated new guid
+    /// GatewayProviderActivation name: name appears in back office
+    /// GatewayProviderActivation description: description appears in back office
+    /// 
+    /// This information is used to add the provider to the backoffice. It will appear in the Merchello section, under gateways.
+    /// 
+    /// GatewayProviderEditor params: title, editorView
+    /// GatewayProviderEditor title: title of editor dialog
+    /// GatewayProviderEditor editorView: the html page to display to edit/configure the provider
+    /// 
+    /// This information is used to give overall/general shipping configuration. This sample doesn't actual
+    /// have the providereditor.html file. This setting is meant as an example only. 
     /// </summary>
-    [GatewayProviderEditor("Sample configuration", "~/App_Plugins/Merchello.Docs.SampleShipper/providereditor.html")]
+    //[GatewayProviderEditor("Sample configuration", "~/App_Plugins/Merchello.Docs.SampleShipper/providereditor.html")]
     [GatewayProviderActivation("2e734763-ed20-4ed5-bcca-9a0e622218dd", "Sample Shipping Provider", "Sample Shipping Provider for Merchello Documentation")]
-    class ShippingGatewayProvider : ShippingGatewayProviderBase
+    class SampleShippingGatewayProvider : ShippingGatewayProviderBase
     {
 
         #region Available Methods
@@ -27,7 +36,7 @@
         /// </summary>
         /// <remarks>
         /// Gateway resources are used to constrain shipping methods to a shipping provider - so in this case
-        /// the BoxRogerShippingProvider will only be able to offer a single shipping method.  In other providers
+        /// the SampleShippingProvider will only be able to offer a single shipping method.  In other providers
         /// like the flat rate shipping provider, we have two resources - one for "Vary by Weight" and one for "Very by Price"
         /// as the computations are done differently.
         /// </remarks>
@@ -39,7 +48,7 @@
         #endregion
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BoxRogerShippingGatewayProvider"/> class.
+        /// Initializes a new instance of the <see cref="SampleShippingGatewayProvider"/> class.
         /// </summary>
         /// <param name="gatewayProviderService">
         /// The <see cref="IGatewayProviderService"/>.
@@ -50,7 +59,7 @@
         /// <param name="runtimeCacheProvider">
         /// Umbraco's <see cref="IRuntimeCacheProvider"/>.
         /// </param>
-        public ShippingGatewayProvider(IGatewayProviderService gatewayProviderService, IGatewayProviderSettings gatewayProviderSettings, IRuntimeCacheProvider runtimeCacheProvider)
+        public SampleShippingGatewayProvider(IGatewayProviderService gatewayProviderService, IGatewayProviderSettings gatewayProviderSettings, IRuntimeCacheProvider runtimeCacheProvider)
             : base(gatewayProviderService, gatewayProviderSettings, runtimeCacheProvider)
         {
         }
@@ -67,7 +76,7 @@
         }
 
         /// <summary>
-        /// Creates a <see cref="IBoxRogerShippingGatewayMethod"/> association with an allowed country.
+        /// Creates a <see cref="ISampleShippingGatewayMethod"/> association with an allowed country.
         /// </summary>
         /// <param name="gatewayResource">
         /// The gateway resource.
@@ -83,6 +92,7 @@
         /// </returns>
         public override IShippingGatewayMethod CreateShippingGatewayMethod(IGatewayResource gatewayResource, IShipCountry shipCountry, string name)
         {
+            //TODO: uncomment these when move to Umbraco 7.2.x
             //Mandate.ParameterNotNull(gatewayResource, "gatewayResource");
             //Mandate.ParameterNotNull(shipCountry, "shipCountry");
             //Mandate.ParameterNotNullOrEmpty(name, "name");

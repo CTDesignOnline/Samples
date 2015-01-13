@@ -7,24 +7,24 @@
     using Umbraco.Core;
 
     /// <summary>
-    /// Represents a Preferred Customer shipping gateway method.
+    /// Represents a Sample shipping gateway method.
     /// </summary>
     /// <remarks>
-    /// If you want to make add some configurations for your ship method, you can uncomment out the attribute below and write an angular view / controller
+    /// If you want to add some configurations for your ship method, you can write an angular view / controller
     /// to save information to the IShipMethod's extendedData collection.  (this adds the 'pencil' on the settings->shipping page in the back office).
-    /// Example, you might want to make your £30 configurable so if the rate changes it is not hard coded.  Alternatively you could just 
-    /// add it as an AppSetting to keep it simple - which I did here.  AppSetting is "BoxRoger:IsForHireShippingRate"
+    /// Example, you might want to make your shipping charge configurable so if the rate changes it is not hard coded.  Alternatively you could just 
+    /// add it as an AppSetting to keep it simple - which I did here.  AppSetting is "SampleShipProvider:HeavyShippingCharge"
     /// </remarks>
-    [GatewayMethodEditor("Sample ship method editor", "Sample ship method editor", "~/App_Plugins/Merchello.Docs.SampleShipper/methodeditor.html")]
+    //[GatewayMethodEditor("Sample ship method editor", "Sample ship method editor", "~/App_Plugins/Merchello.Docs.SampleShipper/methodeditor.html")]
     public class SampleShippingGatewayMethod : ShippingGatewayMethodBase
     {
         /// <summary>
-        /// The rental shipping rate.
+        /// The overweight shipping rate.
         /// </summary>
         private readonly decimal _isHeavyShippingRate;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BoxRogerShippingGatewayMethod"/> class.
+        /// Initializes a new instance of the <see cref="SampleShippingGatewayMethod"/> class.
         /// </summary>
         /// <param name="gatewayResource">
         /// The gateway resource.
@@ -55,7 +55,7 @@
         }
 
         /// <summary>
-        /// Performs the actual work of performing the shipment rate quote for the shipment.
+        /// Performs the actual work of performing the shipment rate quote for the shipment based on what items are in the shipment.
         /// </summary>
         /// <param name="shipment">
         /// The shipment.
@@ -65,20 +65,8 @@
         /// </returns>
         public override Attempt<IShipmentRateQuote> QuoteShipment(IShipment shipment)
         {
-            //// I usually use a visitor to analize line items (checkout PluralSight design patterns library for videos on this).
-            //// http://en.wikipedia.org/wiki/Visitor_pattern
-            //var visitor = new MyLineItemVisitor();
-
-            //shipment.Items.Accept(visitor);
-
-            //return Attempt<IShipmentRateQuote>.Succeed(new ShipmentRateQuote(shipment, this.ShipMethod)
-            //{
-            //    Rate = visitor.RentalLineItemCount * _isPreferredCustomerShippingRate
-            //});
-
             var itemHeavyCount = 0;
 
-            //Example NOT using visitor pattern
             foreach (ILineItem item in shipment.Items)
             {
                 var isHeavyItem = false;
@@ -90,6 +78,7 @@
                 }
             }
 
+            // each item gets an added charge, instead of one charge regardless of how many items there are
             var shippingRate = itemHeavyCount * _isHeavyShippingRate;
 
             return Attempt<IShipmentRateQuote>.Succeed(new ShipmentRateQuote(shipment, this.ShipMethod){Rate = shippingRate});
