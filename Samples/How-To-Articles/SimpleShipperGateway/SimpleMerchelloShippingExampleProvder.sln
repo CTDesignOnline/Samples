@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMerchelloShippingExampleProvder", "SimpleMerchelloShippingExampleProvder\SimpleMerchelloShippingExampleProvder.csproj", "{C75EC522-535B-42E7-BB1B-3C691032EA7F}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "website(5)", "http://localhost:59529", "{1646FDAE-6111-4308-9082-9C29109DFEF0}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{c75ec522-535b-42e7-bb1b-3c691032ea7f}|SampleMerchelloShippingExampleProvder.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59529"
+		Debug.AspNetCompiler.PhysicalPath = "RosettaUm718Mer1512\website\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59529\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59529"
+		Release.AspNetCompiler.PhysicalPath = "RosettaUm718Mer1512\website\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59529\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "RosettaUm718Mer1512\website\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C75EC522-535B-42E7-BB1B-3C691032EA7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C75EC522-535B-42E7-BB1B-3C691032EA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C75EC522-535B-42E7-BB1B-3C691032EA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C75EC522-535B-42E7-BB1B-3C691032EA7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1646FDAE-6111-4308-9082-9C29109DFEF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1646FDAE-6111-4308-9082-9C29109DFEF0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{1646FDAE-6111-4308-9082-9C29109DFEF0}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
