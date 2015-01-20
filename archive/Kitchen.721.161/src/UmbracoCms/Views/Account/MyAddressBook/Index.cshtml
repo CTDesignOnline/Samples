@@ -1,0 +1,80 @@
+@using BrambleBerry.Kitchen.Controllers.Account
+@using BrambleBerry.Kitchen.Models.Account.MyAddressBook
+
+@inherits UmbracoViewPage<AddressesIndexModel>
+@{
+    Layout = "../Base.cshtml";
+    Model.SetPageTitle("My Account / My Addresses and Express Checkout Settings");
+}
+<script>
+    // TODO: this needs moving into a general scripts file but kept here for now for ease development
+    function AreYouSure() {
+        // Do whatever fancy logic for showing a popup you like
+        // TODO: Don't forget localisation/dictionary stuff
+        return confirm("Are you sure?");
+    }
+
+</script>
+
+@if (!String.IsNullOrEmpty((string)TempData[MyAddressBookController.AddressErrorMessageKey]))
+{
+    // Something must have gone wrong, ie can't find the address etc.
+    // TODO: What do we do from here for the user?
+    @TempData[MyAddressBookController.AddressErrorMessageKey]
+}
+else
+{
+    if (!Model.AllAddresses.Any())
+    {
+        <div class="alert col-s-8 offset-s-2">
+            <p>You have no addresses yet, why not @Html.ActionLink("add one", "Create", "MyAddressBook")?</p>
+        </div>
+    }
+    else
+    {
+        <ul id="addresses" class="row">
+            @for (var i = 0; i < Model.AllAddresses.Count(); i++)
+            {
+                var address = Model.AllAddresses.ElementAt(i);
+
+                <li class="col-l-4 col-s-6">
+
+                    <header>
+                        <h3>@address.Alias</h3>
+
+                        @using (Html.BeginForm("Delete", "MyAddressBook", FormMethod.Post, new { onsubmit = "return AreYouSure();" }))
+                        {
+                            <input type="hidden" value="@address.Key" name="key" id="key" />
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="delete"><i class="fa fa-trash-o"></i></button>
+                        }
+                    </header>
+
+                    <div class="address vcard">
+                        <span class="fn">@address.Fullname</span>
+                        <span class="adr">
+                            <span class="street-address">@address.Address1</span>
+                            @if (String.IsNullOrEmpty(address.Address2))
+                            {
+                                @MvcHtmlString.Create(string.Format(", <span class=\"extended-address\">{0}</span>", @address.Address2))
+                            }
+                            <span class="locality">@address.City</span>, <span class="region">@address.Region</span> <span class="postal-code">@address.PostalCode</span>
+                            <span class="country-name">@address.CountryName</span>
+                        </span>
+                        <span class="tel">@address.Phone</span>
+
+                        @using (Html.BeginUmbracoForm("Delete", "MyAddressBook", FormMethod.Post, new { onsubmit = "return AreYouSure();" }))
+                        {
+                            @BramFormHelpers.RenderCheckBox(Html.NameFor(x => address.IsExpressCheckoutEnabled), Html.IdFor(x => address.IsExpressCheckoutEnabled), new MvcHtmlString("Use express checkout with this address"))
+                        }
+                    </div>
+                    @*@Html.ActionLink("Edit Address", "Edit", "MyAddressBook")*@
+                    <a href="@Url.Action("Edit", "MyAddressBook")" role="button">Edit Address</a>
+                </li>
+            }
+            <li class="add-address col-l-4 col-s-6">
+                <a href="@Url.Action("Create", "MyAddressBook")"><i class="fa fa-plus-circle"></i>Add an Address</a>
+            </li>
+        </ul>
+    }
+}

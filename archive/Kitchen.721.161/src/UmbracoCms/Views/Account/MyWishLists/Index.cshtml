@@ -1,0 +1,39 @@
+﻿@using BrambleBerry.Kitchen
+@using BrambleBerry.Kitchen.Controllers
+@using BrambleBerry.Kitchen.Controllers.Account
+@using Umbraco.Core.Models.Membership
+
+
+@inherits UmbracoViewPage<BrambleBerry.Kitchen.Models.Account.MyWishlists.MyWishlistsViewModel>
+@{
+    Layout = "/Views/Account/Base.cshtml";
+    Model.SetPageTitle("My Wishlists");
+}
+
+<div class ="row">
+    <a href="#">All Items</a>
+    @foreach (var item in Model.Wishlists)
+    {
+        <a href="#">@item.Title</a>
+    }
+</div>
+<div class="row">
+    <div class="col-s-6">
+
+    </div>
+    <div class="col-s-6">
+
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-s-6">
+
+
+    </div>
+    <div class="col-s-6">
+
+        TODO Communication prefs?
+
+    </div>
+</div>

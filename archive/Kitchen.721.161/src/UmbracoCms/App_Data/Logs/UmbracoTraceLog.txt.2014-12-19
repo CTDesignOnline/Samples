@@ -1,0 +1,69 @@
+﻿2014-12-19 05:31:23,208 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2014-12-19 05:31:23,270 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 48ms)
+2014-12-19 05:31:23,316 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2014-12-19 05:31:24,435 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 46 (took 1117ms)
+2014-12-19 05:31:24,630 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2014-12-19 05:31:24,644 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 14ms)
+2014-12-19 05:31:24,645 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2014-12-19 05:31:24,661 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 16ms)
+2014-12-19 05:31:24,698 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2014-12-19 05:31:24,719 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 23 (took 20ms)
+2014-12-19 05:31:24,720 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2014-12-19 05:31:24,778 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 51 (took 58ms)
+2014-12-19 05:31:24,892 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2014-12-19 05:31:24,906 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 13ms)
+2014-12-19 05:31:24,907 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2014-12-19 05:31:24,925 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 18ms)
+2014-12-19 05:31:26,009 [10] INFO  Merchello.Web.UmbracoApplicationEventHandler - Attempting to initialize Merchello
+2014-12-19 05:31:26,056 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Gateways.GatewayProviderBase
+2014-12-19 05:31:26,080 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Gateways.GatewayProviderBase, found 7 (took 23ms)
+2014-12-19 05:31:26,806 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Observation.ITrigger
+2014-12-19 05:31:26,819 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Observation.ITrigger, found 3 (took 13ms)
+2014-12-19 05:31:26,828 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Observation.IMonitor
+2014-12-19 05:31:26,839 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Observation.IMonitor, found 3 (took 10ms)
+2014-12-19 05:31:26,845 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Web.Reporting.ReportController
+2014-12-19 05:31:26,859 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Web.Reporting.ReportController, found 2 (took 13ms)
+2014-12-19 05:31:26,861 [10] INFO  Merchello.Core.CoreBootManager - [Thread 1] Starting subscribing Monitors to Triggers
+2014-12-19 05:31:26,863 [10] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] PartialOrderShippedMonitor subscribing to PartialOrderShippedTrigger
+2014-12-19 05:31:26,864 [10] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.MonitorModels.IPaymentResultMonitorModel, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] OrderConfirmationMonitor subscribing to OrderConfirmationTrigger
+2014-12-19 05:31:26,864 [10] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] OrderShippedMonitor subscribing to OrderShippedTrigger
+2014-12-19 05:31:26,864 [10] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Finished subscribing Monitors to Triggers
+2014-12-19 05:31:27,324 [10] INFO  Merchello.Web.UmbracoApplicationEventHandler - Initialization of Merchello complete
+2014-12-19 05:31:27,330 [10] INFO  BrambleBerry.Kitchen.Events.UmbracoEvents - [Thread 1] Binding MvcDonutCache refreshers
+2014-12-19 05:31:27,332 [10] INFO  BrambleBerry.Kitchen.Events.UmbracoEvents - [Thread 1] Reassigning default render mvc controller
+2014-12-19 05:31:27,332 [10] INFO  BrambleBerry.Kitchen.Events.UmbracoEvents - [Thread 1] Default render mvc controller successfully reassigned
+2014-12-19 05:31:27,332 [10] INFO  BrambleBerry.Kitchen.Events.UmbracoEvents - [Thread 1] Adding Custom Routes
+2014-12-19 05:31:27,445 [10] INFO  Merchello.Web.Search.ExamineEvents - [Thread 1] Initializing Merchello ProductIndex binding events
+2014-12-19 05:31:28,047 [10] INFO  Merchello.Web.Trees.ServerVariablesParsingEvents - [Thread 1] Initializing Merchello ServerVariablesParsingEvents
+2014-12-19 05:31:28,048 [10] INFO  Merchello.Web.UmbracoApplicationEventHandler - [Thread 1] Initializing Customer related events
+2014-12-19 05:31:28,075 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Trees.TreeController
+2014-12-19 05:31:28,085 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 5 (took 9ms)
+2014-12-19 05:31:28,103 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.ITree
+2014-12-19 05:31:28,117 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 14ms)
+2014-12-19 05:31:28,135 [10] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2014-12-19 05:31:28,135 [10] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2014-12-19 05:31:28,139 [10] INFO  Merchello.Plugin.Payments.AuthorizeNet.AuthorizeNetEvents - [Thread 1] Initializing AuthorizeNet provider registration binding events
+2014-12-19 05:31:28,142 [10] INFO  Merchello.Core.Gateways.GatewayEvents - [Thread 1] Initializing Merchello Warehouse Catalog binding events
+2014-12-19 05:31:28,144 [10] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 1] Initializing Merchello NotificationMonitor binding events
+2014-12-19 05:31:28,144 [10] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 1] Completed Merchello NotificationMonitor binding events
+2014-12-19 05:31:28,145 [10] INFO  Merchello.Core.Gateways.Notification.Smtp.SmtpProviderEvents - [Thread 1] Initializing SMTP notification gateway provider registration binding events
+2014-12-19 05:31:28,146 [10] INFO  Merchello.Plugin.Taxation.Avalara.UmbracoApplicationEvents - [Thread 1] Initializing Avalara AvaTax provider registration binding events
+2014-12-19 05:31:28,157 [10] INFO  Merchello.Plugin.Shipping.FedEx.FedExEvents - [Thread 1] Initializing FedEx Shipping provider registration binding events
+2014-12-19 05:31:28,162 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplication
+2014-12-19 05:31:28,197 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 8 (took 35ms)
+2014-12-19 05:31:29,325 [10] INFO  Umbraco.Web.UmbracoModule - [Thread 5] Setting OriginalRequestUrl: localhost:51541/umbraco
+2014-12-19 05:31:29,473 [10] INFO  umbraco.content - [Thread 5] Loading content from disk cache...
+2014-12-19 05:31:29,691 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2014-12-19 05:31:29,705 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 12ms)
+2014-12-19 05:31:30,354 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2014-12-19 05:31:30,405 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 51ms)
+2014-12-19 05:32:04,851 [10] ERROR Umbraco.Web.Scheduling.ScheduledTasks - [Thread 5] An error occurred calling web task for url: http://kitchen.local/umbraco/Merchello/ScheduledTasksApi/RemoveAnonymousCustomers
+System.Net.WebException: The remote name could not be resolved: 'kitchen.local'
+   at System.Net.HttpWebRequest.GetResponse()
+   at Umbraco.Web.Scheduling.ScheduledTasks.GetTaskByHttp(String url)
+2014-12-19 05:32:04,851 [10] INFO  Umbraco.Web.Scheduling.ScheduledTasks - [Thread 5] removeAnonymousCustomers has been called with response: False
+2014-12-19 09:32:07,046 [10] ERROR Umbraco.Web.Scheduling.ScheduledTasks - [Thread 40] An error occurred calling web task for url: http://kitchen.local/umbraco/Merchello/ScheduledTasksApi/RemoveAnonymousCustomers
+System.Net.WebException: The remote name could not be resolved: 'kitchen.local'
+   at System.Net.HttpWebRequest.GetResponse()
+   at Umbraco.Web.Scheduling.ScheduledTasks.GetTaskByHttp(String url)
+2014-12-19 09:32:07,046 [10] INFO  Umbraco.Web.Scheduling.ScheduledTasks - [Thread 40] removeAnonymousCustomers has been called with response: False

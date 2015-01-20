@@ -1,0 +1,22 @@
+﻿@inherits UmbracoViewPage<BrambleBerry.Kitchen.Models.Account.MyOrders.OrderViewModel>
+@{
+    Layout = "../Base.cshtml";
+    Model.SetPageTitle("My Account / My Orders");
+
+}
+<div class="row account-index-row">
+    <h1>Your order</h1>
+    <h1>Order Number: @Model.Order.Id</h1>
+    <h1>date: @Model.Order.CreatedOn</h1>
+    <h2>Support Updates:</h2>
+    
+    @{
+        foreach (var update in Model.Order.SupportUpdates)
+        {
+            <p>Date:@update.Date</p>
+            <p>Text:@update.Text</p>
+            <p>By:@update.UpdatedBy</p>
+            <hr />
+        }
+}
+</div>

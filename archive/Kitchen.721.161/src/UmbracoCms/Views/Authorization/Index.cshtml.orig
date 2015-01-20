@@ -1,0 +1,83 @@
+@using BrambleBerry.Kitchen
+@using BrambleBerry.Kitchen.Controllers
+@using BrambleBerry.Kitchen.Models.Authorization
+@using Umbraco.Core.Models.Membership
+
+
+@inherits UmbracoViewPage<BrambleBerry.Kitchen.Models.Authorization.AuthorizationLoginModel>
+@{
+
+    Layout = "Base.cshtml";
+}
+@*<h1>@Model.ReturnUrl</h1>*@
+<section id="sign-in" class="col-s-6">
+    <h2>Sign in to My Account</h2>
+    @using (Html.BeginUmbracoForm<AuthorizationController>("Index", FormMethod.Post))
+    { 
+        
+        if (TempData[AuthorizationController.LoginErrorMessageKey] != null)
+        {
+            <div class="alert warning">
+                @Html.Raw(TempData[AuthorizationController.LoginErrorMessageKey])
+            </div>
+        }
+        <label>
+            <span>@Html.DisplayNameFor(x => x.Username)</span>
+            @Html.TextBoxFor(x => x.Username, new { placeholder = @Html.DisplayNameFor(x => x.Username) })
+            @Html.ValidationMessageFor(x => x.Username)
+        </label>
+
+        <label>
+            <span>@Html.DisplayNameFor(x => x.Password)</span>
+            @Html.PasswordFor(x => x.Password, new { placeholder = @Html.DisplayNameFor(x => x.Password) })
+            @Html.ValidationMessageFor(x => x.Password)
+        </label>
+
+        <div class="row">
+            <div class="col-s-6">
+                @BramFormHelpers.RenderCheckBox(@Html.NameFor(x => x.RememberMe), @Html.IdFor(x => x.RememberMe), @Html.DisplayNameFor(x => x.RememberMe))
+            </div>
+            <div class="col-s-6 forgot">
+                @Html.ActionLink("I forgot my password", "ForgottenPassword")
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.ReturnUrl)
+        @Html.AntiForgeryToken()
+<<<<<<< HEAD
+        <input type="submit" value="Login" />
+    }</div>
+<div class="col-s-6">
+    <h1>I'm New Here</h1>
+    <h2>Save time now.</h2>
+    <p>You don't need an account to checkout</p>
+    <a href="/" role="button">Continue as Our Guest</a>
+
+    <h2>Save time later.</h2>
+    <p>Create a BrambleBerry.com account for fast checkout and easy access to order history.</p>
+    @Html.ActionLink("Create an account", "Registration",null,new{role="button"} )
+    <h1>test</h1>
+    @Html.Partial("ForgottenPassword",new AuthorizationForgotPasswordFormModel(),new ViewDataDictionary(){{"disableLayout",true}})
+    
+</div>
+=======
+        <button type="submit">Sign in with Our Secure Server</button>
+    }
+</section>
+<section id="options" class="col-s-6">
+    
+    <section class="guest">
+        <h2>I'm New Here</h2>
+        <h3>Save time now.</h3>
+        <p>You don't need an account to checkout</p>
+        <a href="/" role="button">Continue as Our Guest</a>
+    </section>
+    
+    <section class="create">
+        <h3>Save time later.</h3>
+        <p>Create a BrambleBerry.com account for fast checkout and easy access to order history.</p>
+        @Html.ActionLink("Create an account", "Registration", null, new { role = "button" })
+    </section>
+
+</section>
+>>>>>>> origin/master
