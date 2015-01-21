@@ -468,3 +468,6 @@
 2015-01-20 10:25:09,923 [22] INFO  umbraco.BusinessLogic.Log - [Thread 5] Log scrubbed.  Removed all items older than 2014-11-21 10:25:09
 2015-01-20 10:26:36,334 [22] INFO  umbraco.BusinessLogic.Log - [Thread 24] Log scrubbed.  Removed all items older than 2014-11-21 10:26:36
 2015-01-20 10:28:02,743 [22] INFO  umbraco.BusinessLogic.Log - [Thread 42] Log scrubbed.  Removed all items older than 2014-11-21 10:28:02
+2015-01-20 10:29:29,159 [22] INFO  umbraco.BusinessLogic.Log - [Thread 47] Log scrubbed.  Removed all items older than 2014-11-21 10:29:29
+2015-01-20 10:30:55,559 [22] INFO  umbraco.BusinessLogic.Log - [Thread 43] Log scrubbed.  Removed all items older than 2014-11-21 10:30:55
+2015-01-20 10:32:21,970 [22] INFO  umbraco.BusinessLogic.Log - [Thread 40] Log scrubbed.  Removed all items older than 2014-11-21 10:32:21

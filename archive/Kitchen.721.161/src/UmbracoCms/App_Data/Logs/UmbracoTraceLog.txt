@@ -915,3 +915,8 @@ System.Net.WebException: The remote server returned an error: (404) Not Found.
    at System.Net.HttpWebRequest.GetResponse()
    at Umbraco.Web.Scheduling.ScheduledTasks.GetTaskByHttp(String url)
 2015-01-20 12:21:11,502 [19] INFO  Umbraco.Web.Scheduling.ScheduledTasks - [Thread 27] removeAnonymousCustomers has been called with response: False
+2015-01-20 12:22:33,880 [19] INFO  umbraco.BusinessLogic.Log - [Thread 27] Log scrubbed.  Removed all items older than 2014-11-21 12:22:33
+2015-01-20 12:24:00,294 [19] INFO  umbraco.BusinessLogic.Log - [Thread 34] Log scrubbed.  Removed all items older than 2014-11-21 12:24:00
+2015-01-20 12:25:26,704 [19] INFO  umbraco.BusinessLogic.Log - [Thread 34] Log scrubbed.  Removed all items older than 2014-11-21 12:25:26
+2015-01-20 12:26:53,113 [19] INFO  umbraco.BusinessLogic.Log - [Thread 24] Log scrubbed.  Removed all items older than 2014-11-21 12:26:53
+2015-01-20 12:28:19,524 [19] INFO  umbraco.BusinessLogic.Log - [Thread 33] Log scrubbed.  Removed all items older than 2014-11-21 12:28:19
