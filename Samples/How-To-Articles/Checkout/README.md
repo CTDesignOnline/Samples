@@ -1,6 +1,3 @@
-###Basket Sample
-User: admin@admin.com
-Pwd: 1234
 
 Start with the basket, for example http://localhost:51840/basket/, add an item to the basket, then begin the checkout process. 
 

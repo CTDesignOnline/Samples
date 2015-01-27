@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <plugins>
   <baseType type="umbraco.interfaces.IApplicationStartupHandler" resolutionType="FindAllTypes">
-    <add type="MerchKit.NotificationEvents, App_Code.ie99kopx, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="MerchKit.Caching.RuntimeCacheApplicationEventListener, App_Code.ie99kopx, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="MerchKit.NotificationEvents, App_Code.j1nenieb, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="MerchKit.Caching.RuntimeCacheApplicationEventListener, App_Code.j1nenieb, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.providers.members.MembershipEventHandler, umbraco.providers, Version=1.0.5462.37516, Culture=neutral, PublicKeyToken=null" />
     <add type="Merchello.Core.Gateways.GatewayEvents, Merchello.Core, Version=1.6.1.0, Culture=neutral, PublicKeyToken=null" />
     <add type="Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents, Merchello.Core, Version=1.6.1.0, Culture=neutral, PublicKeyToken=null" />
@@ -67,16 +67,16 @@
     <add type="Umbraco.Web.PropertyEditors.ValueConverters.RteMacroRenderingValueConverter, umbraco, Version=1.0.5462.37518, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Web.Mvc.SurfaceController" resolutionType="FindAllTypes">
-    <add type="MerchKit.Controllers.NavigationController, App_Code.ie99kopx, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="MerchKit.Controllers.ContactFormSurfaceController, App_Code.ie99kopx, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="MerchKit.Controllers.BasketController, App_Code.ie99kopx, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="MerchKit.Controllers.BasketController, App_Code.j1nenieb, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="MerchKit.Controllers.NavigationController, App_Code.j1nenieb, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="MerchKit.Controllers.ContactFormSurfaceController, App_Code.j1nenieb, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Controllers.UmbProfileController, umbraco, Version=1.0.5462.37518, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Controllers.UmbLoginStatusController, umbraco, Version=1.0.5462.37518, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Controllers.UmbRegisterController, umbraco, Version=1.0.5462.37518, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Controllers.UmbLoginController, umbraco, Version=1.0.5462.37518, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Web.WebApi.UmbracoApiController" resolutionType="FindAllTypes">
-    <add type="MerchKit.Controllers.MerchKitApiController, App_Code.ie99kopx, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="MerchKit.Controllers.MerchKitApiController, App_Code.j1nenieb, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Editors.AuthenticationController, umbraco, Version=1.0.5462.37518, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Editors.ContentController, umbraco, Version=1.0.5462.37518, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Editors.DashboardController, umbraco, Version=1.0.5462.37518, Culture=neutral, PublicKeyToken=null" />

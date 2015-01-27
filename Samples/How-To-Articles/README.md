@@ -1,4 +1,4 @@
 All How-To sites use:
 
-User: admin@admin.com
+User: admin
 Pwd: 1234
