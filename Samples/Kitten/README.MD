@@ -1,9 +1,3 @@
-#Merchello Starter 
-
-##Product Versions
-Umbraco 7.2
-Merchello 1.6
-
 ##Client-side Features
 The features include
 - products on the home page
