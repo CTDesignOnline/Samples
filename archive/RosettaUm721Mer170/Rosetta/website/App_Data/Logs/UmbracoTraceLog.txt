@@ -375,3 +375,10 @@ System.Net.Mail.SmtpException: Failure sending mail. ---> System.Net.WebExceptio
    at System.Net.Mail.SmtpClient.Send(MailMessage message)
    at Merchello.Core.Gateways.Notification.Smtp.SmtpNotificationGatewayMethod.Send(MailMessage msg, NetworkCredential credentials) in c:\Working Repositories\GitHub\Merchello\src\Merchello.Core\Gateways\Notification\Smtp\SmtpNotificationGatewayMethod.cs:line 97
 2015-02-15 18:51:15,283 [7] INFO  umbraco.BusinessLogic.Log - [Thread 12] Log scrubbed.  Removed all items older than 2014-12-17 18:51:15
+2015-02-15 18:52:41,698 [7] INFO  umbraco.BusinessLogic.Log - [Thread 9] Log scrubbed.  Removed all items older than 2014-12-17 18:52:41
+2015-02-15 18:54:08,111 [7] INFO  umbraco.BusinessLogic.Log - [Thread 28] Log scrubbed.  Removed all items older than 2014-12-17 18:54:08
+2015-02-15 18:55:34,517 [7] INFO  umbraco.BusinessLogic.Log - [Thread 39] Log scrubbed.  Removed all items older than 2014-12-17 18:55:34
+2015-02-15 18:57:00,942 [7] INFO  umbraco.BusinessLogic.Log - [Thread 29] Log scrubbed.  Removed all items older than 2014-12-17 18:57:00
+2015-02-15 18:58:27,346 [7] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-12-17 18:58:27
+2015-02-15 18:59:53,754 [7] INFO  umbraco.BusinessLogic.Log - [Thread 56] Log scrubbed.  Removed all items older than 2014-12-17 18:59:53
+2015-02-15 19:01:20,148 [7] INFO  umbraco.BusinessLogic.Log - [Thread 52] Log scrubbed.  Removed all items older than 2014-12-17 19:01:20
