@@ -5,25 +5,25 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMerchelloShippingExampleProvder", "SimpleMerchelloShippingExampleProvder\SimpleMerchelloShippingExampleProvder.csproj", "{C75EC522-535B-42E7-BB1B-3C691032EA7F}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RosettaUm721Mer161", "http://localhost:61316", "{B6685731-0400-4BC1-AB77-080A3E8FDC06}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "website(13)", "http://localhost:58123", "{32942245-BE01-45F8-AB76-8813B6246936}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_61316"
-		Debug.AspNetCompiler.PhysicalPath = "RosettaUm721Mer161\Rosetta\website\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61316\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58123"
+		Debug.AspNetCompiler.PhysicalPath = "RosettaUm721Mer170\Rosetta\website\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58123\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_61316"
-		Release.AspNetCompiler.PhysicalPath = "RosettaUm721Mer161\Rosetta\website\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61316\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58123"
+		Release.AspNetCompiler.PhysicalPath = "RosettaUm721Mer170\Rosetta\website\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58123\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "RosettaUm721Mer161\Rosetta\website\"
+		SlnRelativePath = "RosettaUm721Mer170\Rosetta\website\"
 	EndProjectSection
 EndProject
 Global
@@ -36,9 +36,9 @@ Global
 		{C75EC522-535B-42E7-BB1B-3C691032EA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C75EC522-535B-42E7-BB1B-3C691032EA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C75EC522-535B-42E7-BB1B-3C691032EA7F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6685731-0400-4BC1-AB77-080A3E8FDC06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6685731-0400-4BC1-AB77-080A3E8FDC06}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6685731-0400-4BC1-AB77-080A3E8FDC06}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{32942245-BE01-45F8-AB76-8813B6246936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32942245-BE01-45F8-AB76-8813B6246936}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{32942245-BE01-45F8-AB76-8813B6246936}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

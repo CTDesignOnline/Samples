@@ -1,0 +1,617 @@
+﻿2015-02-16 05:28:21,777 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2015-02-16 05:28:21,826 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 36ms)
+2015-02-16 05:28:21,843 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-02-16 05:28:22,805 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 43 (took 959ms)
+2015-02-16 05:28:23,112 [10] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 1] An unhandled exception occurred
+System.Configuration.ConfigurationErrorsException: Unexpected end tag. Line 104, position 3. (C:\github\Samples.1.7\Samples\archive\RosettaUm721Mer170\Rosetta\website\config\Dashboard.config line 104) ---> System.Xml.XmlException: Unexpected end tag. Line 104, position 3.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlTextReader.Read()
+   at System.Configuration.XmlUtil.CopySection()
+   at System.Configuration.BaseConfigurationRecord.LoadConfigSource(String name, SectionXmlInfo sectionXmlInfo)
+   at System.Configuration.BaseConfigurationRecord.GetSectionXmlReader(String[] keys, SectionInput input)
+   --- End of inner exception stack trace ---
+   at System.Configuration.BaseConfigurationRecord.EvaluateOne(String[] keys, SectionInput input, Boolean isTrusted, FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult)
+   at System.Configuration.BaseConfigurationRecord.Evaluate(FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult, Boolean getLkg, Boolean getRuntimeObject, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Web.HttpContext.GetSection(String sectionName)
+   at System.Web.Configuration.HttpConfigurationSystem.GetSection(String sectionName)
+   at System.Web.Configuration.HttpConfigurationSystem.System.Configuration.Internal.IInternalConfigSystem.GetSection(String configKey)
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at Umbraco.Core.Configuration.UmbracoConfig..ctor()
+   at Umbraco.Core.Configuration.UmbracoConfig.<.cctor>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Umbraco.Core.Configuration.UmbracoConfig.get_For()
+   at Umbraco.Core.Sync.ConfigServerRegistrar..ctor()
+   at Umbraco.Core.CoreBootManager.InitializeResolvers()
+   at Umbraco.Web.WebBootManager.InitializeResolvers()
+   at Umbraco.Core.CoreBootManager.Initialize()
+   at Umbraco.Web.WebBootManager.Initialize()
+   at Umbraco.Core.UmbracoApplicationBase.StartApplication(Object sender, EventArgs e)
+   at Umbraco.Core.UmbracoApplicationBase.Application_Start(Object sender, EventArgs e)
+2015-02-16 05:28:33,161 [10] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 6] Application shutdown. Reason: InitializationError
+2015-02-16 05:28:49,098 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2015-02-16 05:28:49,120 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 15ms)
+2015-02-16 05:28:49,126 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-02-16 05:28:49,238 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 43 (took 111ms)
+2015-02-16 05:28:49,376 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-02-16 05:28:51,696 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2320ms)
+2015-02-16 05:28:51,696 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-02-16 05:28:51,713 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 16ms)
+2015-02-16 05:28:51,750 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-02-16 05:28:51,769 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 7 (took 19ms)
+2015-02-16 05:28:51,772 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-02-16 05:28:51,805 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 53 (took 32ms)
+2015-02-16 05:28:51,953 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-02-16 05:28:51,964 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 10ms)
+2015-02-16 05:28:51,965 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-02-16 05:28:51,988 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 23ms)
+2015-02-16 05:28:54,041 [14] INFO  Merchello.Web.UmbracoApplicationEventHandler - Attempting to initialize Merchello
+2015-02-16 05:28:54,100 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Gateways.GatewayProviderBase
+2015-02-16 05:28:54,116 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Gateways.GatewayProviderBase, found 4 (took 16ms)
+2015-02-16 05:28:54,654 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Observation.ITrigger
+2015-02-16 05:28:54,661 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Observation.ITrigger, found 3 (took 7ms)
+2015-02-16 05:28:54,670 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Observation.IMonitor
+2015-02-16 05:28:54,687 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Observation.IMonitor, found 3 (took 16ms)
+2015-02-16 05:28:54,694 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Web.Reporting.ReportController
+2015-02-16 05:28:54,711 [14] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Web.Reporting.ReportController, found 0 (took 16ms)
+2015-02-16 05:28:54,713 [14] INFO  Merchello.Core.CoreBootManager - [Thread 1] Starting subscribing Monitors to Triggers
+2015-02-16 05:28:54,715 [14] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] PartialOrderShippedMonitor subscribing to PartialOrderShippedTrigger
+2015-02-16 05:28:54,717 [14] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.MonitorModels.IPaymentResultMonitorModel, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] OrderConfirmationMonitor subscribing to OrderConfirmationTrigger
+2015-02-16 05:28:54,718 [14] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] OrderShippedMonitor subscribing to OrderShippedTrigger
+2015-02-16 05:28:54,718 [14] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Finished subscribing Monitors to Triggers
+2015-02-16 05:28:55,510 [14] INFO  Merchello.Web.UmbracoApplicationEventHandler - Initialization of Merchello complete
+2015-02-16 05:28:55,639 [14] INFO  Merchello.Core.Gateways.GatewayEvents - [Thread 1] Initializing Merchello Warehouse Catalog binding events
+2015-02-16 05:28:55,641 [14] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 1] Initializing Merchello NotificationMonitor binding events
+2015-02-16 05:28:55,642 [14] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 1] Completed Merchello NotificationMonitor binding events
+2015-02-16 05:28:55,642 [14] INFO  Merchello.Core.Gateways.Notification.Smtp.SmtpProviderEvents - [Thread 1] Initializing SMTP notification gateway provider registration binding events
+2015-02-16 05:28:55,655 [14] INFO  Merchello.Web.Search.ExamineEvents - [Thread 1] Initializing Merchello ProductIndex binding events
+2015-02-16 05:28:56,001 [14] INFO  Merchello.Web.Trees.ServerVariablesParsingEvents - [Thread 1] Initializing Merchello ServerVariablesParsingEvents
+2015-02-16 05:28:56,002 [14] INFO  Merchello.Web.UmbracoApplicationEventHandler - [Thread 1] Initializing Customer related events
+2015-02-16 05:28:56,047 [14] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2015-02-16 05:28:56,048 [14] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2015-02-16 05:28:57,455 [14] INFO  Umbraco.Web.UmbracoModule - [Thread 5] Setting OriginalRequestUrl: localhost:54066/umbraco
+2015-02-16 05:28:57,596 [14] INFO  umbraco.content - [Thread 5] Loading content from disk cache...
+2015-02-16 05:28:57,828 [14] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2015-02-16 05:28:57,844 [14] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 14ms)
+2015-02-16 05:29:02,152 [14] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2015-02-16 05:29:02,180 [14] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 27ms)
+2015-02-16 05:29:31,783 [14] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 7] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 05:29:31,905 [14] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 7] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 05:29:32,187 [14] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 7] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 05:29:32,341 [14] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 7] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 05:29:32,555 [14] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 7] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 05:29:32,747 [14] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 7] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 05:29:37,412 [14] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 5] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 05:29:39,201 [14] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 5] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 05:30:00,960 [14] ERROR Merchello.Core.Strategies.Packaging.ShippableProductVisitor - [Thread 5] ProductVariant marked as shippable was not assoicated with a WarehouseCatalog.  Product was: c16033bc-9709-4afd-9645-e0dac4171a7d -  Tree of Life Mold
+System.IO.InvalidDataException: Found invalid data while decoding.
+2015-02-16 05:30:01,155 [14] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 5] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Validator returned: ErrorNoCatalogFound
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 05:30:01,155 [14] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 5] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Attempt message: No CatalogKeys found in Shipment Items
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 05:30:14,196 [14] ERROR Merchello.Core.Strategies.Packaging.ShippableProductVisitor - [Thread 8] ProductVariant marked as shippable was not assoicated with a WarehouseCatalog.  Product was: c16033bc-9709-4afd-9645-e0dac4171a7d -  Tree of Life Mold
+System.IO.InvalidDataException: Found invalid data while decoding.
+2015-02-16 05:30:14,197 [14] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 8] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Validator returned: ErrorNoCatalogFound
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 05:30:14,198 [14] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 8] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Attempt message: No CatalogKeys found in Shipment Items
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 05:30:16,368 [14] INFO  umbraco.BusinessLogic.Log - [Thread 5] Log scrubbed.  Removed all items older than 2014-12-18 05:30:16
+2015-02-16 05:30:48,087 [14] INFO  Umbraco.Web.Security.WebSecurity - [Thread 6] User Id: 1 logged in
+2015-02-16 05:30:48,282 [14] INFO  Umbraco.Core.PluginManager - [Thread 6] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-02-16 05:30:48,299 [14] INFO  Umbraco.Core.PluginManager - [Thread 6] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 5 (took 16ms)
+2015-02-16 05:30:48,567 [14] INFO  Umbraco.Core.PluginManager - [Thread 6] Starting resolution types of umbraco.interfaces.IApplication
+2015-02-16 05:30:48,637 [14] INFO  Umbraco.Core.PluginManager - [Thread 6] Completed resolution of types of umbraco.interfaces.IApplication, found 8 (took 69ms)
+2015-02-16 05:30:48,667 [14] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of umbraco.interfaces.ITree
+2015-02-16 05:30:48,682 [14] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 15ms)
+2015-02-16 05:30:48,716 [14] WARN  Umbraco.Core.Services.ApplicationTreeService - [Thread 5] The tree definition: <add initialize="true" sortOrder="9" alias="diploTraceLog" application="developer" title="Trace Logs" iconClosed="icon-folder" iconOpen="icon-folder-open" type="Diplo.TraceLogViewer.Controllers.TraceLogTreeController, Diplo.TraceLogViewer" /> could not be resolved to a .Net object type
+2015-02-16 05:30:48,726 [14] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-02-16 05:30:48,726 [14] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 5 (took 0ms)
+2015-02-16 05:30:48,730 [14] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of umbraco.interfaces.ITree
+2015-02-16 05:30:48,758 [14] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 28ms)
+2015-02-16 05:31:42,770 [14] INFO  umbraco.BusinessLogic.Log - [Thread 15] Log scrubbed.  Removed all items older than 2014-12-18 05:31:42
+2015-02-16 05:32:54,543 [14] ERROR Merchello.Core.Strategies.Packaging.ShippableProductVisitor - [Thread 5] ProductVariant marked as shippable was not assoicated with a WarehouseCatalog.  Product was: c16033bc-9709-4afd-9645-e0dac4171a7d -  Tree of Life Mold
+System.IO.InvalidDataException: Found invalid data while decoding.
+2015-02-16 05:33:15,561 [14] INFO  umbraco.BusinessLogic.Log - [Thread 15] Log scrubbed.  Removed all items older than 2014-12-18 05:33:15
+2015-02-16 05:33:17,953 [14] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 5] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Validator returned: ErrorNoCatalogFound
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 05:33:17,953 [14] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 5] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Attempt message: No CatalogKeys found in Shipment Items
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 05:34:41,966 [14] INFO  umbraco.BusinessLogic.Log - [Thread 19] Log scrubbed.  Removed all items older than 2014-12-18 05:34:41
+2015-02-16 05:35:04,820 [14] INFO  Umbraco.Core.PluginManager - [Thread 19] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-02-16 05:35:04,820 [14] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 5 (took 0ms)
+2015-02-16 05:36:08,364 [14] INFO  umbraco.BusinessLogic.Log - [Thread 24] Log scrubbed.  Removed all items older than 2014-12-18 05:36:08
+2015-02-16 07:04:55,408 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2015-02-16 07:04:55,582 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 162ms)
+2015-02-16 07:04:55,625 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-02-16 07:04:56,205 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 43 (took 572ms)
+2015-02-16 07:04:56,652 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-02-16 07:04:56,654 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+2015-02-16 07:04:56,654 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-02-16 07:04:56,659 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 5ms)
+2015-02-16 07:04:56,743 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-02-16 07:04:56,753 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 7 (took 10ms)
+2015-02-16 07:04:56,756 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-02-16 07:04:56,789 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 53 (took 33ms)
+2015-02-16 07:04:57,144 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-02-16 07:04:57,147 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2015-02-16 07:04:57,147 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-02-16 07:04:57,149 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 1ms)
+2015-02-16 07:05:00,416 [5] INFO  Merchello.Web.UmbracoApplicationEventHandler - Attempting to initialize Merchello
+2015-02-16 07:05:00,504 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Gateways.GatewayProviderBase
+2015-02-16 07:05:00,506 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Gateways.GatewayProviderBase, found 4 (took 1ms)
+2015-02-16 07:05:01,067 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Observation.ITrigger
+2015-02-16 07:05:01,071 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Observation.ITrigger, found 3 (took 4ms)
+2015-02-16 07:05:01,084 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Observation.IMonitor
+2015-02-16 07:05:01,086 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Observation.IMonitor, found 3 (took 2ms)
+2015-02-16 07:05:01,097 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Web.Reporting.ReportController
+2015-02-16 07:05:01,099 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Web.Reporting.ReportController, found 0 (took 1ms)
+2015-02-16 07:05:01,104 [5] INFO  Merchello.Core.CoreBootManager - [Thread 1] Starting subscribing Monitors to Triggers
+2015-02-16 07:05:01,108 [5] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] PartialOrderShippedMonitor subscribing to PartialOrderShippedTrigger
+2015-02-16 07:05:01,112 [5] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.MonitorModels.IPaymentResultMonitorModel, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] OrderConfirmationMonitor subscribing to OrderConfirmationTrigger
+2015-02-16 07:05:01,112 [5] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] OrderShippedMonitor subscribing to OrderShippedTrigger
+2015-02-16 07:05:01,112 [5] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Finished subscribing Monitors to Triggers
+2015-02-16 07:05:01,815 [5] INFO  Merchello.Web.UmbracoApplicationEventHandler - Initialization of Merchello complete
+2015-02-16 07:05:02,048 [5] INFO  Merchello.Core.Gateways.GatewayEvents - [Thread 1] Initializing Merchello Warehouse Catalog binding events
+2015-02-16 07:05:02,051 [5] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 1] Initializing Merchello NotificationMonitor binding events
+2015-02-16 07:05:02,051 [5] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 1] Completed Merchello NotificationMonitor binding events
+2015-02-16 07:05:02,052 [5] INFO  Merchello.Core.Gateways.Notification.Smtp.SmtpProviderEvents - [Thread 1] Initializing SMTP notification gateway provider registration binding events
+2015-02-16 07:05:02,111 [5] INFO  Merchello.Web.Search.ExamineEvents - [Thread 1] Initializing Merchello ProductIndex binding events
+2015-02-16 07:05:02,590 [5] INFO  Merchello.Web.Trees.ServerVariablesParsingEvents - [Thread 1] Initializing Merchello ServerVariablesParsingEvents
+2015-02-16 07:05:02,594 [5] INFO  Merchello.Web.UmbracoApplicationEventHandler - [Thread 1] Initializing Customer related events
+2015-02-16 07:05:02,652 [5] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2015-02-16 07:05:02,657 [5] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2015-02-16 07:05:07,549 [5] INFO  Umbraco.Web.UmbracoModule - [Thread 7] Setting OriginalRequestUrl: localhost:54066/umbraco
+2015-02-16 07:05:07,803 [5] INFO  umbraco.content - [Thread 7] Loading content from disk cache...
+2015-02-16 07:05:08,181 [5] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2015-02-16 07:05:08,190 [5] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 7ms)
+2015-02-16 07:05:12,901 [5] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2015-02-16 07:05:12,904 [5] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 3ms)
+2015-02-16 07:05:35,049 [5] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 7] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 07:05:35,231 [5] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 7] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 07:05:35,647 [5] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 7] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 07:05:35,760 [5] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 8] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 07:05:35,842 [5] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 8] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 07:05:35,984 [5] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 8] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 07:05:38,764 [5] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 7] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 07:05:39,417 [5] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 7] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 07:05:41,512 [5] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 11] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 07:06:27,893 [5] INFO  umbraco.BusinessLogic.Log - [Thread 7] Log scrubbed.  Removed all items older than 2014-12-18 07:06:27
+2015-02-16 07:07:54,265 [5] INFO  umbraco.BusinessLogic.Log - [Thread 8] Log scrubbed.  Removed all items older than 2014-12-18 07:07:54
+2015-02-16 07:09:20,680 [5] INFO  umbraco.BusinessLogic.Log - [Thread 22] Log scrubbed.  Removed all items older than 2014-12-18 07:09:20
+2015-02-16 07:10:47,092 [5] INFO  umbraco.BusinessLogic.Log - [Thread 21] Log scrubbed.  Removed all items older than 2014-12-18 07:10:47
+2015-02-16 07:12:13,503 [5] INFO  umbraco.BusinessLogic.Log - [Thread 28] Log scrubbed.  Removed all items older than 2014-12-18 07:12:13
+2015-02-16 09:47:18,841 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2015-02-16 09:47:19,158 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 114ms)
+2015-02-16 09:47:19,188 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-02-16 09:47:21,503 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 43 (took 2313ms)
+2015-02-16 09:47:22,422 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-02-16 09:47:22,431 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 9ms)
+2015-02-16 09:47:22,440 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-02-16 09:47:22,554 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 113ms)
+2015-02-16 09:47:22,735 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-02-16 09:47:22,738 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 7 (took 2ms)
+2015-02-16 09:47:22,738 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-02-16 09:47:22,767 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 53 (took 28ms)
+2015-02-16 09:47:23,053 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-02-16 09:47:23,054 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 1ms)
+2015-02-16 09:47:23,055 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-02-16 09:47:23,056 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 1ms)
+2015-02-16 09:47:27,726 [7] INFO  Merchello.Web.UmbracoApplicationEventHandler - Attempting to initialize Merchello
+2015-02-16 09:47:27,999 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Gateways.GatewayProviderBase
+2015-02-16 09:47:28,007 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Gateways.GatewayProviderBase, found 4 (took 7ms)
+2015-02-16 09:47:28,896 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Observation.ITrigger
+2015-02-16 09:47:28,899 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Observation.ITrigger, found 3 (took 3ms)
+2015-02-16 09:47:28,932 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Observation.IMonitor
+2015-02-16 09:47:28,940 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Observation.IMonitor, found 3 (took 7ms)
+2015-02-16 09:47:28,972 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Web.Reporting.ReportController
+2015-02-16 09:47:28,973 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Web.Reporting.ReportController, found 0 (took 1ms)
+2015-02-16 09:47:28,975 [7] INFO  Merchello.Core.CoreBootManager - [Thread 1] Starting subscribing Monitors to Triggers
+2015-02-16 09:47:28,979 [7] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] PartialOrderShippedMonitor subscribing to PartialOrderShippedTrigger
+2015-02-16 09:47:28,990 [7] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.MonitorModels.IPaymentResultMonitorModel, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] OrderConfirmationMonitor subscribing to OrderConfirmationTrigger
+2015-02-16 09:47:28,991 [7] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] OrderShippedMonitor subscribing to OrderShippedTrigger
+2015-02-16 09:47:28,991 [7] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Finished subscribing Monitors to Triggers
+2015-02-16 09:47:31,190 [7] INFO  Merchello.Web.UmbracoApplicationEventHandler - Initialization of Merchello complete
+2015-02-16 09:47:31,805 [7] INFO  Merchello.Core.Gateways.GatewayEvents - [Thread 1] Initializing Merchello Warehouse Catalog binding events
+2015-02-16 09:47:31,819 [7] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 1] Initializing Merchello NotificationMonitor binding events
+2015-02-16 09:47:31,820 [7] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 1] Completed Merchello NotificationMonitor binding events
+2015-02-16 09:47:31,822 [7] INFO  Merchello.Core.Gateways.Notification.Smtp.SmtpProviderEvents - [Thread 1] Initializing SMTP notification gateway provider registration binding events
+2015-02-16 09:47:31,958 [7] INFO  Merchello.Web.Search.ExamineEvents - [Thread 1] Initializing Merchello ProductIndex binding events
+2015-02-16 09:47:33,195 [7] INFO  Merchello.Web.Trees.ServerVariablesParsingEvents - [Thread 1] Initializing Merchello ServerVariablesParsingEvents
+2015-02-16 09:47:33,203 [7] INFO  Merchello.Web.UmbracoApplicationEventHandler - [Thread 1] Initializing Customer related events
+2015-02-16 09:47:33,538 [7] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2015-02-16 09:47:33,539 [7] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2015-02-16 09:47:38,587 [7] INFO  Umbraco.Web.UmbracoModule - [Thread 8] Setting OriginalRequestUrl: localhost:54066/umbraco
+2015-02-16 09:47:39,002 [7] INFO  umbraco.content - [Thread 8] Loading content from disk cache...
+2015-02-16 09:47:39,605 [7] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2015-02-16 09:47:39,612 [7] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 2ms)
+2015-02-16 09:47:43,064 [7] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2015-02-16 09:47:43,090 [7] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 25ms)
+2015-02-16 09:48:15,966 [7] INFO  Umbraco.Web.Security.WebSecurity - [Thread 11] User Id: 1 logged in
+2015-02-16 09:48:16,242 [7] INFO  Umbraco.Core.PluginManager - [Thread 10] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-02-16 09:48:16,246 [7] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 5 (took 3ms)
+2015-02-16 09:48:16,517 [7] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of umbraco.interfaces.IApplication
+2015-02-16 09:48:16,519 [7] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of umbraco.interfaces.IApplication, found 8 (took 2ms)
+2015-02-16 09:48:16,548 [7] INFO  Umbraco.Core.PluginManager - [Thread 10] Starting resolution types of umbraco.interfaces.ITree
+2015-02-16 09:48:16,551 [7] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 2ms)
+2015-02-16 09:48:16,580 [7] WARN  Umbraco.Core.Services.ApplicationTreeService - [Thread 10] The tree definition: <add initialize="true" sortOrder="9" alias="diploTraceLog" application="developer" title="Trace Logs" iconClosed="icon-folder" iconOpen="icon-folder-open" type="Diplo.TraceLogViewer.Controllers.TraceLogTreeController, Diplo.TraceLogViewer" /> could not be resolved to a .Net object type
+2015-02-16 09:48:16,586 [7] INFO  Umbraco.Core.PluginManager - [Thread 10] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-02-16 09:48:16,586 [7] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 5 (took 0ms)
+2015-02-16 09:48:16,590 [7] INFO  Umbraco.Core.PluginManager - [Thread 10] Starting resolution types of umbraco.interfaces.ITree
+2015-02-16 09:48:16,592 [7] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 1ms)
+2015-02-16 09:48:23,371 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 8] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:23,891 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 8] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:24,095 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 10] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:24,140 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 8] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:24,229 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 8] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:27,041 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 10] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:34,895 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 8] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:34,990 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 10] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:36,979 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 5] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:42,645 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 5] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:45,711 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 18] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:45,752 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 18] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:45,772 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 19] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:47,580 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 9] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:50,057 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 18] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:52,011 [7] INFO  umbraco.BusinessLogic.Log - [Thread 9] Log scrubbed.  Removed all items older than 2014-12-18 09:48:51
+2015-02-16 09:48:52,950 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 9] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:52,971 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 20] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:53,003 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 9] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:55,047 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 10] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:58,850 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 19] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:58,875 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 11] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:48:58,914 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 16] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:49:00,901 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 19] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:49:04,653 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 10] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:49:23,919 [7] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 18] Application shutdown. Reason: ConfigurationChange
+2015-02-16 09:49:47,062 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Determining hash of code files on disk
+2015-02-16 09:49:47,148 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Hash determined (took 38ms)
+2015-02-16 09:49:47,207 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-02-16 09:49:47,909 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 43 (took 699ms)
+2015-02-16 09:49:48,413 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-02-16 09:49:48,417 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2015-02-16 09:49:48,419 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-02-16 09:49:48,421 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 2ms)
+2015-02-16 09:49:48,489 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-02-16 09:49:48,500 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 7 (took 10ms)
+2015-02-16 09:49:48,502 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-02-16 09:49:48,524 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 53 (took 22ms)
+2015-02-16 09:49:48,704 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-02-16 09:49:48,706 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2015-02-16 09:49:48,707 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-02-16 09:49:48,708 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 1ms)
+2015-02-16 09:49:52,032 [7] INFO  Merchello.Web.UmbracoApplicationEventHandler - Attempting to initialize Merchello
+2015-02-16 09:49:52,206 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of Merchello.Core.Gateways.GatewayProviderBase
+2015-02-16 09:49:52,209 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Merchello.Core.Gateways.GatewayProviderBase, found 4 (took 3ms)
+2015-02-16 09:49:52,983 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of Merchello.Core.Observation.ITrigger
+2015-02-16 09:49:52,990 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Merchello.Core.Observation.ITrigger, found 3 (took 6ms)
+2015-02-16 09:49:53,017 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of Merchello.Core.Observation.IMonitor
+2015-02-16 09:49:53,019 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Merchello.Core.Observation.IMonitor, found 3 (took 2ms)
+2015-02-16 09:49:53,028 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of Merchello.Web.Reporting.ReportController
+2015-02-16 09:49:53,038 [7] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Merchello.Web.Reporting.ReportController, found 0 (took 9ms)
+2015-02-16 09:49:53,076 [7] INFO  Merchello.Core.CoreBootManager - [Thread 12] Starting subscribing Monitors to Triggers
+2015-02-16 09:49:53,082 [7] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 12] PartialOrderShippedMonitor subscribing to PartialOrderShippedTrigger
+2015-02-16 09:49:53,084 [7] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.MonitorModels.IPaymentResultMonitorModel, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 12] OrderConfirmationMonitor subscribing to OrderConfirmationTrigger
+2015-02-16 09:49:53,096 [7] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 12] OrderShippedMonitor subscribing to OrderShippedTrigger
+2015-02-16 09:49:53,096 [7] INFO  Umbraco.Core.CoreBootManager - [Thread 12] Finished subscribing Monitors to Triggers
+2015-02-16 09:49:54,783 [7] INFO  Merchello.Web.UmbracoApplicationEventHandler - Initialization of Merchello complete
+2015-02-16 09:49:55,049 [7] INFO  Merchello.Core.Gateways.GatewayEvents - [Thread 12] Initializing Merchello Warehouse Catalog binding events
+2015-02-16 09:49:55,053 [7] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 12] Initializing Merchello NotificationMonitor binding events
+2015-02-16 09:49:55,053 [7] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 12] Completed Merchello NotificationMonitor binding events
+2015-02-16 09:49:55,054 [7] INFO  Merchello.Core.Gateways.Notification.Smtp.SmtpProviderEvents - [Thread 12] Initializing SMTP notification gateway provider registration binding events
+2015-02-16 09:49:55,136 [7] INFO  Merchello.Web.Search.ExamineEvents - [Thread 12] Initializing Merchello ProductIndex binding events
+2015-02-16 09:49:55,879 [7] INFO  Merchello.Web.Trees.ServerVariablesParsingEvents - [Thread 12] Initializing Merchello ServerVariablesParsingEvents
+2015-02-16 09:49:55,884 [7] INFO  Merchello.Web.UmbracoApplicationEventHandler - [Thread 12] Initializing Customer related events
+2015-02-16 09:49:55,990 [7] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 12] Initializing Examine and binding to business logic events
+2015-02-16 09:49:55,991 [7] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 12] Adding examine event handlers for index providers: 3
+2015-02-16 09:49:59,743 [7] INFO  Umbraco.Web.UmbracoModule - [Thread 16] Setting OriginalRequestUrl: localhost:54066/umbraco
+2015-02-16 09:49:59,987 [7] INFO  umbraco.content - [Thread 16] Loading content from disk cache...
+2015-02-16 09:50:00,530 [7] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2015-02-16 09:50:00,534 [7] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 2ms)
+2015-02-16 09:50:03,211 [7] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2015-02-16 09:50:03,222 [7] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 10ms)
+2015-02-16 09:50:18,381 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 16] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:50:18,835 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 18] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:50:18,968 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 16] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:50:21,852 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 20] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:50:22,141 [7] ERROR Merchello.Examine.DataServices.MerchelloLogService - [Thread 22] Provider=MerchelloProductIndexer, NodeId=-1, MerchelloProductIndexSet
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ProcessIndexQueueItem(IndexOperation op, IndexWriter writer)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.ForceProcessQueueItems()
+2015-02-16 09:51:10,434 [7] INFO  umbraco.BusinessLogic.Log - [Thread 18] Log scrubbed.  Removed all items older than 2014-12-18 09:51:10
