@@ -267,3 +267,17 @@ System.ArgumentException: merchWarehouseCatalogKey
 2015-02-16 09:40:55,228 [21] INFO  Umbraco.Core.PluginManager - [Thread 15] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
 2015-02-16 09:40:55,231 [21] INFO  Umbraco.Core.PluginManager - [Thread 15] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 3ms)
 2015-02-16 09:42:01,182 [21] INFO  umbraco.BusinessLogic.Log - [Thread 3] Log scrubbed.  Removed all items older than 2014-12-18 09:42:01
+2015-02-16 09:43:27,536 [21] INFO  umbraco.BusinessLogic.Log - [Thread 28] Log scrubbed.  Removed all items older than 2014-12-18 09:43:27
+2015-02-16 09:43:56,943 [21] INFO  Umbraco.Web.Security.WebSecurity - [Thread 13] User Id: 1 logged in
+2015-02-16 09:43:57,195 [21] INFO  Umbraco.Core.PluginManager - [Thread 13] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-02-16 09:43:57,198 [21] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 5 (took 2ms)
+2015-02-16 09:43:57,400 [21] INFO  Umbraco.Core.PluginManager - [Thread 6] Starting resolution types of umbraco.interfaces.IApplication
+2015-02-16 09:43:57,402 [21] INFO  Umbraco.Core.PluginManager - [Thread 6] Completed resolution of types of umbraco.interfaces.IApplication, found 8 (took 2ms)
+2015-02-16 09:43:57,408 [21] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of umbraco.interfaces.ITree
+2015-02-16 09:43:57,412 [21] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 4ms)
+2015-02-16 09:43:57,428 [21] WARN  Umbraco.Core.Services.ApplicationTreeService - [Thread 16] The tree definition: <add initialize="true" sortOrder="9" alias="diploTraceLog" application="developer" title="Trace Logs" iconClosed="icon-folder" iconOpen="icon-folder-open" type="Diplo.TraceLogViewer.Controllers.TraceLogTreeController, Diplo.TraceLogViewer" /> could not be resolved to a .Net object type
+2015-02-16 09:43:57,436 [21] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-02-16 09:43:57,437 [21] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 5 (took 0ms)
+2015-02-16 09:43:57,440 [21] INFO  Umbraco.Core.PluginManager - [Thread 16] Starting resolution types of umbraco.interfaces.ITree
+2015-02-16 09:43:57,442 [21] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 2ms)
+2015-02-16 09:44:53,948 [21] INFO  umbraco.BusinessLogic.Log - [Thread 9] Log scrubbed.  Removed all items older than 2014-12-18 09:44:53
