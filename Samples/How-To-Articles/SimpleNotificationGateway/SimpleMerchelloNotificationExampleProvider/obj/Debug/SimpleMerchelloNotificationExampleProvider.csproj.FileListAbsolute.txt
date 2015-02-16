@@ -166,6 +166,5 @@ C:\github\Samples.1.7\Samples\Samples\How-To-Articles\SimpleNotificationGateway\
 C:\github\Samples.1.7\Samples\Samples\How-To-Articles\SimpleNotificationGateway\SimpleMerchelloNotificationExampleProvider\bin\Debug\umbraco.editorControls.xml
 C:\github\Samples.1.7\Samples\Samples\How-To-Articles\SimpleNotificationGateway\SimpleMerchelloNotificationExampleProvider\bin\Debug\umbraco.MacroEngines.xml
 C:\github\Samples.1.7\Samples\Samples\How-To-Articles\SimpleNotificationGateway\SimpleMerchelloNotificationExampleProvider\bin\Debug\umbraco.providers.xml
-C:\github\Samples.1.7\Samples\Samples\How-To-Articles\SimpleNotificationGateway\SimpleMerchelloNotificationExampleProvider\obj\Debug\SimpleMerchelloNotificationExampleProvider.csprojResolveAssemblyReference.cache
 C:\github\Samples.1.7\Samples\Samples\How-To-Articles\SimpleNotificationGateway\SimpleMerchelloNotificationExampleProvider\obj\Debug\MerchelloNotificationExampleProvder.dll
 C:\github\Samples.1.7\Samples\Samples\How-To-Articles\SimpleNotificationGateway\SimpleMerchelloNotificationExampleProvider\obj\Debug\MerchelloNotificationExampleProvder.pdb

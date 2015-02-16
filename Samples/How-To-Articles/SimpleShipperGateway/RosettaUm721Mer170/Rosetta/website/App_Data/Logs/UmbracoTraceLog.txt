@@ -1,0 +1,122 @@
+﻿2015-02-16 05:12:44,657 [6] INFO  umbraco.BusinessLogic.Log - [Thread 23] Log scrubbed.  Removed all items older than 2014-12-18 05:12:44
+2015-02-16 05:14:11,065 [6] INFO  umbraco.BusinessLogic.Log - [Thread 29] Log scrubbed.  Removed all items older than 2014-12-18 05:14:11
+2015-02-16 05:15:37,475 [6] INFO  umbraco.BusinessLogic.Log - [Thread 19] Log scrubbed.  Removed all items older than 2014-12-18 05:15:37
+2015-02-16 05:16:24,677 [6] INFO  Umbraco.Core.Manifest.ManifestWatcher - [Thread 43] manifest has changed, app pool is restarting (C:\github\Samples.1.7\Samples\Samples\How-To-Articles\SimpleShipperGateway\RosettaUm721Mer161\Rosetta\website\App_Plugins\Merchello\Package.manifest)
+2015-02-16 05:16:24,724 [6] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 39] Application shutdown. Reason: UnloadAppDomainCalled
+2015-02-16 07:27:51,484 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2015-02-16 07:27:51,505 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 16ms)
+2015-02-16 07:27:51,515 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-02-16 07:27:51,664 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 43 (took 148ms)
+2015-02-16 07:27:51,865 [7] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 1] An unhandled exception occurred
+System.Configuration.ConfigurationErrorsException: Unexpected end tag. Line 104, position 3. (C:\github\Samples.1.7\Samples\Samples\How-To-Articles\SimpleShipperGateway\RosettaUm721Mer161\Rosetta\website\config\Dashboard.config line 104) ---> System.Xml.XmlException: Unexpected end tag. Line 104, position 3.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlTextReader.Read()
+   at System.Configuration.XmlUtil.CopySection()
+   at System.Configuration.BaseConfigurationRecord.LoadConfigSource(String name, SectionXmlInfo sectionXmlInfo)
+   at System.Configuration.BaseConfigurationRecord.GetSectionXmlReader(String[] keys, SectionInput input)
+   --- End of inner exception stack trace ---
+   at System.Configuration.BaseConfigurationRecord.EvaluateOne(String[] keys, SectionInput input, Boolean isTrusted, FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult)
+   at System.Configuration.BaseConfigurationRecord.Evaluate(FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult, Boolean getLkg, Boolean getRuntimeObject, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Web.HttpContext.GetSection(String sectionName)
+   at System.Web.Configuration.HttpConfigurationSystem.GetSection(String sectionName)
+   at System.Web.Configuration.HttpConfigurationSystem.System.Configuration.Internal.IInternalConfigSystem.GetSection(String configKey)
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at Umbraco.Core.Configuration.UmbracoConfig..ctor()
+   at Umbraco.Core.Configuration.UmbracoConfig.<.cctor>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Umbraco.Core.Configuration.UmbracoConfig.get_For()
+   at Umbraco.Core.Sync.ConfigServerRegistrar..ctor()
+   at Umbraco.Core.CoreBootManager.InitializeResolvers()
+   at Umbraco.Web.WebBootManager.InitializeResolvers()
+   at Umbraco.Core.CoreBootManager.Initialize()
+   at Umbraco.Web.WebBootManager.Initialize()
+   at Umbraco.Core.UmbracoApplicationBase.StartApplication(Object sender, EventArgs e)
+   at Umbraco.Core.UmbracoApplicationBase.Application_Start(Object sender, EventArgs e)
+2015-02-16 07:28:01,907 [7] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 10] Application shutdown. Reason: InitializationError
+2015-02-16 07:28:30,493 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2015-02-16 07:28:30,539 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 34ms)
+2015-02-16 07:28:30,567 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-02-16 07:28:30,833 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 43 (took 263ms)
+2015-02-16 07:28:31,180 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-02-16 07:28:31,183 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2015-02-16 07:28:31,184 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-02-16 07:28:31,186 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 2ms)
+2015-02-16 07:28:31,242 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-02-16 07:28:31,245 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 7 (took 3ms)
+2015-02-16 07:28:31,248 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-02-16 07:28:31,275 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 53 (took 26ms)
+2015-02-16 07:28:31,474 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-02-16 07:28:31,476 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 1ms)
+2015-02-16 07:28:31,477 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-02-16 07:28:31,483 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 5ms)
+2015-02-16 07:28:33,425 [11] INFO  Merchello.Web.UmbracoApplicationEventHandler - Attempting to initialize Merchello
+2015-02-16 07:28:33,530 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Gateways.GatewayProviderBase
+2015-02-16 07:28:33,561 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Gateways.GatewayProviderBase, found 5 (took 30ms)
+2015-02-16 07:28:34,174 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Observation.ITrigger
+2015-02-16 07:28:34,179 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Observation.ITrigger, found 3 (took 4ms)
+2015-02-16 07:28:34,197 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Core.Observation.IMonitor
+2015-02-16 07:28:34,200 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Core.Observation.IMonitor, found 3 (took 3ms)
+2015-02-16 07:28:34,210 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Merchello.Web.Reporting.ReportController
+2015-02-16 07:28:34,211 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Merchello.Web.Reporting.ReportController, found 0 (took 1ms)
+2015-02-16 07:28:34,218 [11] INFO  Merchello.Core.CoreBootManager - [Thread 1] Starting subscribing Monitors to Triggers
+2015-02-16 07:28:34,220 [11] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] PartialOrderShippedMonitor subscribing to PartialOrderShippedTrigger
+2015-02-16 07:28:34,221 [11] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.MonitorModels.IPaymentResultMonitorModel, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] OrderConfirmationMonitor subscribing to OrderConfirmationTrigger
+2015-02-16 07:28:34,223 [11] INFO  Merchello.Core.Observation.MonitorBase`1[[Merchello.Core.Models.IShipment, Merchello.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null]] - [Thread 1] OrderShippedMonitor subscribing to OrderShippedTrigger
+2015-02-16 07:28:34,224 [11] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Finished subscribing Monitors to Triggers
+2015-02-16 07:28:35,082 [11] INFO  Merchello.Web.UmbracoApplicationEventHandler - Initialization of Merchello complete
+2015-02-16 07:28:35,416 [11] INFO  Merchello.Core.Gateways.GatewayEvents - [Thread 1] Initializing Merchello Warehouse Catalog binding events
+2015-02-16 07:28:35,418 [11] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 1] Initializing Merchello NotificationMonitor binding events
+2015-02-16 07:28:35,419 [11] INFO  Merchello.Core.Gateways.Notification.Monitors.NotificationMonitorEvents - [Thread 1] Completed Merchello NotificationMonitor binding events
+2015-02-16 07:28:35,419 [11] INFO  Merchello.Core.Gateways.Notification.Smtp.SmtpProviderEvents - [Thread 1] Initializing SMTP notification gateway provider registration binding events
+2015-02-16 07:28:35,647 [11] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2015-02-16 07:28:36,168 [11] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2015-02-16 07:28:36,191 [11] INFO  Merchello.Web.Search.ExamineEvents - [Thread 1] Initializing Merchello ProductIndex binding events
+2015-02-16 07:28:36,199 [11] INFO  Merchello.Web.Trees.ServerVariablesParsingEvents - [Thread 1] Initializing Merchello ServerVariablesParsingEvents
+2015-02-16 07:28:36,201 [11] INFO  Merchello.Web.UmbracoApplicationEventHandler - [Thread 1] Initializing Customer related events
+2015-02-16 07:28:43,888 [11] INFO  Umbraco.Web.UmbracoModule - [Thread 8] Setting OriginalRequestUrl: localhost:61316/umbraco
+2015-02-16 07:28:44,346 [11] INFO  umbraco.content - [Thread 8] Loading content from disk cache...
+2015-02-16 07:28:44,743 [11] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2015-02-16 07:28:44,753 [11] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 2ms)
+2015-02-16 07:28:50,761 [11] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2015-02-16 07:28:50,764 [11] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 2ms)
+2015-02-16 07:29:34,833 [11] ERROR Merchello.Core.Strategies.Packaging.ShippableProductVisitor - [Thread 9] ProductVariant marked as shippable was not assoicated with a WarehouseCatalog.  Product was: c16033bc-9709-4afd-9645-e0dac4171a7d -  Tree of Life Mold
+System.IO.InvalidDataException: Found invalid data while decoding.
+2015-02-16 07:29:35,123 [11] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 9] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Validator returned: ErrorNoCatalogFound
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 07:29:35,123 [11] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 9] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Attempt message: No CatalogKeys found in Shipment Items
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 07:29:35,127 [11] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 9] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Validator returned: ErrorNoCatalogFound
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 07:29:35,127 [11] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 9] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Attempt message: No CatalogKeys found in Shipment Items
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 07:29:48,574 [11] ERROR Merchello.Core.Strategies.Packaging.ShippableProductVisitor - [Thread 8] ProductVariant marked as shippable was not assoicated with a WarehouseCatalog.  Product was: c16033bc-9709-4afd-9645-e0dac4171a7d -  Tree of Life Mold
+System.IO.InvalidDataException: Found invalid data while decoding.
+2015-02-16 07:29:48,597 [11] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 8] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Validator returned: ErrorNoCatalogFound
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 07:29:48,598 [11] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 8] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Attempt message: No CatalogKeys found in Shipment Items
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 07:29:48,598 [11] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 8] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Validator returned: ErrorNoCatalogFound
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 07:29:48,598 [11] ERROR Merchello.Core.Gateways.Shipping.ShippingGatewayProviderBase - [Thread 8] ShipMethods could not be determined for Shipment passed to GetAvailableShipMethodsForDestination method. Attempt message: No CatalogKeys found in Shipment Items
+System.ArgumentException: merchWarehouseCatalogKey
+2015-02-16 07:29:59,558 [11] INFO  umbraco.BusinessLogic.Log - [Thread 8] Log scrubbed.  Removed all items older than 2014-12-18 07:29:59
+2015-02-16 07:30:07,359 [11] INFO  Umbraco.Web.Security.WebSecurity - [Thread 8] User Id: 1 logged in
+2015-02-16 07:30:07,731 [11] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-02-16 07:30:07,733 [11] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 5 (took 2ms)
+2015-02-16 07:30:08,250 [11] INFO  Umbraco.Core.PluginManager - [Thread 18] Starting resolution types of umbraco.interfaces.ITree
+2015-02-16 07:30:08,253 [11] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 3ms)
+2015-02-16 07:30:08,455 [11] INFO  Umbraco.Core.PluginManager - [Thread 9] Starting resolution types of umbraco.interfaces.IApplication
+2015-02-16 07:30:08,458 [11] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of umbraco.interfaces.IApplication, found 8 (took 2ms)
+2015-02-16 07:30:08,460 [11] WARN  Umbraco.Core.Services.ApplicationTreeService - [Thread 18] The tree definition: <add initialize="true" sortOrder="9" alias="diploTraceLog" application="developer" title="Trace Logs" iconClosed="icon-folder" iconOpen="icon-folder-open" type="Diplo.TraceLogViewer.Controllers.TraceLogTreeController, Diplo.TraceLogViewer" /> could not be resolved to a .Net object type
+2015-02-16 07:30:08,468 [11] INFO  Umbraco.Core.PluginManager - [Thread 18] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-02-16 07:30:08,469 [11] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 5 (took 0ms)
+2015-02-16 07:30:08,473 [11] INFO  Umbraco.Core.PluginManager - [Thread 18] Starting resolution types of umbraco.interfaces.ITree
+2015-02-16 07:30:08,474 [11] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 1ms)
+2015-02-16 07:31:25,805 [11] INFO  umbraco.BusinessLogic.Log - [Thread 17] Log scrubbed.  Removed all items older than 2014-12-18 07:31:25

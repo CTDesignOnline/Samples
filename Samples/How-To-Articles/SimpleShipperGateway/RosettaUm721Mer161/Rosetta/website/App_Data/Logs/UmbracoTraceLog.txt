@@ -1,5 +1,0 @@
-﻿2015-02-16 05:12:44,657 [6] INFO  umbraco.BusinessLogic.Log - [Thread 23] Log scrubbed.  Removed all items older than 2014-12-18 05:12:44
-2015-02-16 05:14:11,065 [6] INFO  umbraco.BusinessLogic.Log - [Thread 29] Log scrubbed.  Removed all items older than 2014-12-18 05:14:11
-2015-02-16 05:15:37,475 [6] INFO  umbraco.BusinessLogic.Log - [Thread 19] Log scrubbed.  Removed all items older than 2014-12-18 05:15:37
-2015-02-16 05:16:24,677 [6] INFO  Umbraco.Core.Manifest.ManifestWatcher - [Thread 43] manifest has changed, app pool is restarting (C:\github\Samples.1.7\Samples\Samples\How-To-Articles\SimpleShipperGateway\RosettaUm721Mer161\Rosetta\website\App_Plugins\Merchello\Package.manifest)
-2015-02-16 05:16:24,724 [6] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 39] Application shutdown. Reason: UnloadAppDomainCalled
