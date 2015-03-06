@@ -1462,21 +1462,6 @@
             Provides access to language settings and language files used in the umbraco back-end.
             </summary>
         </member>
-        <member name="M:umbraco.ui.Culture(umbraco.BusinessLogic.User)">
-            <summary>
-            Gets the current Culture for the logged-in users
-            </summary>
-            <param name="u">The user.</param>
-            <returns></returns>
-        </member>
-        <member name="M:umbraco.ui.GetLanguage">
-            <summary>
-            Check if th user is logged in, if they are, return their language specified in the database.
-            If they aren't logged in, check the current thread culture and return it, however if that is
-            null, then return the default Umbraco culture.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:umbraco.ui.Text(System.String,umbraco.BusinessLogic.User)">
             <summary>
             Returns translated UI text with a specific key based on the specified user's language settings
@@ -1578,6 +1563,13 @@
             Gets the language file as a xml document.
             </summary>
             <param name="language">The language.</param>
+            <returns></returns>
+        </member>
+        <member name="M:umbraco.ui.ConvertToDictionaryVars(System.String[])">
+            <summary>
+            Convert an array of strings to a dictionary of indicies -> values
+            </summary>
+            <param name="variables"></param>
             <returns></returns>
         </member>
         <member name="T:umbraco.UmbracoSettings">
