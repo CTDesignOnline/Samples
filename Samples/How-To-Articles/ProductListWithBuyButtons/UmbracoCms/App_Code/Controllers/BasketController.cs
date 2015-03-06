@@ -15,7 +15,7 @@
     /// <summary>
     /// Summary description for BasketController
     /// </summary>
-    [PluginController("MerchelloProductListExample")]
+    [PluginController("MerchelloExample")]
     public class BasketController : MerchelloSurfaceContoller
     {
 
