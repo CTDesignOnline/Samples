@@ -1,8 +1,8 @@
 ﻿@inherits Merchello.Web.Mvc.MerchelloTemplatePage
-
+@using Merchello.Web.Models.ContentEditing
 @{
     Layout = "RosettaBasePage.cshtml";
-    var product = Merchello.Query.Product.GetByKey(new Guid(CurrentPage.merchelloProduct));
+    var product = CurrentPage.GetPropertyValue<ProductDisplay>("merchelloProduct");
     
 }
 
