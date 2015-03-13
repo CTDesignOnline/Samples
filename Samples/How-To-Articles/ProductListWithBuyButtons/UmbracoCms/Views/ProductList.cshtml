@@ -4,45 +4,48 @@
 @using Merchello.Web.Models.ContentEditing
 @{
     Layout = null;
-    
-
 }
+
+<!-- show customer name and basket item count -->
+
 <h1>@CurrentPage.Name</h1>
-<!-- @CurrentPage.Id -->
+
 <table>
     @*    for this page, get all visible children in Umbraco content tree *@
     @foreach (IPublishedContent contentProduct in CurrentPage.Children.Where("Visible"))
     {
-        //@GetProductInfo(contentProduct)
-        
+
         // info from Umbraco
         var contentidForChildPage = contentProduct.Id;
         var productname = contentProduct.Name;
-        var productdescription = contentProduct.GetPropertyValue("productdescription").ToString();
-        var merchelloproductguid = contentProduct.GetPropertyValue("merchelloproduct").ToString();
 
-        // merchello object
-        var merchello = new MerchelloHelper();
-    
-        // info from Merchello
-        var merchelloproductobject = merchello.Query.Product.GetByKey(new Guid(merchelloproductguid));
-        var productprice = merchelloproductobject.Price.ToString("C");
+        // get content page's product description
+        var productdescription = contentProduct.GetPropertyValue<string>("productdescription");
+
+        // get content page's merchello product option
+        var merchelloproductobject = contentProduct.GetPropertyValue<ProductDisplay>("merchelloproduct");
 
         // build model to hand to controller used in BuyButton.cshtml
         var productitemmodel = new AddItemModel()
         {
-            ProductKey = new Guid(merchelloproductguid),
+            ProductKey = merchelloproductobject.Key,
             ContentId = contentidForChildPage
-        };            
-                
-    <tr>
-            <!-- <td>@contentidForChildPage</td> -->
-            <!-- <td>@merchelloproductguid</td> -->
+        };
+
+        <tr>
             <td>@contentProduct.Name</td>
             <td>@productdescription</td>
-            <td>@productprice</td>
-                    
-            <td>@Html.Action("Display_BuyButton", "Basket", new { area = "MerchelloProductListExample", product = productitemmodel })</td>
-    </tr>        
+            <td>@merchelloproductobject.Price.ToString("C")</td>
+
+            <td>@Html.Action("Display_BuyButton", "Basket", new { area = "MerchelloExample", product = productitemmodel })</td>
+
+        </tr>
     }
 </table>
+
+
+
+
+
+
+

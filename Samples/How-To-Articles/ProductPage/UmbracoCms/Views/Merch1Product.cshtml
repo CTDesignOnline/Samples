@@ -1,15 +1,20 @@
 ﻿@inherits Merchello.Web.Mvc.MerchelloTemplatePage
-
+@using Merchello.Web
+@using Merchello.Web.Models.ContentEditing
 @{
     Layout = null;
 
-    var key = new Guid(CurrentPage.product);
-    var product = Merchello.Query.Product.GetByKey(key);
+    // Before 1.8 Release
+    //var key = new Guid(CurrentPage.product);
+    //var product = Merchello.Query.Product.GetByKey(key);
+
+    // 1.8 Release+
+    var product = CurrentPage.GetPropertyValue<ProductDisplay>("product");
 }
 
 <!--
 	Umbraco Content Page Id: @CurrentPage.id, 
-    Merchello Product Guid: @key.ToString()
+    Merchello Product Guid: @product.Key.ToString()
 -->
 <!-- exampletable class is only for center alignment -->
 <table class="exampletable">
