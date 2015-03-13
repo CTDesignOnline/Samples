@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "RosettaBasePage.cshtml";
+}
+
+
+<h2>@Umbraco.Field("tagLine")<h2>
+    @CurrentPage.brief         
+
+
+
+@CurrentPage.bodyText
+	
+<!-- call partial MerchelloSampleProductImages --> 	
+@Html.Partial("MerchelloSampleProductImages")
